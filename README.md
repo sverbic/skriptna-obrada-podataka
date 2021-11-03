@@ -1,5 +1,5 @@
 # Skriptna obrada i analiza podataka u Pajtonu
-## Praktikum za Primenjenu nauku o podacima
+### Praktikum za predmet "Primenjena nauka o podacima"
 
 Srđan Verbić, 2021.
 
