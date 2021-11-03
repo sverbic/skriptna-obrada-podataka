@@ -15,7 +15,7 @@ Sadržaj
 
 4 [Priprema i deskriptivna analiza numeričkih podataka](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.ipynb)
 
-5 Vizuelizacija podataka na geografskoj mapi
+5 [Vizuelizacija podataka na geografskoj mapi](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/5%20Vizuelizacija%20podataka%20na%20geografskoj%20mapi.ipynb)
 
 6 [Mašinska obrada tekstualnih podataka](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/6%20Ma%C5%A1inska%20obrada%20tekstualnih%20podataka.ipynb)
 
