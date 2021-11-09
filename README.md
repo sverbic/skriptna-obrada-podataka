@@ -23,7 +23,7 @@ Sadržaj
 
 8 [Kvantifikacija sličnosti i razlika složenih objekata](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/8%20Kvantifikacija%20sli%C4%8Dnosti%20i%20razlika%20slo%C5%BEenih%20objekata.ipynb)
 
-9 Linearni model
+9 Fitovanje podataka 
 
 10 [Višestruka linearna regresija](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/10%20Vi%C5%A1estruka%20linearna%20regresija.ipynb)
 
