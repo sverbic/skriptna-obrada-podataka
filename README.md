@@ -1,7 +1,11 @@
 # Skriptna obrada i analiza podataka u Pajtonu
 ### Praktikum za predmet "Primenjena nauka o podacima"
 
+- draft -
+
 Srđan Verbić, 2021.
+
+[![silly walk (unknown author)](../figures/silly_walk.jpg)]
 
 Sadržaj
 
@@ -23,7 +27,7 @@ Sadržaj
 
 8 [Kvantifikacija sličnosti i razlika složenih objekata](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/8%20Kvantifikacija%20sli%C4%8Dnosti%20i%20razlika%20slo%C5%BEenih%20objekata.ipynb)
 
-9 Fitovanje podataka 
+9 [Fitovanje podataka](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/9%20Fitovanje%20podataka.ipynb) 
 
 10 [Višestruka linearna regresija](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/10%20Vi%C5%A1estruka%20linearna%20regresija.ipynb)
 
