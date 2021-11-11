@@ -1,11 +1,11 @@
 # Skriptna obrada i analiza podataka u Pajtonu
 ### Praktikum za predmet "Primenjena nauka o podacima"
 
-- draft -
+\- draft -
 
 Srđan Verbić, 2021.
 
-[![silly walk (unknown author)](notebooks/figures/silly_walk.jpg)]
+![silly walk (unknown author)](notebooks/figures/silly_walk.jpg)
 
 Sadržaj
 
