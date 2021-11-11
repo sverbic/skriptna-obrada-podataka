@@ -5,7 +5,7 @@
 
 Srđan Verbić, 2021.
 
-[![silly walk (unknown author)](../figures/silly_walk.jpg)]
+[![silly walk (unknown author)](notebooks/figures/silly_walk.jpg)]
 
 Sadržaj
 
