@@ -1,5 +1,7 @@
 ## Skriptna obrada i analiza podataka u Pajtonu
 
+Zna li da prikazuje ŠĐČĆĆŽ šđčćž
+
 You can use the [editor on GitHub](https://github.com/sverbic/skriptna-obrada-podataka/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
