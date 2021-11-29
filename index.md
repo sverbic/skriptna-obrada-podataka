@@ -7,9 +7,9 @@ You can use the [editor on GitHub](https://github.com/sverbic/skriptna-obrada-po
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### 0 [Uvod](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/0%20Uvod.ipynb)
+0 [Uvod](https://github.com/sverbic/skriptna-obrada-podataka/blob/gh-pages/0%20Uvod.html)
 
-### 1 [Obrada tabelarnih podataka u Pajtonu](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/1%20Obrada%20tabelarnih%20podataka%20u%20Pajtonu.ipynb)
+1 [Obrada tabelarnih podataka u Pajtonu](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/1%20Obrada%20tabelarnih%20podataka%20u%20Pajtonu.ipynb)
 
 2 [Eksplorativna analiza podataka](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/2%20Eksplorativna%20analiza%20podataka.ipynb)
 
