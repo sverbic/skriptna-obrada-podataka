@@ -1,17 +1,13 @@
 ## Skriptna obrada i analiza podataka u Pajtonu
 
-Zna li da prikazuje pažljivo i tačno šta treba
 Srđan Verbić
+Univerzitet Metropolitan - FEFA, 2021.
 
-You can use the [editor on GitHub](https://github.com/sverbic/skriptna-obrada-podataka/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### 0 [Uvod](https://sverbic.github.io/skriptna-obrada-podataka/0%20Uvod.html)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 1 [Obrada tabelarnih podataka u Pajtonu](https://sverbic.github.io/skriptna-obrada-podataka/1%20Obrada%20tabelarnih%20podataka%20u%20Pajtonu.html)
 
-0 [Uvod](https://sverbic.github.io/skriptna-obrada-podataka/0%20Uvod.html)
-
-1 [Obrada tabelarnih podataka u Pajtonu](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/1%20Obrada%20tabelarnih%20podataka%20u%20Pajtonu.ipynb)
-
-2 [Eksplorativna analiza podataka](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/2%20Eksplorativna%20analiza%20podataka.ipynb)
+### 2 [Eksplorativna analiza podataka](https://sverbic.github.io/skriptna-obrada-podataka/2%20Eksplorativna%20analiza%20podataka.html)
 
 3 [Čisćenje podataka u Pajtonu](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/3%20%C4%8Cis%C4%87enje%20podataka%20u%20Pajtonu.ipynb)
 
