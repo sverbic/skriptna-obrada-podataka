@@ -2,7 +2,13 @@
 
 Srđan Verbić
 
-Univerzitet Metropolitan - FEFA, 2021.
+> Univerzitet Metropolitan - FEFA, 2021.
+
+- jen
+- dva
+- tri
+
+```Kod```
 
 ### 0 [Uvod](https://sverbic.github.io/skriptna-obrada-podataka/0%20Uvod.html)
 
