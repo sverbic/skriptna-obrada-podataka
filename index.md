@@ -2,13 +2,15 @@
 
 Srđan Verbić
 
-> Univerzitet Metropolitan - FEFA, 2021.
+> Univerzitet Metropolitan - FEFA, Beograd, 2021.
 
 - jen
 - dva
 - tri
 
-```Kod```
+```
+Kod
+```
 
 ### 0 [Uvod](https://sverbic.github.io/skriptna-obrada-podataka/0%20Uvod.html)
 
@@ -38,7 +40,8 @@ Srđan Verbić
 
 
 
-```Jekyll Themes
+```
+Jekyll Themes
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sverbic/skriptna-obrada-podataka/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
