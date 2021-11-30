@@ -1,6 +1,7 @@
 ## Skriptna obrada i analiza podataka u Pajtonu
 
 Srđan Verbić
+
 Univerzitet Metropolitan - FEFA, 2021.
 
 ### 0 [Uvod](https://sverbic.github.io/skriptna-obrada-podataka/0%20Uvod.html)
@@ -9,11 +10,11 @@ Univerzitet Metropolitan - FEFA, 2021.
 
 ### 2 [Eksplorativna analiza podataka](https://sverbic.github.io/skriptna-obrada-podataka/2%20Eksplorativna%20analiza%20podataka.html)
 
-3 [Čisćenje podataka u Pajtonu](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/3%20%C4%8Cis%C4%87enje%20podataka%20u%20Pajtonu.ipynb)
+### 3 [Čisćenje podataka u Pajtonu](https://sverbic.github.io/skriptna-obrada-podataka/3%20%C4%8Cis%C4%87enje%20podataka%20u%20Pajtonu.html)
 
-4 [Priprema i deskriptivna analiza numeričkih podataka](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.ipynb)
+### 4 [Priprema i deskriptivna analiza numeričkih podataka](https://sverbic.github.io/skriptna-obrada-podataka/4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html)
 
-5 [Vizuelizacija podataka na geografskoj mapi](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/5%20Vizuelizacija%20podataka%20na%20geografskoj%20mapi.ipynb)
+### 5 [Vizuelizacija podataka na geografskoj mapi](https://sverbic.github.io/skriptna-obrada-podataka/5%20Vizuelizacija%20podataka%20na%20geografskoj%20mapi.html)
 
 6 [Mašinska obrada tekstualnih podataka](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/6%20Ma%C5%A1inska%20obrada%20tekstualnih%20podataka.ipynb)
 
@@ -31,10 +32,11 @@ Univerzitet Metropolitan - FEFA, 2021.
 
 
 
-### Jekyll Themes
+```Jekyll Themes
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sverbic/skriptna-obrada-podataka/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```
