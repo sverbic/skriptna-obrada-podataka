@@ -19,19 +19,19 @@ Srđan Verbić
 
 5 [Vizuelizacija podataka na geografskoj mapi](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/5%20Vizuelizacija%20podataka%20na%20geografskoj%20mapi.html)
 
-6 [Mašinska obrada tekstualnih podataka](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/6%20Ma%C5%A1inska%20obrada%20tekstualnih%20podataka.ipynb)
+6 [Mašinska obrada tekstualnih podataka](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/6%20Ma%C5%A1inska%20obrada%20tekstualnih%20podataka.html)
 
-7 [Koeficijent korelacije](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/7%20Koeficijent%20korelacije.ipynb)
+7 [Koeficijent korelacije](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/7%20Koeficijent%20korelacije.html)
 
-8 [Kvantifikacija sličnosti i razlika složenih objekata](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/8%20Kvantifikacija%20sli%C4%8Dnosti%20i%20razlika%20slo%C5%BEenih%20objekata.ipynb)
+8 [Kvantifikacija sličnosti i razlika složenih objekata](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/8%20Kvantifikacija%20sli%C4%8Dnosti%20i%20razlika%20slo%C5%BEenih%20objekata.html)
 
-9 [Fitovanje podataka](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/9%20Fitovanje%20podataka.ipynb) 
+9 [Fitovanje podataka](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/9%20Fitovanje%20podataka.html) 
 
-10 [Višestruka linearna regresija](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/10%20Vi%C5%A1estruka%20linearna%20regresija.ipynb)
+10 [Višestruka linearna regresija](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/10%20Vi%C5%A1estruka%20linearna%20regresija.html)
 
-11 [Stablo odlučivanja](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/11%20Stablo%20odlu%C4%8Divanja.ipynb)
+11 [Stablo odlučivanja](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/11%20Stablo%20odlu%C4%8Divanja.html)
 
-12 [Klasterska analiza](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/12%20Klasterska%20analiza.ipynb)
+12 [Klasterska analiza](https://sverbic.github.io/skriptna-obrada-podataka/notebooks/12%20Klasterska%20analiza.html)
 
 
 
