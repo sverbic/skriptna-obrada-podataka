@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uvod &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Obrada tabelarnih podataka u Pajtonu" href="1%20Obrada%20tabelarnih%20podataka%20u%20Pajtonu.html" />
+    <link rel="prev" title="Skriptna obrada i analiza podataka u Pajtonu" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Skriptna obrada i analiza podataka u Pajtonu</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Skriptna obrada i analiza podataka u Pajtonu
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Uvod
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1%20Obrada%20tabelarnih%20podataka%20u%20Pajtonu.html">
+   Obrada tabelarnih podataka u Pajtonu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2%20Eksplorativna%20analiza%20podataka.html">
+   Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
+   Priprema i deskriptivna analiza numeričkih podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5%20Vizuelizacija%20podataka%20na%20geografskoj%20mapi.html">
+   Vizuelizacija podataka na geografskoj mapi
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6%20Ma%C5%A1inska%20obrada%20tekstualnih%20podataka.html">
+   Mašinska obrada tekstualnih podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7%20Koeficijent%20korelacije.html">
+   Koeficijent korelacije
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8%20Kvantifikacija%20sli%C4%8Dnosti%20i%20razlika%20slo%C5%BEenih%20objekata.html">
+   Kvantifikacija sličnosti i razlika složenih objekata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9%20Fitovanje%20podataka.html">
+   Fitovanje podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10%20Vi%C5%A1estruka%20linearna%20regresija.html">
+   Višestruka linearna regresija
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11%20Stablo%20odlu%C4%8Divanja.html">
+   Stablo odlučivanja
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12%20Klasterska%20analiza.html">
+   Klasterska analiza
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/0 Uvod.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F0 Uvod.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/0 Uvod.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skriptna-obrada-podataka">
+   Skriptna obrada podataka
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#o-dzupiter-sveskama">
+   O Džupiter sveskama
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#o-pajtonu">
+   O Pajtonu
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kako-da-pokrenete-interaktivnu-verziju-dzupiter-sveski">
+   Kako da pokrenete interaktivnu verziju Džupiter sveski
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preporucena-literatura">
+     Preporučena literatura
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="uvod">
+<h1>Uvod<a class="headerlink" href="#uvod" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>Za skiptnu obradu i analizu podataka u Pajtonu nam je potrebno nešto matematičkog predznanja i tehničkih preduslova. Ništa od toga nije previše zahtevno. U ovoj svesci je dato uputstvo kako da prevaziđemo te početne teškoće.</p>
+</div></blockquote>
+<div class="section" id="skriptna-obrada-podataka">
+<h2>Skriptna obrada podataka<a class="headerlink" href="#skriptna-obrada-podataka" title="Permalink to this headline">¶</a></h2>
+<p>Internet i društvene mreže su drastično podigli nivo količine podataka koji obrađujemo svaki dan. Dok je internet još bio samo za imejl i pretragu na Yahoo! svi podaci koje smo uopšte mogli da obrađujemo su bili na računaru. Tada je i Eksel (<em>Microsoft Excel</em>) bio više nego dovoljan za ljude čiji je posao da prikupljaju, obrađuju i predstavljaju podatke. Danas su <em>speadsheet</em> programi još mnogo bolji, ali i dalje imaju jednu kritičnu karakteristiku –  svaka obrada podrazumeva da mi, pomoću miša i tastature, svaki put ponavljamo manje-više isti postupak. Možda vremenom postajemo brži i efikasniji, ali i dalje smo mi ljudi neophodni da se obradi novi fajl sa podacima.</p>
+<p>Količina podataka sa kojom se danas susrećemo zahteva drugačiji pristup – da mašini prepustimo taj manuelni posao obrade podataka. To možemo da uradimo tako što napišemo jednostavan program (skriptu) koji isti postupak ponavlja tačno onoliko puta koliko mi to želimo. Takva analiza se naziva skriptnom analizom podataka. Nju možete da izvedete i pomoću makroa ili skripta u Ekselu, ali to, na duge staze, nije dobro rešenje. Pre ili kasnije ćete morati da pređete na programski jezik i okruženje sa velikim, praktično neograničenim, mogućnostima za obradu i analizu podataka.</p>
+<p>Dva programska jezika se danas prepoznaju kao veoma dobra rešenja za skriptnu analizu podataka: <a class="reference external" href="https://cran.r-project.org/">R</a> i Pajton (<em>Python</em>). Mi ćemo u ovom praktikumu koristiti Pajton jer je pogodniji za korišćenje u Džupiter sveskama (<a class="reference external" href="https://jupyter.org/"><em>Jupyter Notebook</em></a>), interaktivnom okruženju u kom je napisan ceo ovaj praktikum.</p>
+<p>Praktikum je namenjen svima koje interesuje kako da automatizuju obradu i analizu podataka. Poželjno je da korisnici imaju osnovno predznanje iz oblasti statistike i programiranja, kao i rada sa Ekselom. Za korišćenje ovih svezaka nije potrebno aktivno programiranje, ali poželjno da korisnici znaju kako se pišu programi, koja im je osnovna struktura, šta su promenljive i funkcije. Džupiter sveske mogu da se koriste bez dopisivanja bilo kakvog kôda, dovoljno je da budete u stanju da jedan argument funkcije zamenite drugim ili da varirate parametre.</p>
+<p>Ovaj praktikum može da se koristi na dva načina: da čitate sadržaj svezaka gde sav kôd i grafikone posmatrate kao ilustracije ili da sveske koristite interaktivno tako što pokrećete kôd i eksperimentišete menjajući ga po malo. Preporučujemo da praktikum čitate u dve faze, prvo samo pročitate, a onda “zavrnete rukave” i probate da koristite sveske interaktivno.</p>
+<p>Imajte u vidu da ovo nije udžbenik za obradu podataka ili nauku o podacima. Objašnjeni su samo neki koncepti potrebni za razumevanje navedenih primera skriptne obrade i analize podataka. Pošto je praktikum priređen kao hipertekst, većina važnih koncepata ima hiperlinkove ka definicijama ili objašnjenjima u drugoj literaturi dostupnoj onlajn. Takođe, za sve sveske postoje važne reference koje treba konsultovati za dalje i dublje učenje ili primene.</p>
+<p>Jedan od većih problema u kulturi rada sa podacima i njihovog korišćenja je loša komunikacija rezultata. Iako se menažeri uspešnih kompanija uvek slažu da je donošenje odluka zasnovanjih na podacima neophodno, retko ko od njih direktno koristi podatke. Mnogo je češći slučaj da čitaju kratke izveštaje koji uglavnom podržavaju već utvrđen stav. Razlog za to je da podaci nikada ne govore sami za sebe. Oni su dosadno i teško razumljivo štivo ukoliko su lišeni konteksta i dobrog narativa. Današnjim analitičarima nisu dovoljni statistika i domensko znanje, oni moraju da vladaju veštinom atraktivnog pripovedanja sa podacima. Publiku privlače zanimljive priče. Ukoliko su one bazirane na pravim podacima, komunikacija će biti bolja, uverljivija i svrsihodnija. Zbog toga su sve Džupiter sveske u ovom praktikumu zamišljene kao priče o nekim podacima.</p>
+</div>
+<div class="section" id="o-dzupiter-sveskama">
+<h2>O Džupiter sveskama<a class="headerlink" href="#o-dzupiter-sveskama" title="Permalink to this headline">¶</a></h2>
+<p>Džupiter sveske (<em>Jupyter Notebook</em>) su <em>open-source</em> aplikacija koja omogućava da pravimo i delimo dokumente koji sadrže programski kôd sa pratećim tekstom, jednačinama i vizuelizacijama. Ova aplikacija radi u Džupiter okruženju, odnosno na Džupiter serveru koji može biti podignut lokalno na vašem računaru ili dostupan kao onlajn servis. Iako je Džupiter zamišljen kao platforma za tri jezika (<strong>Ju</strong>lia, <strong>Pyt</strong>hon i <strong>R</strong>), najveći broj svezaka je urađen u Pajtonu. Za Džupiter sveske ne postoji poseban editor, one se edituju i pokreću iz veb-brauzera.</p>
+<p>Ovde se nećemo upuštati u detalje rada sa Džupiter sveskama. Ako samo čitate sadržaj, nikakvo uputstvo vam nije potrebno. Kada radite interaktivno, najvažnije je da primetite da se sveska sastoji iz “In” (<em>input</em>) i “Out” (<em>output</em>) polja. U <em>input</em> polja mi unosimo instrukcije ili prateći tekst. U <em>output</em> poljima je izlaz koji generiše mašina. Kada unesmo kôd u <em>input</em> polje, izvršavamo ga tako što istovremeno pritiskamo <em>Ctrl</em> i <em>Enter</em> na tastaturi. Tada se u polju ispod se pojavi rezultat. Kada izvršimo instrukcije date u nekom “In” polju, broj u uglastim zagradama pored oba polja se povećava za jedan. Pošto instrukcije ne moraju da se izvršavaju redom kojim su ispisane na ekranu, numeracija nam govori kojim su redom izvršavane.</p>
+</div>
+<div class="section" id="o-pajtonu">
+<h2>O Pajtonu<a class="headerlink" href="#o-pajtonu" title="Permalink to this headline">¶</a></h2>
+<p>U ovom praktikumu nećemo davati uputstvo za rad u Pajtonu. Čitajući ove Džupiter sveske videćete da mnogo toga u Pajtonu može da se uradi sa svega par linija koda. Zato verujemo da je primena Pajtona za obradu i analizu podataka moguća i bez posebnog znanja programiranja. Pajton je programski jezik opšte namene koji ima mnoštvo svojih specifičnosti. Mi, međutim, ne planiramo da pišemo softver od hiljadu linija koda niti da pravimo nove biblioteke. Ideja je da koristimo prednosti interpretera koji dozvoljava da podatke obrađujemo korak po korak kao iz komandne linije. Sintaksa Pajtona je, srećom kao i kod većine jezika interpretera, jednostavna.</p>
+<p>Sam Pajton, u svojoj osnovnoj verziji, nema dovoljno funkcija za rad sa podacima. Zato je potrebno je da koristimo specifične biblioteke koje imaju za to namenjene funkcije. To je takođe jednostavno i vrlo brzo ćete videti da skoro uvek koristimo iste 2-3 biblioteke. Zaista mislimo da niko ne treba da uzima kurs programiranja u Pajtonu kako bi mogao da ga koristi za (ne previše složenu) obradu i analizu podataka.</p>
+<p>Ukoliko procenite da vam je potreban postupniji i lakši pristup Pajtonu, možete da pogledate onlajn kurs Fondacije Petlja na ovu temu [1].</p>
+</div>
+<div class="section" id="kako-da-pokrenete-interaktivnu-verziju-dzupiter-sveski">
+<h2>Kako da pokrenete interaktivnu verziju Džupiter sveski<a class="headerlink" href="#kako-da-pokrenete-interaktivnu-verziju-dzupiter-sveski" title="Permalink to this headline">¶</a></h2>
+<p>Za interaktivni rad sa Džupiter sveskama potrebno je da otvorite odgovarajuće .ipynb fajlove. Te fajlove može da čita samo aplikacija Jupyter Notebook koja može da bude ili servis na internetu ili aplikacija instalirana na vašem računaru.</p>
+<p>Najjednostavniji način da otvorite .ipynb fajlove jeste da ih postavite u neki onlajn Git repozitorijum (npr. GitHub) i da onda link na sveske, odnosno te fajlove unesete u odgovarajuće polje portala <a class="reference external" href="https://mybinder.org/">Binder</a> i kliknete na “launch”. Ovaj servis će otvoriti interaktivnu verziju na kojoj ćete moći da radite dok ste onlajn. Binder vam neće trajno sačuvati ono što radite, ali možete uvek ponovo na mu pristupite.</p>
+<p>Drugi način da pokrenete .ipynb fajlove je da koristite neki od od servisa na kojima je potrebno da otvorite nalog (a možda i da platite korišćenje) poput <a class="reference external" href="https://colab.research.google.com/">Google Colab</a> ili <a class="reference external" href="https://cocalc.com/">CoCalc</a>. Ovo je rešenje, pre svega, za profesionalce koji ne žele samo onlajn servis već i platformu za saradnju sa drugim programerima.</p>
+<p>Treći način je da podignete server za Džupiter sveske na svom računaru. Srećom, to nije tako komplikovano kao što zvuči. Potrebno je da preuzmete sa interneta instalaciju programskog okruženja <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> i da je instalirate. Izaberite verziju za Pajton 3.8 i vaš operativni sistem. Imajte u vidu da je ova instalacija velika i zahtevna u pogledu memorije. Kad pokrenete okruženje Anaconda dobićete mogućnost da izaberete neku od ponuđenih aplikacija. Izaberite Jupyter Notebook. Tada će vaš brauzer otvoriti Pajtonov radni direktorijum. Postarajte se da u taj direktorijum unesete potrebne Džupiter sveske. Biće dovoljno da kliknete na ime fajla i on će se u novom tabu brauzera otvoriti kao interaktivna sveska.</p>
+<p>Kada završimo sa tehničkim podešavanjima, bićemo spremni da se pozabavimo suštinom, tj. obradom i analizom podataka u Pajtonu.</p>
+<p>Svaka sveska ovog praktikuma sadrži kratak spisak preporučene literature slobodno dostupne na internetu.</p>
+<div class="section" id="preporucena-literatura">
+<h3>Preporučena literatura<a class="headerlink" href="#preporucena-literatura" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Машуловић Драган. 2019. <a class="reference external" href="https://petlja.org/biblioteka/r/kursevi/jupyter-prirucnik"><em>Анализа и презентација података у Џупајтеру</em></a></p></li>
+<li><p>VanderPlas Jake. 2016. <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook"><em>Python Data Science Handbook: Essential Tools for Working with Data</em></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Skriptna obrada i analiza podataka u Pajtonu</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="1%20Obrada%20tabelarnih%20podataka%20u%20Pajtonu.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Obrada tabelarnih podataka u Pajtonu</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Srđan Verbić<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
