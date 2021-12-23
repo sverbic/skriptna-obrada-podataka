@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitovanje podataka &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Višestruka linearna regresija" href="10%20Vi%C5%A1estruka%20linearna%20regresija.html" />
+    <link rel="prev" title="Kvantifikacija sličnosti i razlika složenih objekata" href="8%20Kvantifikacija%20sli%C4%8Dnosti%20i%20razlika%20slo%C5%BEenih%20objekata.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Skriptna obrada i analiza podataka u Pajtonu</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Skriptna obrada i analiza podataka u Pajtonu
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0%20Uvod.html">
+   Uvod
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1%20Obrada%20tabelarnih%20podataka%20u%20Pajtonu.html">
+   Obrada tabelarnih podataka u Pajtonu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2%20Eksplorativna%20analiza%20podataka.html">
+   Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
+   Priprema i deskriptivna analiza numeričkih podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5%20Vizuelizacija%20podataka%20na%20geografskoj%20mapi.html">
+   Vizuelizacija podataka na geografskoj mapi
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6%20Ma%C5%A1inska%20obrada%20tekstualnih%20podataka.html">
+   Mašinska obrada tekstualnih podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7%20Koeficijent%20korelacije.html">
+   Koeficijent korelacije
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8%20Kvantifikacija%20sli%C4%8Dnosti%20i%20razlika%20slo%C5%BEenih%20objekata.html">
+   Kvantifikacija sličnosti i razlika složenih objekata
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Fitovanje podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10%20Vi%C5%A1estruka%20linearna%20regresija.html">
+   Višestruka linearna regresija
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11%20Stablo%20odlu%C4%8Divanja.html">
+   Stablo odlučivanja
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12%20Klasterska%20analiza.html">
+   Klasterska analiza
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/9 Fitovanje podataka.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F9 Fitovanje podataka.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/9 Fitovanje podataka.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linearni-model">
+   Linearni model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kvadratna-funkcija">
+     Kvadratna funkcija
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testiranje-modela">
+   Testiranje modela
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preporucena-literatura">
+     Preporučena literatura
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="fitovanje-podataka">
+<h1>Fitovanje podataka<a class="headerlink" href="#fitovanje-podataka" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>U ovoj svesci ćemo demostrirati fitovanje podataka, pokazati smisao srednjeg kvadratnog odstupanja kao mere kvaliteta fita i pokazati šta znači da model premalo ili previše dobro fituje (<em>under-</em> i <em>over-fitting</em>).</p>
+</div></blockquote>
+<p>Ukoliko za empirijske podatke postoji teorijski model, onda sigurno znamo i jednačinu koja povezuje zavisno i nezavisno promenljivu. To je tipičan slučaj kada u istraživanju imamo sve elemente naučnog metoda uključujući posmatranje, postavljanje hipoteze i dizajniranje eksperimenta. Međutim, nauka o podacima i mašinsko učenje su primene analize podataka na podacima za koje ne moramo da znamo teorijski okvir. Najbolji model mašinskog učenja ne pretenduje da bude naučno objašnjenje pojave već samo model koji u konkretnom slučaju daje dobru predikciju rezultata.</p>
+<p>Fitovanje podataka u slučajevima kada znamo jednačinu koja povezuje zavisno i nezavisno promeljivu je jednoznačno određeno. Bez teorijskog modela, odnosno poznavanja te veze za fitovanje podatka možemo da koristimo različite modele i vidimo koji je najverodostojniji. Svakako prvo počinjemo od najjednostavnijeg modela, linearnog.</p>
+<div class="section" id="linearni-model">
+<h2>Linearni model<a class="headerlink" href="#linearni-model" title="Permalink to this headline">¶</a></h2>
+<p>Linearni model je najčešće korišćen model predikcije, ne samo u mašinskom učenju već u nauci uopšte. Pomoću ovog modela se određuju parametri linearne funkcije koja opisuje zavisnost jedne kontinualne promenljive od druge. Ovaj model se često naziva i linearna regresija. Postoji nekoliko načina za pravljenje linearnih modela. Mi ćemo ovde pokušati da prikažemo najjednostavniji, tj. onaj koji ne učitava biblioteku za mašinsko učenje samo zato da bi uradio linearan fit. Biblioteka <strong>numpy</strong> ima funkcije koje mogu da nam pomognu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za potrebe ove vežbe koristićemo veštački generisane, odnosno simulirane podatke. Uzećemo tačno određenu vezu između nezavisne (x) i zavisno promenljive (y). Da bi zadatak bio malo realniji dodaćemo i malo šuma.</p>
+<p>Za potrebe simulacije bazirane na pseudo-slučajnim brojevima potreban nam je modul <strong>random</strong> iz biblioteke <strong>numpy</strong>. Pomoću funkcije <code class="docutils literal notranslate"><span class="pre">rand()</span></code> ovog modula ćemo generisati niz od <code class="docutils literal notranslate"><span class="pre">n=10</span></code> slučajnih <em>float</em> brojeva između 0 i 3. Primetite da ovaj niz nije lista nego niz tipa <em>array</em> jer takve generiše <strong>numpy</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">random</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">x</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.42842584, 0.95702671, 1.08448741, 2.48008895, 2.89843653,
+       1.21754624, 2.03463885, 0.58455736, 0.33555417, 1.80829864])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za dalji rad će nam biti potrebno da ovaj niz bude uređen, odnosno sortiran on najmanje vrednosti. Funkcija <code class="docutils literal notranslate"><span class="pre">sort()</span></code> sortira niz i modifikuje ga. Dovoljno je da aktiviramo <code class="docutils literal notranslate"><span class="pre">x.sort()</span></code> pa da niz <strong>x</strong> bude sortiran.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Uzećemo da kvadratna funkcija povezuje x i y, tj. da je <span class="math notranslate nohighlight">\(y=2x^2-2x+5\)</span>. Da zavisnost ne bi bila sasvim očigledna generisaćemo šum, odnosno niz <strong>noise</strong> kao niz slučajnih brojeva između 0 i 1,5. Vrednost tog šuma ćemo dodati na vrednost dobijenu kvadratnom funkcijom.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noise</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="mf">1.5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">noise</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sada pošto imamo i <strong>x</strong> i <strong>y</strong> možemo da fitujemo podatke linearnom funkcijom. To ćemo uraditi pomoću funkcije <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> koja služi za fitovanje polinomom bilo kog reda. Ako stavimo kao argument broj 1, taj polinom će biti prvog reda, odnosno linearna funkcija. Koeficijenti linearne funkcije će biti sačuvani u objektu koji smo nazvali <strong>model1</strong>. Sa tim koeficijentima možemo da, pomoću funkcije <code class="docutils literal notranslate"><span class="pre">poly1d()</span></code> koja od koeficijenata polinoma pravi polinom, da definišemo pomoćnu funkciju <code class="docutils literal notranslate"><span class="pre">model1_fn()</span></code> koja će nam biti potrebna kasnije. Ta funkcija će za svaku vrednost promenljive <strong>x</strong> davati predikciju vrednosti promenljive <strong>y</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">model1_fn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">model1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Biće potrebno da nacrtamo i tačke (<strong>x</strong>,<strong>y</strong>) i krivu <strong>model1_fn</strong> da bismo videli kako traženi model fituje podatke. Da bi bilo lakše da ocenimo kvalitet fita, ovom grafiku ćemo dodati i reziduale, odnosno razlike između stvarnih vrednosti za <strong>y</strong> i vrednosti koje smo prognozirali pomoću modela.</p>
+<p>Tehnička napomena: Pomoćne promenljive <strong>xfit</strong> i <strong>yfit</strong> su uvedene da bi se funkcija prikazala kao linija, odnosno da bi rezolucija pri crtanju krive bila bolja. Interval od 0 do 3 smo podelili na 100 intervala pomoću funkcije <code class="docutils literal notranslate"><span class="pre">linspace()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+
+<span class="n">xfit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">yfit</span> <span class="o">=</span> <span class="n">model1_fn</span><span class="p">(</span><span class="n">xfit</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xfit</span><span class="p">,</span><span class="n">yfit</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="n">model1_fn</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_build/jupyter_execute/9 Fitovanje podataka_18_0.png" src="_build/jupyter_execute/9 Fitovanje podataka_18_0.png" />
+</div>
+</div>
+<p>Kvalitet fita možemo da opišemo na mnogo načina. Često se za to koristi koeficijent korelacije. Ovde nam je zgodnije da koristimo srednji kvadrat odstupanja (MSE od eng. <em>mean square error</em>) kao meru koja može lepo da se vizuelizuje. Što je vrednost MSE manja, to je fit bolji. Vidimo na grafiku kolike su vrednosti odstupanja za svaku tačku (crvene linije). Sve te vrednosti treba kvadrirati, sabrati i podeliti sa n. Konkretno za ovaj linearni fit, srednje kvadratno odstupanje je:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rez</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">model1</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">y</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">rez</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5513848444348444
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="kvadratna-funkcija">
+<h3>Kvadratna funkcija<a class="headerlink" href="#kvadratna-funkcija" title="Permalink to this headline">¶</a></h3>
+<p>Pošto znamo kako smo generisali podatke, znamo i da postoji boji fit od linearnog modela. Kvadratna funkcija će sigurno imati manja odstupanja stvarne i prognozirane vrednosti <strong>y</strong>. Za to ćemo koristiti istu funkciju <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> samo što će sada argument koji se odnosi na red polinoma biti 2. Na sledećem grafiku ćemo nacrtati krivu dobijenu ovakvim fitom.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+
+<span class="n">model2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">model2_fn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
+
+<span class="n">xfit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">yfit</span> <span class="o">=</span> <span class="n">model2_fn</span><span class="p">(</span><span class="n">xfit</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xfit</span><span class="p">,</span><span class="n">yfit</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="n">model2_fn</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x122b33ac0&gt;
+</pre></div>
+</div>
+<img alt="_build/jupyter_execute/9 Fitovanje podataka_23_1.png" src="_build/jupyter_execute/9 Fitovanje podataka_23_1.png" />
+</div>
+</div>
+<p>Očekivano, ovde su rezidualni mnogo manji tako da se crvene linije jedva primećuju. Srednje kvadratno odstupanje je ovde sigurno manje:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rez</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">model2</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">y</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">rez</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.210581107774301
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lako je ovde biti pametan i zaključiti da je kvadratna funkcija odličan model za podatke koje smo prvobitno generisali koristeći kvadratnu funkciju. U realnom slučaju, to naravno nije tako. Mi ne znamo kakva je prava zavisnost i možemo samo da je pretpostavimo na osnovu fitovanja različitim modelima.</p>
+</div>
+</div>
+<div class="section" id="testiranje-modela">
+<h2>Testiranje modela<a class="headerlink" href="#testiranje-modela" title="Permalink to this headline">¶</a></h2>
+<p>U realnom slučaju fitovanje radimo na poznatom uzorku, a predikcije radimo za nepoznate tačke. To je poenta korišćenja modela. Greška koju načinimo predviđajući vrednosti zavisno promenljive u situacijama gde ne možemo da ih izmerimo ili koje se još nisu dogodile je prava mera uspešnosti modela. Ovde ćemo simulirati upravo takvu situaciju za četiri različita modela. Uporedićemo srednje kvadratne greške kako bismo utvrdili koji je model najbolji.</p>
+<p>Za početak, podelićemo ceo skup tačaka (<strong>x</strong>,<strong>y</strong>) na dva dela: na uzorak na kom fitujemo funkciju (<strong>learn</strong>) i ostatak skupa koji koristimo za testiranje modela (<strong>test</strong>). Konkretno, koristićemo funkciju <code class="docutils literal notranslate"><span class="pre">sample()</span></code> iz biblioteke <strong>random</strong> da dobijemo slučajan izorak koji čini polovina početnog skupa. Izraz <code class="docutils literal notranslate"><span class="pre">n//2</span></code> označava celobrojnu vrednost deljenja promenljive <strong>n</strong> sa 2.</p>
+<p>Napomena: Biblioteka <strong>random</strong> nema nikakve veze sa funkcijom istog imena koju smo uzeli iz biblioteke <strong>numpy</strong>. Slučajno imaju isto ime.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">learn</span><span class="o">=</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">test</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">-</span><span class="nb">set</span><span class="p">(</span><span class="n">learn</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xl</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="n">learn</span><span class="p">]</span>
+<span class="n">xt</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="n">test</span><span class="p">]</span>
+
+<span class="n">yl</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">learn</span><span class="p">]</span>
+<span class="n">yt</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">test</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za deo skupa koji smo označili sa <strong>learn</strong> fitovaćemo četiri polinomijalne funkcije prvog, drugog, trećeg i četvrtog reda i tako odrediti koeficijente ovih modela. Potom ćemo za svaki od tih modela napraviti funkciju koja daje predikciju promenljive <strong>y</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">xl</span><span class="p">,</span><span class="n">yl</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">m2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">xl</span><span class="p">,</span><span class="n">yl</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">m3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">xl</span><span class="p">,</span><span class="n">yl</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">m4</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">xl</span><span class="p">,</span><span class="n">yl</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m1_fn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
+<span class="n">m2_fn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">m2</span><span class="p">)</span>
+<span class="n">m3_fn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">m3</span><span class="p">)</span>
+<span class="n">m4_fn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">m4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Zbog prikaza ovih funkcija uzimamo uređen niz vrednosti nezavisno promenljive (<strong>xfit</strong>) i za svaku vrednost izračunavamo vrednost zavisno promenljive po različitim modelima.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xfit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y1fit</span> <span class="o">=</span> <span class="n">m1_fn</span><span class="p">(</span><span class="n">xfit</span><span class="p">)</span>
+<span class="n">y2fit</span> <span class="o">=</span> <span class="n">m2_fn</span><span class="p">(</span><span class="n">xfit</span><span class="p">)</span>
+<span class="n">y3fit</span> <span class="o">=</span> <span class="n">m3_fn</span><span class="p">(</span><span class="n">xfit</span><span class="p">)</span>
+<span class="n">y4fit</span> <span class="o">=</span> <span class="n">m4_fn</span><span class="p">(</span><span class="n">xfit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Reziduale i srednja kvadratna odstupanja računamo samo za tačke iz skupa <strong>test</strong>. Njih želimo da uporedimo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rez1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">m1</span><span class="p">)(</span><span class="n">xt</span><span class="p">)</span><span class="o">-</span><span class="n">yt</span>
+<span class="n">r1</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">rez1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">xt</span><span class="p">)</span>
+<span class="n">rez2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">m2</span><span class="p">)(</span><span class="n">xt</span><span class="p">)</span><span class="o">-</span><span class="n">yt</span>
+<span class="n">r2</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">rez2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">xt</span><span class="p">)</span>
+<span class="n">rez3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">m3</span><span class="p">)(</span><span class="n">xt</span><span class="p">)</span><span class="o">-</span><span class="n">yt</span>
+<span class="n">r3</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">rez3</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">xt</span><span class="p">)</span>
+<span class="n">rez4</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">m4</span><span class="p">)(</span><span class="n">xt</span><span class="p">)</span><span class="o">-</span><span class="n">yt</span>
+<span class="n">r4</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">rez4</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">xt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Na sledećoj slici ćemo prikazati grafike za sva četiri modela, redom od polinoma prvog do polinoma četvrtog stepena. Plave tačke prikadaju skupu <strong>learn</strong>, a narandžaste skupu <strong>test</strong>. Iznad grafika je prikazana odgovarajuća vrednost srednjeg kvadratnog odstupanja, <strong>MSE</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xl</span><span class="p">,</span> <span class="n">yl</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xfit</span><span class="p">,</span><span class="n">y1fit</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSE=</span><span class="si">{</span><span class="n">r1</span><span class="si">:</span><span class="s2">.3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xl</span><span class="p">,</span> <span class="n">yl</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xfit</span><span class="p">,</span><span class="n">y2fit</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSE=</span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xl</span><span class="p">,</span> <span class="n">yl</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xfit</span><span class="p">,</span><span class="n">y3fit</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSE=</span><span class="si">{</span><span class="n">r3</span><span class="si">:</span><span class="s2">.3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xl</span><span class="p">,</span> <span class="n">yl</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xfit</span><span class="p">,</span><span class="n">y4fit</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span><span class="n">yt</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MSE=</span><span class="si">{</span><span class="n">r4</span><span class="si">:</span><span class="s2">.3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;MSE=5.21&#39;)
+</pre></div>
+</div>
+<img alt="_build/jupyter_execute/9 Fitovanje podataka_41_1.png" src="_build/jupyter_execute/9 Fitovanje podataka_41_1.png" />
+</div>
+</div>
+<p>Ako pažljivo pogledamo grafike, videćemo da polinom prvog reda, odnosno linearna funkcija, ima najveća odstupanja od tačaka iz skupa <strong>learn</strong>. Najbolje je slaganje za polinom najvišeg reda gde sve plave tačke leže baš na krivoj kojom smo fitovali podatke. Ovde je odstupanje tačaka iz <strong>learn</strong> uzorka od polinoma četvrtog reda jednaka nuli. Međutim, nas više interesuje koliko će tačke odstupati od funkcije za skup kojim testiramo modele. Narandžaste tačke, verovatno (ipak je ovo simulacija na skromnom uzorku) najmanje odstupaju za polinom drugog reda.</p>
+<p>Pojava da funkcija ne prati dovoljno dobro trend tačaka iz uzorka zbog čega su odstupanja za testni skup velika naziva se <em>under-fitting</em>. To svakako nije dobro, ali ni druga krajnost nije dobra. Kada funkcija previše dobro prati tačke iz uzorka, greške za testni skup opet postaju velike. Ta pojava se naziva <em>over-fitting</em>. Mi unapred, bez poznavanja vrednosti za testni skup, ne može da znamo koji je model najbolji, ali je očekivano da to najjednostavniji model koji prati trend tačaka. Treba se čuvati obe krajnosti.</p>
+<p>Složenost modela ne zavisi samo od složenosti funkcije već i od broja nezavisno promenljivih. Mi smo ovde radili samo sa jednom nezavisno promenljivom, <strong>x</strong>, ali kod mašinskog učenja taj broj može biti mnogo veći. U takvim slučajevima moramo da uradimo odabir promenljivih koje uključujemo u model (<em>feature selection</em>). Premalo nije dobro, ali nije ni previše. <em>Under-fitting</em> i <em>over-fitting</em> su standarni izazovi za mašinsko učenje. Uvek treba tražiti modele koji uključuju samo zaista važne promenljive i gde su funkcije koje ih povezuju što jednostavnije.</p>
+<div class="section" id="preporucena-literatura">
+<h3>Preporučena literatura<a class="headerlink" href="#preporucena-literatura" title="Permalink to this headline">¶</a></h3>
+<p>Mirko Stojiljković, 2018, <a class="reference external" href="https://realpython.com/linear-regression-in-python/">Linear Regression in Python</a></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="8%20Kvantifikacija%20sli%C4%8Dnosti%20i%20razlika%20slo%C5%BEenih%20objekata.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Kvantifikacija sličnosti i razlika složenih objekata</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="10%20Vi%C5%A1estruka%20linearna%20regresija.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Višestruka linearna regresija</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Srđan Verbić<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
