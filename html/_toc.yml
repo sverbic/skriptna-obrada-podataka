@@ -1,0 +1,19 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: 0 Uvod
+- file: 1 Obrada tabelarnih podataka u Pajtonu
+- file: 2 Eksplorativna analiza podataka
+- file: 3 Čišćenje podataka u Pajtonu
+- file: 4 Priprema i deskriptivna analiza numeričkih podataka
+- file: 5 Vizuelizacija podataka na geografskoj mapi
+- file: 6 Mašinska obrada tekstualnih podataka
+- file: 7 Koeficijent korelacije
+- file: 8 Kvantifikacija sličnosti i razlika složenih objekata
+- file: 9 Fitovanje podataka
+- file: 10 Višestruka linearna regresija
+- file: 11 Stablo odlučivanja
+- file: 12 Klasterska analiza
