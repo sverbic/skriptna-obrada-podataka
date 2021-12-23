@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+wordcloud.to_file("output/GDPR wordcloud.png")
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;32m/var/folders/j1/q1_l0vfs66zfhnv67vv0bp700000gq/T/ipykernel_4926/2755788372.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mwordcloud[0m[0;34m.[0m[0mto_file[0m[0;34m([0m[0;34m"output/GDPR wordcloud.png"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m/opt/anaconda3/lib/python3.9/site-packages/wordcloud/wordcloud.py[0m in [0;36mto_file[0;34m(self, filename)[0m
+[1;32m    717[0m [0;34m[0m[0m
+[1;32m    718[0m         [0mimg[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mto_image[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 719[0;31m         [0mimg[0m[0;34m.[0m[0msave[0m[0;34m([0m[0mfilename[0m[0;34m,[0m [0moptimize[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    720[0m         [0;32mreturn[0m [0mself[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    721[0m [0;34m[0m[0m
+
+[0;32m/opt/anaconda3/lib/python3.9/site-packages/PIL/Image.py[0m in [0;36msave[0;34m(self, fp, format, **params)[0m
+[1;32m   2235[0m                 [0mfp[0m [0;34m=[0m [0mbuiltins[0m[0;34m.[0m[0mopen[0m[0;34m([0m[0mfilename[0m[0;34m,[0m [0;34m"r+b"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2236[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 2237[0;31m                 [0mfp[0m [0;34m=[0m [0mbuiltins[0m[0;34m.[0m[0mopen[0m[0;34m([0m[0mfilename[0m[0;34m,[0m [0;34m"w+b"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   2238[0m [0;34m[0m[0m
+[1;32m   2239[0m         [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'output/GDPR wordcloud.png'
+FileNotFoundError: [Errno 2] No such file or directory: 'output/GDPR wordcloud.png'
+

@@ -1,0 +1,1594 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stablo odlučivanja &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Klasterska analiza" href="12%20Klasterska%20analiza.html" />
+    <link rel="prev" title="Višestruka linearna regresija" href="10%20Vi%C5%A1estruka%20linearna%20regresija.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Skriptna obrada i analiza podataka u Pajtonu</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Skriptna obrada i analiza podataka u Pajtonu
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0%20Uvod.html">
+   Uvod
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1%20Obrada%20tabelarnih%20podataka%20u%20Pajtonu.html">
+   Obrada tabelarnih podataka u Pajtonu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2%20Eksplorativna%20analiza%20podataka.html">
+   Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
+   Priprema i deskriptivna analiza numeričkih podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5%20Vizuelizacija%20podataka%20na%20geografskoj%20mapi.html">
+   Vizuelizacija podataka na geografskoj mapi
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6%20Ma%C5%A1inska%20obrada%20tekstualnih%20podataka.html">
+   Mašinska obrada tekstualnih podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7%20Koeficijent%20korelacije.html">
+   Koeficijent korelacije
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8%20Kvantifikacija%20sli%C4%8Dnosti%20i%20razlika%20slo%C5%BEenih%20objekata.html">
+   Kvantifikacija sličnosti i razlika složenih objekata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9%20Fitovanje%20podataka.html">
+   Fitovanje podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10%20Vi%C5%A1estruka%20linearna%20regresija.html">
+   Višestruka linearna regresija
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Stablo odlučivanja
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12%20Klasterska%20analiza.html">
+   Klasterska analiza
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/11 Stablo odlučivanja.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F11 Stablo odlučivanja.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/11 Stablo odlučivanja.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#brza-eksplorativna-analiza">
+   Brza eksplorativna analiza
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obucavanje-modela">
+   Obučavanje modela
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testiranje-modela">
+   Testiranje modela
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vizuelizacija-stabla-odlucivanja">
+   Vizuelizacija stabla odlučivanja
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="stablo-odlucivanja">
+<h1>Stablo odlučivanja<a class="headerlink" href="#stablo-odlucivanja" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>U ovoj svesci je prikazan primer korišćenja stabla odlučivanja, modela mašinskog učenja pod nadzorom koji se obučava sa cijem da verodostojno proceni binarni ishod procesa na osnovu niza kategorijalnih parametara.</p>
+</div></blockquote>
+<p>Kod mašinskog učenja sa višedimenzionalnim podacima gde je bitno na procenimo “koliko” će nečega biti na izlazu, najčešće primenjujemo linearnu regresiju. Sa druge strane, kod mašinskog učenja sa istim takvim podacima gde je bitno da procenimo “da li” će nečega biti ili neće, često se koristi stablo odlučivanja. Postoje različite varijante i nadogradnje stabla odlučivanja (npr. <em>random forest</em>), ali se sve svode na jednostavnu ideju – da postavljamo prava da/ne pitanja i da svakim pitanjem podelimo posmatranu grupu na dve homogenije grupe, približno iste veličine koje imaje različite vrednosti na izlazu.</p>
+<p>U ovoj svesci ćemo analizirati skup podataka koji se često koristi kao primer za stablo odlučivanja – “titanik”. U tom skupu podataka se nalaze osnovne karakteristike putnika, npr. pol, godine, mesto gde su se ukracali itd., dok je binarni podatak koji pokušavamo da procenimo da li su preživeli brodolom ili ne. Ono što znamo o brodolomu Titanika bez gledanja u tabelu jeste da se približno 60% od oko 1300 putnika utopilo. Koje biste vi pitanje postavili o karakteristikama putnika pa da bitno poboljšate procenu da li su preživeli ili ne? Ispostavlja se da je najbolji prediktor pol putnika. Ako je muškog pola verovatno nije preživeo (19%), ako je ženskog pola verovatno jeste (73%). Sada ćemo da analiziramo skup podataka i utvrdimo koja su to prava pitanja.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Osim standardnih biblioteka koje su nam potrebne za rad u Pajtonu, ovde ćemo uvesti i neke potrebne funkcije iz biblioteke <strong>sklearn</strong> za mašinsko učenje.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/titanic.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pclass</th>
+      <th>survived</th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>sibsp</th>
+      <th>parch</th>
+      <th>ticket</th>
+      <th>fare</th>
+      <th>cabin</th>
+      <th>embarked</th>
+      <th>boat</th>
+      <th>body</th>
+      <th>home.dest</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>Allen, Miss. Elisabeth Walton</td>
+      <td>female</td>
+      <td>29.0000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>24160</td>
+      <td>211.3375</td>
+      <td>B5</td>
+      <td>S</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>St Louis, MO</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>Allison, Master. Hudson Trevor</td>
+      <td>male</td>
+      <td>0.9167</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>113781</td>
+      <td>151.5500</td>
+      <td>C22 C26</td>
+      <td>S</td>
+      <td>11</td>
+      <td>NaN</td>
+      <td>Montreal, PQ / Chesterville, ON</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>Allison, Miss. Helen Loraine</td>
+      <td>female</td>
+      <td>2.0000</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>113781</td>
+      <td>151.5500</td>
+      <td>C22 C26</td>
+      <td>S</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Montreal, PQ / Chesterville, ON</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>Allison, Mr. Hudson Joshua Creighton</td>
+      <td>male</td>
+      <td>30.0000</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>113781</td>
+      <td>151.5500</td>
+      <td>C22 C26</td>
+      <td>S</td>
+      <td>NaN</td>
+      <td>135.0</td>
+      <td>Montreal, PQ / Chesterville, ON</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>Allison, Mrs. Hudson J C (Bessie Waldo Daniels)</td>
+      <td>female</td>
+      <td>25.0000</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>113781</td>
+      <td>151.5500</td>
+      <td>C22 C26</td>
+      <td>S</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Montreal, PQ / Chesterville, ON</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1305</th>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>Zabour, Miss. Thamine</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>2665</td>
+      <td>14.4542</td>
+      <td>NaN</td>
+      <td>C</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1306</th>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>Zakarian, Mr. Mapriededer</td>
+      <td>male</td>
+      <td>26.5000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2656</td>
+      <td>7.2250</td>
+      <td>NaN</td>
+      <td>C</td>
+      <td>NaN</td>
+      <td>304.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1307</th>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>Zakarian, Mr. Ortin</td>
+      <td>male</td>
+      <td>27.0000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2670</td>
+      <td>7.2250</td>
+      <td>NaN</td>
+      <td>C</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1308</th>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>Zimmerman, Mr. Leo</td>
+      <td>male</td>
+      <td>29.0000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>315082</td>
+      <td>7.8750</td>
+      <td>NaN</td>
+      <td>S</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1309</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>1310 rows × 14 columns</p>
+</div></div></div>
+</div>
+<p>Za početak, vidimo da je na Titaniku bilo 1310 putnika, ali da za jednog, poslednjeg na listi, ništa ne znamo. Razumno je isključiti taj red tabele jer sa njim ništa ne možemo da uradimo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">1309</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sada da vidimo šta su nam podaci po kolonama.</p>
+<p>Opis promenljivih, odnosno kolona u tabeli <strong>data</strong>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- pclass (putnička klasa, odnosno paluba)
+- survived (da li je putnik preživeo ili ne): 0 = ne, 1 = da
+- name (ime)
+- sex (pol)
+- age (godine)
+- sibsp (broj članova porodice na brodu ne računajući roditelje ili decu)
+- parch (broj rotelja ili dece na brodu)
+- ticket (broj karte)
+- fare (cena karte)
+- cabin (broj kabine)
+- embarked (mesto ukrcavanja): C = Cherbourg, Q = Queenstown, S = Southampton
+- boat (čamac za spasavanje)
+- body (broj identifikovanog tela)
+- home.dest (odredište)
+</pre></div>
+</div>
+<p>Nisu sve ove promenljive neophodne ili smislene za procenu da li je putnik preživeo. Npr. ako je bio u određenom čamcu za spasavanje, onda je preživeo. Svejedno, cilj ove vežbe je da napravimo jednostavan model. Zato ćemo isključiti većinu kolona sa nepotrebnim podacima. Pre toga ćemo napraviti brzu eksplorativnu analizu kako bismo znali šta od kolona treba da zadržimo.</p>
+<p>Otprilike polovina kolona sadrži tekstualne podatke, a polovina numeričke.</p>
+<div class="section" id="brza-eksplorativna-analiza">
+<h2>Brza eksplorativna analiza<a class="headerlink" href="#brza-eksplorativna-analiza" title="Permalink to this headline">¶</a></h2>
+<p>Postoji li veza između palube na kojoj su bili putnici i uspešnosti preživaljavanja? Verovatno da. Pomoću funkcije <code class="docutils literal notranslate"><span class="pre">crosstab()</span></code> ćemo ukrstiti podatke o preživelima i palubama na kojima su bili.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;survived&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;pclass&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>pclass</th>
+      <th>1.0</th>
+      <th>2.0</th>
+      <th>3.0</th>
+    </tr>
+    <tr>
+      <th>survived</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.0</th>
+      <td>123</td>
+      <td>158</td>
+      <td>528</td>
+    </tr>
+    <tr>
+      <th>1.0</th>
+      <td>200</td>
+      <td>119</td>
+      <td>181</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Vidimo da je većina sa prve palube preživela dok sa druge i posebno treće palube nisu. Ovu kolonu ćemo sačuvati. Pitanje “Da li je putnik bio na prvoj palubi?” sigurno je jedno od onih koja mogu da povećaju uspešnost procene preživljavanja.</p>
+<p>Za pol smo još u uvodu rekli da je dobar prediktor. Da vidimo kolika je ta razlika.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;survived&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sex</th>
+      <th>female</th>
+      <th>male</th>
+    </tr>
+    <tr>
+      <th>survived</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.0</th>
+      <td>127</td>
+      <td>682</td>
+    </tr>
+    <tr>
+      <th>1.0</th>
+      <td>339</td>
+      <td>161</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Nema sumnje da ovu kolonu treba zadržati. Imamo samo mali tehnički problem. Drvo odlučivanja u biblioteci <strong>sklearn</strong> zahteva da podaci budu brojevi. Zato ćemo morati da mapiramo podatke tako da umesto “male” stavimo 0, a umesto “female” 1. Za to ćemo koristi funkciju <code class="docutils literal notranslate"><span class="pre">map()</span></code> čiji je argument <em>dictionary</em> sa nizom parova koji određuju šta se u šta mapira.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sex_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;male&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;female&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">sex_mapping</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pclass</th>
+      <th>survived</th>
+      <th>name</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>sibsp</th>
+      <th>parch</th>
+      <th>ticket</th>
+      <th>fare</th>
+      <th>cabin</th>
+      <th>embarked</th>
+      <th>boat</th>
+      <th>body</th>
+      <th>home.dest</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>Allen, Miss. Elisabeth Walton</td>
+      <td>1</td>
+      <td>29.0000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>24160</td>
+      <td>211.3375</td>
+      <td>B5</td>
+      <td>S</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>St Louis, MO</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>Allison, Master. Hudson Trevor</td>
+      <td>0</td>
+      <td>0.9167</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>113781</td>
+      <td>151.5500</td>
+      <td>C22 C26</td>
+      <td>S</td>
+      <td>11</td>
+      <td>NaN</td>
+      <td>Montreal, PQ / Chesterville, ON</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>Allison, Miss. Helen Loraine</td>
+      <td>1</td>
+      <td>2.0000</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>113781</td>
+      <td>151.5500</td>
+      <td>C22 C26</td>
+      <td>S</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Montreal, PQ / Chesterville, ON</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>Allison, Mr. Hudson Joshua Creighton</td>
+      <td>0</td>
+      <td>30.0000</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>113781</td>
+      <td>151.5500</td>
+      <td>C22 C26</td>
+      <td>S</td>
+      <td>NaN</td>
+      <td>135.0</td>
+      <td>Montreal, PQ / Chesterville, ON</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>Allison, Mrs. Hudson J C (Bessie Waldo Daniels)</td>
+      <td>1</td>
+      <td>25.0000</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>113781</td>
+      <td>151.5500</td>
+      <td>C22 C26</td>
+      <td>S</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Montreal, PQ / Chesterville, ON</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Sledeća promenljiva koja sigurno ima veze sa verovatnoćom preživljavanja je starost putnika. U principu, mogli bismo da ostavimo tu kolonu takvu kakva jeste, ali rezulat ne bi bio naročito smislen. Stabla odlučivanja pretpostavljaju da su numerički podaci ordinalni, odnosno da postoji neka monotona veza između broja i uticaja na traženu procenu. Logično, prvo su decu spašavali i tu je stopa preživljavanja najveća, ali verovatnoća spašavanja ne opada monotono sa godinama. Zato ovo nije dobar primer ordinalne promenljive.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">]</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0-14&#39;</span><span class="p">,</span> <span class="s1">&#39;15-29&#39;</span><span class="p">,</span> <span class="s1">&#39;30-44&#39;</span><span class="p">,</span> <span class="s1">&#39;45-59&#39;</span><span class="p">,</span> <span class="s1">&#39;60+&#39;</span><span class="p">]</span>
+<span class="n">godine</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;survived&#39;</span><span class="p">],</span><span class="n">godine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>age</th>
+      <th>0-14</th>
+      <th>15-29</th>
+      <th>30-44</th>
+      <th>45-59</th>
+      <th>60+</th>
+    </tr>
+    <tr>
+      <th>survived</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.0</th>
+      <td>49</td>
+      <td>312</td>
+      <td>165</td>
+      <td>68</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>1.0</th>
+      <td>66</td>
+      <td>182</td>
+      <td>117</td>
+      <td>54</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Umesto ordinalne skale možda je bolje da uzmemo samo jedan podatak za koji imamo nekakvo objašnjenje, npr. da uvedemo dodatnu promenljivu <strong>child</strong> koja bi bila binarna. Ako je dete onda je vrednost 1, ako nije onda je 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">child</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">age</span><span class="o">&lt;</span><span class="mi">15</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;child&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">child</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Veza između broja rođaka i preživljavanja opet nije linearna.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;survived&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;sibsp&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sibsp</th>
+      <th>0.0</th>
+      <th>1.0</th>
+      <th>2.0</th>
+      <th>3.0</th>
+      <th>4.0</th>
+      <th>5.0</th>
+      <th>8.0</th>
+    </tr>
+    <tr>
+      <th>survived</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.0</th>
+      <td>582</td>
+      <td>156</td>
+      <td>23</td>
+      <td>14</td>
+      <td>19</td>
+      <td>6</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1.0</th>
+      <td>309</td>
+      <td>163</td>
+      <td>19</td>
+      <td>6</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;survived&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;parch&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>parch</th>
+      <th>0.0</th>
+      <th>1.0</th>
+      <th>2.0</th>
+      <th>3.0</th>
+      <th>4.0</th>
+      <th>5.0</th>
+      <th>6.0</th>
+      <th>9.0</th>
+    </tr>
+    <tr>
+      <th>survived</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.0</th>
+      <td>666</td>
+      <td>70</td>
+      <td>56</td>
+      <td>3</td>
+      <td>5</td>
+      <td>5</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1.0</th>
+      <td>336</td>
+      <td>100</td>
+      <td>57</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Primećuje je se da su oni koji imaju nula rođaka najugroženiji. Čini se logično. Oni koji nemaju nikog bliskog u kriznim trenucima sigurno imaju manje šanse da prežive. Možemo da objednimo promenljive <strong>sibsp</strong> i <strong>parch</strong> i da vidimo ko je sam na brodu. Drugim rečima, da uvedemo novu binarnu promeljivu <strong>alone</strong> za one koji su sami.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alone</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">sibsp</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">parch</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;alone&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">alone</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ostale promenljive kao što su ime, odredište ili oznaka kabine verovatno imaju još manje efekta pa ih nećemo uzimati za dalju analizu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;survived&#39;</span><span class="p">,</span><span class="s1">&#39;pclass&#39;</span><span class="p">,</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span><span class="s1">&#39;child&#39;</span><span class="p">,</span><span class="s1">&#39;alone&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>survived</th>
+      <th>pclass</th>
+      <th>sex</th>
+      <th>child</th>
+      <th>alone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1304</th>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1305</th>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1306</th>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1307</th>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1308</th>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>1309 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>Primetite da su neke vrednosti memorisane kao celobrojne, a neke kao decimalne. To je za stablo odlučivanja svejedno jer će ih sve tretirati kao decimalne.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>survived</th>
+      <th>pclass</th>
+      <th>sex</th>
+      <th>child</th>
+      <th>alone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>survived</th>
+      <td>1.000000</td>
+      <td>-0.312469</td>
+      <td>0.528693</td>
+      <td>0.110204</td>
+      <td>-0.201719</td>
+    </tr>
+    <tr>
+      <th>pclass</th>
+      <td>-0.312469</td>
+      <td>1.000000</td>
+      <td>-0.124617</td>
+      <td>0.118383</td>
+      <td>0.147393</td>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <td>0.528693</td>
+      <td>-0.124617</td>
+      <td>1.000000</td>
+      <td>0.070430</td>
+      <td>-0.284537</td>
+    </tr>
+    <tr>
+      <th>child</th>
+      <td>0.110204</td>
+      <td>0.118383</td>
+      <td>0.070430</td>
+      <td>1.000000</td>
+      <td>-0.332270</td>
+    </tr>
+    <tr>
+      <th>alone</th>
+      <td>-0.201719</td>
+      <td>0.147393</td>
+      <td>-0.284537</td>
+      <td>-0.332270</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Koeficijent korelacije između pojedinih promenljivih govori o tome koliko su dobri prediktori za preživljavanje, ali i tome u kakvoj su međusobnoj vezi. Npr. postoji primetna veza između promeljivih <strong>child</strong> i <strong>alone</strong> i onda ima negativnu korelaciju. Zvuči logično. Deca ne bi trebalo da su na brodu sama bez ikog svog. Za naš model predikcije to govori nešto drugo, odnosno da prejaka veza između dve promenljive kvari model i da bi možda jednu od njih trebalo isključiti.</p>
+<p>Konačno, možemo da izaberemo karakteristike koje hoćemo kao nezavisno promenljive u modelu. <strong>X</strong> će biti tabela samo sa tim kolonama, a <strong>y</strong> kolona u kojoj su podaci o tome da li su preživeli.</p>
+</div>
+<div class="section" id="obucavanje-modela">
+<h2>Obučavanje modela<a class="headerlink" href="#obucavanje-modela" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pclass&#39;</span><span class="p">,</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span><span class="s1">&#39;child&#39;</span><span class="p">,</span><span class="s1">&#39;alone&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">features</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;survived&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pomoću funkcije <code class="docutils literal notranslate"><span class="pre">train_test_split()</span></code> iz biblioteka <strong>sklearn.model</strong> ćemo podeliti <strong>X</strong> i <strong>y</strong> na deo za obučavanje i deo za testiranje u odnosu 75:25.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span>  <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Osnovni stabla odlučivanja je klasifikator. Ovde prvo kreiramo jedan takav objekat pod imenom <strong>clf</strong>, a onda ga obučavamo na pripremljenim podacima za obuku. Kriterijumi za klasifikaciju i načini realizacije mogu biti razni. Podrazumevani kriterijum je “gini”. Njegove vrednosti će kasnije biti prikazivane na dijagramu. Za sada je važno samo da ograničimo maksimalni broj deljenja stabla (<em>max_depth</em>) ili minimalni uzorak koji može da se deli (<em>min_samples_split</em>). Ovo je važno da bismo izbegli <em>over-fitting</em> efekat. Model koji previše dobro fituje na podacima za obuku, pravi velike greške na podacima za testiranje.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">min_samples_split</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="c1">#</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="testiranje-modela">
+<h2>Testiranje modela<a class="headerlink" href="#testiranje-modela" title="Permalink to this headline">¶</a></h2>
+<p>Sada kada imamo obučen (ili istreniran) model možemo da ga primenimo na podacima koje smo ostavili za testiranje (<strong>X_test</strong>), dobijemo procene <strong>y_pred</strong> i da ih onda uporedimo sa stvarnim vrednostima (<strong>y_test</strong>). U oba niza su nule i jedinice. Kako da izmerimo koliko je dobro preklapanje između njih?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za uspešnost predikcije postoje različite metrike: tačnost, preciznost itd. Ipak, uspešnost predikcije, u opštem slučaju, ne može da se prikaže samo jednim brojem. Nas bi trebalo da interesuje koliko su zastupljene sve četiri kombinacije:</p>
+<ol class="simple">
+<li><p>da je putnik preživeo i da je predikcija bila da je preživeo (<em>true positive</em>, TP),</p></li>
+<li><p>da je putnik preživeo i da je predikcija bila da nije preživeo (<em>false negative</em>, FN),</p></li>
+<li><p>da putnik nije preživeo i da je predikcija bila da nije preživeo (<em>true negative</em>, TN) i</p></li>
+<li><p>da putnik nije preživeo i da je predikcija bila da je preživeo (<em>false positive</em>, FP).</p></li>
+</ol>
+<p>Samo jedan od ovih brojeva može da nas dovede u zabludu. Npr. model koji kaže da su svi preživeli bi imao 100% uspešnost u proceni kod onih koji su preživeli, ali 0% kod onih koji nisu. To ne bi bio posebno dobar model.</p>
+<p>Umesto jednog broja za opisivanje uspešnosti predikcije, obično se koristi koristi matrica konfuzije (<em>confusion matrix</em>). U matrici su frekvencije sve četiri gore pomenute kombinacije.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>nije preživeo</strong></p></td>
+<td><p>TN</p></td>
+<td><p>FP</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>preživeo</strong></p></td>
+<td><p>FN</p></td>
+<td><p>TP</p></td>
+</tr>
+</tbody>
+</table>
+<p>Idealan model bi trebalo da ima vrednosti samo po glavnoj dijagonali, tj. TP i FN. To bi značilo da se predikcija 0 uvek poklapa sa “nije preživeo”, a 1 sa “preživeo”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">cm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[185,  26],
+       [ 45,  72]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kada bismo ovo malo lepše formatirali, imali bismo <em>DataFrame</em> sa odgovarajućim vrednostima.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;nije preživeo&#39;</span><span class="p">,</span><span class="s1">&#39;preživeo&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>nije preživeo</th>
+      <td>185</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>preživeo</th>
+      <td>45</td>
+      <td>72</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Idealni model bi imao samo <em>true positive</em> i <em>true negative</em> vrednosti. Takav model bi imao tačnost 100%.
+Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagonali podeljen sa zbirom svih vrednosti u matrici konfuzije, tj. <span class="math notranslate nohighlight">\(accuracy=\frac{TP+TN}{TP+TN+FP+FN}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span><span class="o">=</span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tačnost: </span><span class="si">{</span><span class="n">acc</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># formatiran ispis sa tri decimale</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost: 0.784
+</pre></div>
+</div>
+</div>
+</div>
+<p>Poređenja radi, kada bismo samo na osnovu frekvencije preživljavanja u skupu podataka za obuku, bez ikakvog kriterijuma, slučajno dodeljivali vrednost <strong>1</strong> sa verovatnoćom <span class="math notranslate nohighlight">\(p=\frac{broj\hspace{.1cm}preživelih}{ukupan\hspace{.1cm}broj\hspace{.1cm}putnika}\)</span> tačnost bi trebalo da bude oko 0.53. Mala odstupanja od ove vrednosti su moguća zbog malog uzorka i stohastičnosti izbora.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_dummy</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span><span class="o">&lt;</span><span class="nb">sum</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">y_train</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">acc0</span><span class="o">=</span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_dummy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tačnost (bez kriterijuma): </span><span class="si">{</span><span class="n">acc0</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost (bez kriterijuma): 0.518
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="vizuelizacija-stabla-odlucivanja">
+<h2>Vizuelizacija stabla odlučivanja<a class="headerlink" href="#vizuelizacija-stabla-odlucivanja" title="Permalink to this headline">¶</a></h2>
+<p>Uprkos tome što smo obučili i testirali stablo odlučivanja, mi i dalje ne znamo kako ono izgleda. Teorijski uvek postoji čvor koji se deli na dve grane, pa te dve na četiri, četiri na osam itd. Nas svakako interesuje koje je promenljive i koje kriterijume algoritam koristio da izvrši grananje i koliko dobra podela u svakom od tih čvorova u kojima se odvija grananje. Detalje stabla odlučivanja kao što su promenljive po kojim delimo uzorak, koji je bio kriterijum za deljenje, kolika je veličina uzorka i kakva raspodela unutar uzorka prema izlaznoj vrednosti možemo da vidimo kao tekstualni zapis za svaki čvor pomoću funkcije <code class="docutils literal notranslate"><span class="pre">export_text()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text_representation</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_text</span><span class="p">(</span><span class="n">clf</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text_representation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 0.50
+|   |--- feature_2 &lt;= 0.50
+|   |   |--- feature_0 &lt;= 1.50
+|   |   |   |--- class: 0.0
+|   |   |--- feature_0 &gt;  1.50
+|   |   |   |--- class: 0.0
+|   |--- feature_2 &gt;  0.50
+|   |   |--- class: 1.0
+|--- feature_1 &gt;  0.50
+|   |--- feature_0 &lt;= 2.50
+|   |   |--- feature_0 &lt;= 1.50
+|   |   |   |--- class: 1.0
+|   |   |--- feature_0 &gt;  1.50
+|   |   |   |--- class: 1.0
+|   |--- feature_0 &gt;  2.50
+|   |   |--- feature_3 &lt;= 0.50
+|   |   |   |--- class: 0.0
+|   |   |--- feature_3 &gt;  0.50
+|   |   |   |--- class: 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Složićemo se lako da ovaj način prikazivanja nije najpregledniji. Kako je napravljeno ovo naše stablo odlučivanja, najbolje ćemo videti ako ga prikažemo grafički pomoću funkcije <code class="docutils literal notranslate"><span class="pre">plot_tree()</span></code>.</p>
+<p>Prvi čvor, odakle sve kreće, uzima ceo uzorak za učenje. Tu algoritam bira promenljive i njihove vrednosti koje su najbolje deljenje podatka po izabranom kriterijumu. U našem primeru je to podela prema polu putnika. Za predikciju da li je putnik preživeo ili ne, prvo najvažnije pitanje je kog je pola putnik. To piše u prvom čvoru grafičke reprezentacije mada je to zapisano na malo čudan način (sex&lt;=0.5). Iako ovaj uslov izgleda neobično, nije ga teško protumačiti. Pošto je numerička oznaka za muški pol 0, a za ženski 1, onda manje od 0.5 znači da se stablo grana tako da na levo ide uzorak sa muškarcima, a na desno sa ženama. Uslovi za dalje grananje su da li je dete (leva grana) i da li je na trećoj palubi (desna strana). Za ostale to takođe možete da vidite.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">tp</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> 
+                   <span class="n">feature_names</span><span class="o">=</span><span class="n">features</span><span class="p">,</span>
+                   <span class="n">impurity</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># entropy</span>
+                   <span class="n">label</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> 
+                   <span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Died&#39;</span><span class="p">,</span> <span class="s1">&#39;Survived&#39;</span><span class="p">],</span>
+                   <span class="c1">#precision=2,</span>
+                   <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                   <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/11 Stablo odlučivanja_62_0.png" src="_images/11 Stablo odlučivanja_62_0.png" />
+</div>
+</div>
+<p>Boje pravougaonika kojima su opisani čvorovi odgovaraju čistoći uzorka, odnosno raspodeli ishoda za taj konretan uzorak. Ako niko nije preživeo, pravougaonik će biti crven. Ako su svi preživeli, biće plav. Beo je ako jednih i drugih ima podjednako. U idealnom slučaju, stablo odlučivanja vodi do niza crvenih i plavih pravougaonika koje nema smisla dalje deliti.</p>
+<p>Najbolji izbor promenljivih za mašinsko učenje ne mora da bude isti za različite modele. Štaviše, ne mora da budu isti ni za jedan model ako je uzorak drugačiji ili ako se primene različiti kriterijumi. Svejedno, najznačajniji faktori će uvek biti prepoznati. Stablo odlučivanja, odnosno funkcija <code class="docutils literal notranslate"><span class="pre">feature_importances_</span></code> prikazuje koliki je udeo koje promenljive u proceni ishoda.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">feature_importances_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.2233198 , 0.68712497, 0.07779763, 0.0117576 ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Grafički to možemo ovako da prikažemo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">features</span><span class="p">,</span><span class="n">clf</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 4 artists&gt;
+</pre></div>
+</div>
+<img alt="_images/11 Stablo odlučivanja_67_1.png" src="_images/11 Stablo odlučivanja_67_1.png" />
+</div>
+</div>
+<p>Iako bi bilo logično da je važan faktor u predikciji preživljavanja to da li je putnik dete ili ne, on je važan samo kod male grupe putnika. 91% putnika na Titaniku nisu bili deca ispod 15 godina. Zato je značaj ovog faktora relativno mali.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="10%20Vi%C5%A1estruka%20linearna%20regresija.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Višestruka linearna regresija</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="12%20Klasterska%20analiza.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Klasterska analiza</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Srđan Verbić<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
