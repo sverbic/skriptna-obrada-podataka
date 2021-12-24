@@ -5,8 +5,6 @@
 
 Srđan Verbić, 2021.
 
-[![silly walk (unknown author)](notebooks/figures/silly_walk.jpg)](https://www.deviantart.com/mrkiwi101/art/Ministry-of-Silly-Walks-353442424)
-
 ## Sadržaj
 
 0 [Uvod](https://github.com/sverbic/skriptna-obrada-podataka/blob/main/notebooks/0%20Uvod.ipynb)
