@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Uvod &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -110,6 +111,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="2%20Eksplorativna%20analiza%20podataka.html">
    Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
@@ -299,12 +305,12 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="uvod">
+  <section class="tex2jax_ignore mathjax_ignore" id="uvod">
 <h1>Uvod<a class="headerlink" href="#uvod" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>Za skiptnu obradu i analizu podataka u Pajtonu nam je potrebno nešto matematičkog predznanja i tehničkih preduslova. Ništa od toga nije previše zahtevno. U ovoj svesci je dato uputstvo kako da prevaziđemo te početne teškoće.</p>
 </div></blockquote>
-<div class="section" id="skriptna-obrada-podataka">
+<section id="skriptna-obrada-podataka">
 <h2>Skriptna obrada podataka<a class="headerlink" href="#skriptna-obrada-podataka" title="Permalink to this headline">¶</a></h2>
 <p>Internet i društvene mreže su drastično podigli nivo količine podataka koji obrađujemo svaki dan. Dok je internet još bio samo za imejl i pretragu na Yahoo! svi podaci koje smo uopšte mogli da obrađujemo su bili na računaru. Tada je i Eksel (<em>Microsoft Excel</em>) bio više nego dovoljan za ljude čiji je posao da prikupljaju, obrađuju i predstavljaju podatke. Danas su <em>speadsheet</em> programi još mnogo bolji, ali i dalje imaju jednu kritičnu karakteristiku –  svaka obrada podrazumeva da mi, pomoću miša i tastature, svaki put ponavljamo manje-više isti postupak. Možda vremenom postajemo brži i efikasniji, ali i dalje smo mi ljudi neophodni da se obradi novi fajl sa podacima.</p>
 <p>Količina podataka sa kojom se danas susrećemo zahteva drugačiji pristup – da mašini prepustimo taj manuelni posao obrade podataka. To možemo da uradimo tako što napišemo jednostavan program (skriptu) koji isti postupak ponavlja tačno onoliko puta koliko mi to želimo. Takva analiza se naziva skriptnom analizom podataka. Nju možete da izvedete i pomoću makroa ili skripta u Ekselu, ali to, na duge staze, nije dobro rešenje. Pre ili kasnije ćete morati da pređete na programski jezik i okruženje sa velikim, praktično neograničenim, mogućnostima za obradu i analizu podataka.</p>
@@ -313,19 +319,19 @@
 <p>Ovaj praktikum može da se koristi na dva načina: da čitate sadržaj svezaka gde sav kôd i grafikone posmatrate kao ilustracije ili da sveske koristite interaktivno tako što pokrećete kôd i eksperimentišete menjajući ga po malo. Preporučujemo da praktikum čitate u dve faze, prvo samo pročitate, a onda “zavrnete rukave” i probate da koristite sveske interaktivno.</p>
 <p>Imajte u vidu da ovo nije udžbenik za obradu podataka ili nauku o podacima. Objašnjeni su samo neki koncepti potrebni za razumevanje navedenih primera skriptne obrade i analize podataka. Pošto je praktikum priređen kao hipertekst, većina važnih koncepata ima hiperlinkove ka definicijama ili objašnjenjima u drugoj literaturi dostupnoj onlajn. Takođe, za sve sveske postoje važne reference koje treba konsultovati za dalje i dublje učenje ili primene.</p>
 <p>Jedan od većih problema u kulturi rada sa podacima i njihovog korišćenja je loša komunikacija rezultata. Iako se menažeri uspešnih kompanija uvek slažu da je donošenje odluka zasnovanjih na podacima neophodno, retko ko od njih direktno koristi podatke. Mnogo je češći slučaj da čitaju kratke izveštaje koji uglavnom podržavaju već utvrđen stav. Razlog za to je da podaci nikada ne govore sami za sebe. Oni su dosadno i teško razumljivo štivo ukoliko su lišeni konteksta i dobrog narativa. Današnjim analitičarima nisu dovoljni statistika i domensko znanje, oni moraju da vladaju veštinom atraktivnog pripovedanja sa podacima. Publiku privlače zanimljive priče. Ukoliko su one bazirane na pravim podacima, komunikacija će biti bolja, uverljivija i svrsihodnija. Zbog toga su sve Džupiter sveske u ovom praktikumu zamišljene kao priče o nekim podacima.</p>
-</div>
-<div class="section" id="o-dzupiter-sveskama">
+</section>
+<section id="o-dzupiter-sveskama">
 <h2>O Džupiter sveskama<a class="headerlink" href="#o-dzupiter-sveskama" title="Permalink to this headline">¶</a></h2>
 <p>Džupiter sveske (<em>Jupyter Notebook</em>) su <em>open-source</em> aplikacija koja omogućava da pravimo i delimo dokumente koji sadrže programski kôd sa pratećim tekstom, jednačinama i vizuelizacijama. Ova aplikacija radi u Džupiter okruženju, odnosno na Džupiter serveru koji može biti podignut lokalno na vašem računaru ili dostupan kao onlajn servis. Iako je Džupiter zamišljen kao platforma za tri jezika (<strong>Ju</strong>lia, <strong>Pyt</strong>hon i <strong>R</strong>), najveći broj svezaka je urađen u Pajtonu. Za Džupiter sveske ne postoji poseban editor, one se edituju i pokreću iz veb-brauzera.</p>
 <p>Ovde se nećemo upuštati u detalje rada sa Džupiter sveskama. Ako samo čitate sadržaj, nikakvo uputstvo vam nije potrebno. Kada radite interaktivno, najvažnije je da primetite da se sveska sastoji iz “In” (<em>input</em>) i “Out” (<em>output</em>) polja. U <em>input</em> polja mi unosimo instrukcije ili prateći tekst. U <em>output</em> poljima je izlaz koji generiše mašina. Kada unesmo kôd u <em>input</em> polje, izvršavamo ga tako što istovremeno pritiskamo <em>Ctrl</em> i <em>Enter</em> na tastaturi. Tada se u polju ispod se pojavi rezultat. Kada izvršimo instrukcije date u nekom “In” polju, broj u uglastim zagradama pored oba polja se povećava za jedan. Pošto instrukcije ne moraju da se izvršavaju redom kojim su ispisane na ekranu, numeracija nam govori kojim su redom izvršavane.</p>
-</div>
-<div class="section" id="o-pajtonu">
+</section>
+<section id="o-pajtonu">
 <h2>O Pajtonu<a class="headerlink" href="#o-pajtonu" title="Permalink to this headline">¶</a></h2>
 <p>U ovom praktikumu nećemo davati uputstvo za rad u Pajtonu. Čitajući ove Džupiter sveske videćete da mnogo toga u Pajtonu može da se uradi sa svega par linija koda. Zato verujemo da je primena Pajtona za obradu i analizu podataka moguća i bez posebnog znanja programiranja. Pajton je programski jezik opšte namene koji ima mnoštvo svojih specifičnosti. Mi, međutim, ne planiramo da pišemo softver od hiljadu linija koda niti da pravimo nove biblioteke. Ideja je da koristimo prednosti interpretera koji dozvoljava da podatke obrađujemo korak po korak kao iz komandne linije. Sintaksa Pajtona je, srećom kao i kod većine jezika interpretera, jednostavna.</p>
 <p>Sam Pajton, u svojoj osnovnoj verziji, nema dovoljno funkcija za rad sa podacima. Zato je potrebno je da koristimo specifične biblioteke koje imaju za to namenjene funkcije. To je takođe jednostavno i vrlo brzo ćete videti da skoro uvek koristimo iste 2-3 biblioteke. Zaista mislimo da niko ne treba da uzima kurs programiranja u Pajtonu kako bi mogao da ga koristi za (ne previše složenu) obradu i analizu podataka.</p>
 <p>Ukoliko procenite da vam je potreban postupniji i lakši pristup Pajtonu, možete da pogledate onlajn kurs Fondacije Petlja na ovu temu [1].</p>
-</div>
-<div class="section" id="kako-da-pokrenete-interaktivnu-verziju-dzupiter-sveski">
+</section>
+<section id="kako-da-pokrenete-interaktivnu-verziju-dzupiter-sveski">
 <h2>Kako da pokrenete interaktivnu verziju Džupiter sveski<a class="headerlink" href="#kako-da-pokrenete-interaktivnu-verziju-dzupiter-sveski" title="Permalink to this headline">¶</a></h2>
 <p>Za interaktivni rad sa Džupiter sveskama potrebno je da otvorite odgovarajuće .ipynb fajlove. Te fajlove može da čita samo aplikacija Jupyter Notebook koja može da bude ili servis na internetu ili aplikacija instalirana na vašem računaru.</p>
 <p>Najjednostavniji način da otvorite .ipynb fajlove jeste da ih postavite u neki onlajn Git repozitorijum (npr. GitHub) i da onda link na sveske, odnosno te fajlove unesete u odgovarajuće polje portala <a class="reference external" href="https://mybinder.org/">Binder</a> i kliknete na “launch”. Ovaj servis će otvoriti interaktivnu verziju na kojoj ćete moći da radite dok ste onlajn. Binder vam neće trajno sačuvati ono što radite, ali možete uvek ponovo na mu pristupite.</p>
@@ -333,15 +339,15 @@
 <p>Treći način je da podignete server za Džupiter sveske na svom računaru. Srećom, to nije tako komplikovano kao što zvuči. Potrebno je da preuzmete sa interneta instalaciju programskog okruženja <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> i da je instalirate. Izaberite verziju za Pajton 3.8 i vaš operativni sistem. Imajte u vidu da je ova instalacija velika i zahtevna u pogledu memorije. Kad pokrenete okruženje Anaconda dobićete mogućnost da izaberete neku od ponuđenih aplikacija. Izaberite Jupyter Notebook. Tada će vaš brauzer otvoriti Pajtonov radni direktorijum. Postarajte se da u taj direktorijum unesete potrebne Džupiter sveske. Biće dovoljno da kliknete na ime fajla i on će se u novom tabu brauzera otvoriti kao interaktivna sveska.</p>
 <p>Kada završimo sa tehničkim podešavanjima, bićemo spremni da se pozabavimo suštinom, tj. obradom i analizom podataka u Pajtonu.</p>
 <p>Svaka sveska ovog praktikuma sadrži kratak spisak preporučene literature slobodno dostupne na internetu.</p>
-<div class="section" id="preporucena-literatura">
+<section id="preporucena-literatura">
 <h3>Preporučena literatura<a class="headerlink" href="#preporucena-literatura" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Машуловић Драган. 2019. <a class="reference external" href="https://petlja.org/biblioteka/r/kursevi/jupyter-prirucnik"><em>Анализа и презентација података у Џупајтеру</em></a></p></li>
 <li><p>VanderPlas Jake. 2016. <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook"><em>Python Data Science Handbook: Essential Tools for Working with Data</em></a></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Mašinska obrada tekstualnih podataka &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -110,6 +111,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="2%20Eksplorativna%20analiza%20podataka.html">
    Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
@@ -302,7 +308,7 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="masinska-obrada-tekstualnih-podataka">
+  <section class="tex2jax_ignore mathjax_ignore" id="masinska-obrada-tekstualnih-podataka">
 <h1>Mašinska obrada tekstualnih podataka<a class="headerlink" href="#masinska-obrada-tekstualnih-podataka" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>U ovoj svesci su dati primeri obrade tekstualnih podatka u Pajtonu. Sa karakterima i stringovima ne mogu da se izvode računske operacije, ali razne operacije poput pronalaženja, spajanja i razdvajanja mogu. Slično kao i kod numeričkih podataka, na kraju obrade tekstualnih podataka radimo statistiku i otvaramo mogućnosti za analizu i tumačenje podataka.</p>
@@ -310,7 +316,7 @@
 <p>Tekstualni podaci se najbolje obrađuju tako što ih neko pročita sa razumevanjem. Naravno, to ljudi još uvek bolje rade nego mašine. Ipak, ima mnogo situacija kada taj posao moramo da prepustimo mašini. Na primer, kada imamo deset sekundi da obradimo tekst ili kada treba obraditi hiljadu fajlova. Pomoć mašine je tada više nego dobrodošla.</p>
 <p>Mašine mogu da “čitaju” tekst na dva načina: da rade po instrukcijama ili da im objasnimo šta je cilj pa da same uče. Ovo drugo je već u domenu mašinskog učenja i time se nećemo baviti u ovoj lekciji. Umesto toga bavićemo se jednostavnijim algoritmima čije je ishode lakše protumačiti.</p>
 <p>Tekstualni podaci sa kojima se najčešće susrećemo u javnoj upravi su oni koji nisu strukturirani i smešteni u baze podataka ili tabele. Uglavnom su to dokumenti, tekstualni zapisi u nekoliko različitih formata koje čuvamo na raznim mestima. Za tako organizovane podatke jednostavnih alata za obradu i analizu nema. Moramo da uložimo trud da tekstovi budu u formatu koji je mašinski čitljiv.</p>
-<div class="section" id="tekstualni-podaci-u-tabeli">
+<section id="tekstualni-podaci-u-tabeli">
 <h2>Tekstualni podaci u tabeli<a class="headerlink" href="#tekstualni-podaci-u-tabeli" title="Permalink to this headline">¶</a></h2>
 <p>Tekstualni podaci prikazani u tabeli se lakše obrađuju i analiziraju nego čist tekst jer je neko već razvrstao delove teksta i pridružio ih atributima koji su opisani nazivima kolona. Ovo je struktura kakvu priželjkujemo kada radimo sa tekstom.</p>
 <p>Za ovu vežbu ćemo koristiti tabelu koja nam je već poznata – “Opštinski pokazatelji poslednje stanje”. Učitajte je sa Portala otvorenih podataka. Ako se desi da Portal ne radi, učitajte isti taj fajl koji je na vreme preuzet.</p>
@@ -713,7 +719,7 @@ Length: 95, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/6 Mašinska obrada tekstualnih podataka_24_0.png" src="_build/jupyter_execute/6 Mašinska obrada tekstualnih podataka_24_0.png" />
+<img alt="_images/6 Mašinska obrada tekstualnih podataka_24_0.png" src="_images/6 Mašinska obrada tekstualnih podataka_24_0.png" />
 </div>
 </div>
 <p>Ovo je jednostavan i pregledan način da uporedimo rezultate. Odmah vidimo da je najčešće neki Dragan predsednik opštine, pa Vladimir, pa Milan itd. . Primećujete li nešto neobično kod ovih imena? Sva su muška. Ima li uopšte predsednica opština u Srbiji. Koliko?</p>
@@ -900,12 +906,12 @@ Length: 95, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 2 artists&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/6 Mašinska obrada tekstualnih podataka_42_1.png" src="_build/jupyter_execute/6 Mašinska obrada tekstualnih podataka_42_1.png" />
+<img alt="_images/6 Mašinska obrada tekstualnih podataka_42_1.png" src="_images/6 Mašinska obrada tekstualnih podataka_42_1.png" />
 </div>
 </div>
 <p>Čuvena “pitica” se crta uz pomoć funkcije <code class="docutils literal notranslate"><span class="pre">pie()</span></code>. Evo šta smo učinili sa se ona pojavi. Prvo smo pomoću funkcije <code class="docutils literal notranslate"><span class="pre">figure()</span></code> zadali dimenzije grafikona od 5 puta 5 inča: <code class="docutils literal notranslate"><span class="pre">figsize=(5,5)</span></code>. U sledećem koraku smo prebrojali koliko ima kojih vrednosti u <code class="docutils literal notranslate"><span class="pre">ime_df['Pol']</span></code> pomoću funkcije <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>. Pošto imamo samo dve različite vrednosti (0 i 1, odnosno muško i žensko), pridružili smo im oznake <strong>M</strong> i <strong>Ž</strong> i boje plavo i crveno. Sa tim argumentima smo pokrenuli funkciju za crtanje pitica. Konačno, u poslednjem redu stoji naredba <code class="docutils literal notranslate"><span class="pre">show()</span></code> da se grafikon prikaže na ekranu.</p>
-</div>
-<div class="section" id="pretraga-teksta">
+</section>
+<section id="pretraga-teksta">
 <h2>Pretraga teksta<a class="headerlink" href="#pretraga-teksta" title="Permalink to this headline">¶</a></h2>
 <p>Tekst nije uvek složen u tabele, niti u liste gde je svaki element string u kom prvo ide ime, pa razmak pa prezime. Tekstovi nemaju unapred poznatu strukturu. Zato je često neophodno da u tekstu tražimo string.</p>
 <p>Pretraga teksta može da bude proizvoljno komplikovana. Za to postoje posebne biblioteke kojima se ovde nećemo baviti. Za dosta toga dovoljne su funkcije za rad sa stringovima koje Pajton već ima. Navešćemo samo nekoliko korisnih funkcija.</p>
@@ -966,8 +972,8 @@ Length: 95, dtype: int64
 </div>
 </div>
 <p>Pošto je igra sa stringovima zaista proizvoljno komplikovana, dalje ispitivanje ovih funkcija prepuštamo vašem samostalnom radu. Umesto toga, prelazimo na statistiku stringova.</p>
-</div>
-<div class="section" id="statistika-tokena">
+</section>
+<section id="statistika-tokena">
 <h2>Statistika tokena<a class="headerlink" href="#statistika-tokena" title="Permalink to this headline">¶</a></h2>
 <p>Analiza teksta se zasniva na statistici tokena (znakova) u tom tekstu. Taj token može da bude slovo, slog, reč, sintagma itd. Svaki tekst u digitalnom obliku možemo da podelimo na tokene i da ih onda statistički obrađujemo. Ukoliko tekst nije čist (eng. <em>plain text</em>) nego ima i kontrolne znakove, to neće biti sasvim jednostavno. Vrlo često je neophodno da tekst čistimo nekoliko puta kako bi bio adekvatan za analizu. Da pogledamo sada kako bi izgledala jednostavna analiza ovog pasusa.</p>
 <p>Jednostavna mašinska analiza teksta podrazumeva čišćenje teksta (uklanjanje znakova interpunkcije, uklanjanje reči koje prave šum, konverzija svih slova u mala, itd.) i “tokenizaciju” očišćenog teksta, tj. razdvajanje teksta na pojedinačne tokene. Iako bi bilo dobro prvo da očistimo tekst pa da ga tokenizujemo, to nije uvek jednostavno.</p>
@@ -1151,7 +1157,7 @@ dtype: int64
 </div>
 </div>
 <p>Čemu bi sad ovo moglo da posluži? Na primer za prepoznavanje jezika na kom je pisan tekst. Frekvencija slova se značajno razlikuje među jezicima pa čak i među dijalektima. Nesumnjivo je da će frekvencija slova j biti veća u jekavici nego u ekavici. Čak i kratke sekvence slova mogu da ukažu na jezik kojim je tekst pisan i za to ne moramo da znamo jezik. Mašinama je dovoljno da nizove frekvenci u nekoj rečenici uporede sa tipičnim frekvencama u određenim jezicima i tako odrede koji je jezik u pitanju. U engleskom je, na primer, najfrekventnije slovo e, dok je u srpskom a. Jasno, ukoliko postoje specifična slova kao što su ć, я ili Ψ identifikacija će biti trivijalna. Mašine su nam potrebne za ono što nije očigledno.</p>
-<div class="section" id="n-gram">
+<section id="n-gram">
 <h3><em>n</em>-gram<a class="headerlink" href="#n-gram" title="Permalink to this headline">¶</a></h3>
 <p>Jasno, frekvencije slova ne mogu mnogo da nam kažu o sadržaju teksta. Bolje je da probamo sa statistikom reči. Osnovni koncept u rudarenju teksta je <em>n</em>-gram, tj. sekvenca od n tokena (najčešće znakova ili reči) u nekom većem tekstu. Ako za token uzmemo reč, 1-grami su u ovom tekstu “Osnovni”, “koncept”, “u” itd., dok su 2-grami “Osnovni koncept”, “koncept u” itd.</p>
 <p>Da bismo videli moć statističke analize tokena, uzećemo jedan (vama) nepoznati tekst i analizirati ga. Taj tekst je malo veći i nalazi se u fajlu <strong>“CELEX 32016R0679 EN TXT.txt”</strong>. Nećemo ga učitavati u DataFrame kao što smo to radili sa tabelama. Dovoljno je da ga učitamo u promenljivu tipa string.</p>
@@ -1222,7 +1228,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>56086
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>56090
 </pre></div>
 </div>
 </div>
@@ -1241,9 +1247,7 @@ False 	 &lt;#d1e40-1-1&gt;
 False 	 *
 True 	 Top
 False 	 &lt;#d1e40-1-1&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False 	 *
+False 	 *
 True 	 CHAPTER
 True 	 I
 False 	 -
@@ -1328,9 +1332,9 @@ Length: 2456, dtype: int64
 </div>
 </div>
 <p>Ovo sada već liči na ozbiljnu statistiku reči. Međutim, iz ovih nekoliko redova, ipak, ne možemo da kažemo o čemu je tekst. Tekst je očigledno na engleskom jeziku i najčešće reči su <em>the</em>, <em>of</em>, <em>to</em> itd. Te najčešće reči su uobičajene za bilo koji tekst i neće nam mnogo pomoći da proniknemo u suštinu teksta. Moraćemo da uklonimo te opšte reči da bismo došli do onih informativnijih. U terminologiji obrade podataka te reči kojih ima svugde, a ne doprinose razumevanju teksta se zovu <em>stop words</em>.</p>
-</div>
-</div>
-<div class="section" id="oblak-reci">
+</section>
+</section>
+<section id="oblak-reci">
 <h2>Oblak reči<a class="headerlink" href="#oblak-reci" title="Permalink to this headline">¶</a></h2>
 <p>Statistika tokena može da se prikaže grafički. Taj način prikaza se zove oblak reči (eng. <em>word cloud</em>). Standardne biblioteke ne znaju da ga prikažu. Trebaće nam jedna posebna: <strong>wordcloud</strong>. Ako nije instalirana u vašem okruženju, potrebno je da je instalirate sa <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">wordcloud</span></code>.</p>
 <div class="cell docutils container">
@@ -1368,7 +1372,7 @@ Length: 2456, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/6 Mašinska obrada tekstualnih podataka_104_0.png" src="_build/jupyter_execute/6 Mašinska obrada tekstualnih podataka_104_0.png" />
+<img alt="_images/6 Mašinska obrada tekstualnih podataka_104_0.png" src="_images/6 Mašinska obrada tekstualnih podataka_104_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1378,15 +1382,15 @@ Length: 2456, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;wordcloud.wordcloud.WordCloud at 0x11d6efe50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;wordcloud.wordcloud.WordCloud at 0x23274b1af70&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>Šta vidite na grafikonu? Najčešće korišćeni termini su lični podaci (<em>personal data</em>), zaštita podataka (<em>data protection</em>), fizičko lice (<em>natural person</em>), zemlja članica (<em>member state</em>) itd. Šta mislite o čemu je tekst? U pitanju je GDPR, direktiva Evropske unije koja se tiče zaštite podataka o ličnosti.</p>
 <p>Iako se obrada tekstualnih podataka ne bavi smislom teksta, pažljiva analiza sadržaja na nivou statistike tokena lako može da obradi veliki tekst i prikaže najvažnije elemente. Naravno, u analizi može da se ide dalje. Prvi korak dalje se naziva procesiranje prirodnog jezika ili NLP (eng. <em>Natural Language Processing</em>). O tome će, verovatno, biti više reči u nekom narednom, naprednom kursu.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

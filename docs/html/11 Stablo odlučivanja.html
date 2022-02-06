@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Stablo odlučivanja &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -112,6 +113,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="2%20Eksplorativna%20analiza%20podataka.html">
    Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
@@ -294,7 +300,7 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="stablo-odlucivanja">
+  <section class="tex2jax_ignore mathjax_ignore" id="stablo-odlucivanja">
 <h1>Stablo odlučivanja<a class="headerlink" href="#stablo-odlucivanja" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>U ovoj svesci je prikazan primer korišćenja stabla odlučivanja, modela mašinskog učenja pod nadzorom koji se obučava sa cijem da verodostojno proceni binarni ishod procesa na osnovu niza kategorijalnih parametara.</p>
@@ -584,7 +590,7 @@
 </div>
 <p>Nisu sve ove promenljive neophodne ili smislene za procenu da li je putnik preživeo. Npr. ako je bio u određenom čamcu za spasavanje, onda je preživeo. Svejedno, cilj ove vežbe je da napravimo jednostavan model. Zato ćemo isključiti većinu kolona sa nepotrebnim podacima. Pre toga ćemo napraviti brzu eksplorativnu analizu kako bismo znali šta od kolona treba da zadržimo.</p>
 <p>Otprilike polovina kolona sadrži tekstualne podatke, a polovina numeričke.</p>
-<div class="section" id="brza-eksplorativna-analiza">
+<section id="brza-eksplorativna-analiza">
 <h2>Brza eksplorativna analiza<a class="headerlink" href="#brza-eksplorativna-analiza" title="Permalink to this headline">¶</a></h2>
 <p>Postoji li veza između palube na kojoj su bili putnici i uspešnosti preživaljavanja? Verovatno da. Pomoću funkcije <code class="docutils literal notranslate"><span class="pre">crosstab()</span></code> ćemo ukrstiti podatke o preživelima i palubama na kojima su bili.</p>
 <div class="cell docutils container">
@@ -1283,8 +1289,8 @@
 </div>
 <p>Koeficijent korelacije između pojedinih promenljivih govori o tome koliko su dobri prediktori za preživljavanje, ali i tome u kakvoj su međusobnoj vezi. Npr. postoji primetna veza između promeljivih <strong>child</strong> i <strong>alone</strong> i onda ima negativnu korelaciju. Zvuči logično. Deca ne bi trebalo da su na brodu sama bez ikog svog. Za naš model predikcije to govori nešto drugo, odnosno da prejaka veza između dve promenljive kvari model i da bi možda jednu od njih trebalo isključiti.</p>
 <p>Konačno, možemo da izaberemo karakteristike koje hoćemo kao nezavisno promenljive u modelu. <strong>X</strong> će biti tabela samo sa tim kolonama, a <strong>y</strong> kolona u kojoj su podaci o tome da li su preživeli.</p>
-</div>
-<div class="section" id="obucavanje-modela">
+</section>
+<section id="obucavanje-modela">
 <h2>Obučavanje modela<a class="headerlink" href="#obucavanje-modela" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1313,8 +1319,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="testiranje-modela">
+</section>
+<section id="testiranje-modela">
 <h2>Testiranje modela<a class="headerlink" href="#testiranje-modela" title="Permalink to this headline">¶</a></h2>
 <p>Sada kada imamo obučen (ili istreniran) model možemo da ga primenimo na podacima koje smo ostavili za testiranje (<strong>X_test</strong>), dobijemo procene <strong>y_pred</strong> i da ih onda uporedimo sa stvarnim vrednostima (<strong>y_test</strong>). U oba niza su nule i jedinice. Kako da izmerimo koliko je dobro preklapanje između njih?</p>
 <div class="cell docutils container">
@@ -1361,8 +1367,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[185,  26],
-       [ 45,  72]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[176,  20],
+       [ 49,  83]], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -1400,13 +1406,13 @@
   <tbody>
     <tr>
       <th>nije preživeo</th>
-      <td>185</td>
-      <td>26</td>
+      <td>176</td>
+      <td>20</td>
     </tr>
     <tr>
       <th>preživeo</th>
-      <td>45</td>
-      <td>72</td>
+      <td>49</td>
+      <td>83</td>
     </tr>
   </tbody>
 </table>
@@ -1422,7 +1428,7 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost: 0.784
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost: 0.790
 </pre></div>
 </div>
 </div>
@@ -1437,13 +1443,13 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost (bez kriterijuma): 0.518
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost (bez kriterijuma): 0.500
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="vizuelizacija-stabla-odlucivanja">
+</section>
+<section id="vizuelizacija-stabla-odlucivanja">
 <h2>Vizuelizacija stabla odlučivanja<a class="headerlink" href="#vizuelizacija-stabla-odlucivanja" title="Permalink to this headline">¶</a></h2>
 <p>Uprkos tome što smo obučili i testirali stablo odlučivanja, mi i dalje ne znamo kako ono izgleda. Teorijski uvek postoji čvor koji se deli na dve grane, pa te dve na četiri, četiri na osam itd. Nas svakako interesuje koje je promenljive i koje kriterijume algoritam koristio da izvrši grananje i koliko dobra podela u svakom od tih čvorova u kojima se odvija grananje. Detalje stabla odlučivanja kao što su promenljive po kojim delimo uzorak, koji je bio kriterijum za deljenje, kolika je veličina uzorka i kakva raspodela unutar uzorka prema izlaznoj vrednosti možemo da vidimo kao tekstualni zapis za svaki čvor pomoću funkcije <code class="docutils literal notranslate"><span class="pre">export_text()</span></code>.</p>
 <div class="cell docutils container">
@@ -1455,18 +1461,21 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 0.50
-|   |--- feature_2 &lt;= 0.50
-|   |   |--- feature_0 &lt;= 1.50
+|   |--- feature_0 &lt;= 1.50
+|   |   |--- feature_2 &lt;= 0.50
 |   |   |   |--- class: 0.0
-|   |   |--- feature_0 &gt;  1.50
+|   |   |--- feature_2 &gt;  0.50
+|   |   |   |--- class: 1.0
+|   |--- feature_0 &gt;  1.50
+|   |   |--- feature_2 &lt;= 0.50
 |   |   |   |--- class: 0.0
-|   |--- feature_2 &gt;  0.50
-|   |   |--- class: 1.0
+|   |   |--- feature_2 &gt;  0.50
+|   |   |   |--- class: 0.0
 |--- feature_1 &gt;  0.50
 |   |--- feature_0 &lt;= 2.50
-|   |   |--- feature_0 &lt;= 1.50
+|   |   |--- feature_3 &lt;= 0.50
 |   |   |   |--- class: 1.0
-|   |   |--- feature_0 &gt;  1.50
+|   |   |--- feature_3 &gt;  0.50
 |   |   |   |--- class: 1.0
 |   |--- feature_0 &gt;  2.50
 |   |   |--- feature_3 &lt;= 0.50
@@ -1506,7 +1515,7 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.2233198 , 0.68712497, 0.07779763, 0.0117576 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.23410673, 0.68863264, 0.066111  , 0.01114963])
 </pre></div>
 </div>
 </div>
@@ -1526,8 +1535,8 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <p>Iako bi bilo logično da je važan faktor u predikciji preživljavanja to da li je putnik dete ili ne, on je važan samo kod male grupe putnika. 91% putnika na Titaniku nisu bili deca ispod 15 godina. Zato je značaj ovog faktora relativno mali.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

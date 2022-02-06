@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Eksplorativna analiza podataka &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -51,7 +52,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Priprema i deskriptivna analiza numeričkih podataka" href="4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html" />
+    <link rel="next" title="Čišćenje podataka u Pajtonu" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html" />
     <link rel="prev" title="Obrada tabelarnih podataka u Pajtonu" href="1%20Obrada%20tabelarnih%20podataka%20u%20Pajtonu.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -110,6 +111,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
@@ -297,7 +303,7 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="eksplorativna-analiza-podataka">
+  <section class="tex2jax_ignore mathjax_ignore" id="eksplorativna-analiza-podataka">
 <h1>Eksplorativna analiza podataka<a class="headerlink" href="#eksplorativna-analiza-podataka" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>U ovoj svesci ćemo prikazati kako radimo preliminarnu, eksplorativnu analizu podataka sa kojima se prvi put srećemo. Teško je postaviti granice dokle se analiza smatra eksplorativnom, a kad postaje neka druga. Sigurno je da bez nje ne možemo mnogo da uradimo kasnije. EDA je korak koji ne može da se preskoči.</p>
@@ -331,7 +337,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="struktura-skupa-podataka">
+<section id="struktura-skupa-podataka">
 <h2>Struktura skupa podataka<a class="headerlink" href="#struktura-skupa-podataka" title="Permalink to this headline">¶</a></h2>
 <p>Učitali smo podatke u tabelu. Sada treba da vidimo šta je u tabeli. Kako prvo, da vidimo koje su dimenzije tabele?</p>
 <div class="cell docutils container">
@@ -581,7 +587,7 @@ Name: Profit, Length: 6977, dtype: int64
        1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976,
        1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987,
        1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998,
-       1999, 2000, 2001, 2002, 2003, 2004, 2005])
+       1999, 2000, 2001, 2002, 2003, 2004, 2005], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -719,8 +725,8 @@ Name: Year, dtype: int64
 </div>
 <p>Na sličan način možemo da proverimo koje se vrednosti načaze u ostalim kolonama. Možda je bolje da podatke prikažemo grafički. Tako će biti preglednije.</p>
 <p>Eksplorativna analiza podrazumeva vizuelizaciju podataka. Vizuelizacija je pomoć u analizi. Često je lakše razumeti podatke ako ih vidimo nego ako gledamo samo statistike. Te vizuelizacije ne moraju da budu posebno lepe je nisu namenjene nikome drugom do vama koji radite analizu. Zbog toga nećemo trošiti previše vremena na estetiku grafikona.</p>
-</div>
-<div class="section" id="univarijatna-analiza">
+</section>
+<section id="univarijatna-analiza">
 <h2>Univarijatna analiza<a class="headerlink" href="#univarijatna-analiza" title="Permalink to this headline">¶</a></h2>
 <p>Ako radimo analizu samo jedne promenljive, onda je ta analiza univarijatna. Nema mnogo toga što možemo da uradimo sa jednom promenljivom, odnosno nizom njenih vrednosti. Možemo da nađemo mere centralne tendencije (srednja vrednost, medijana i slični), da nađemo meru rastura (varijansa, standardna devijacija ili slično) ili da nacrtamo raspodelu ovih vrednosti (npr. pomoću histograma ili kutijastih dijagrama).</p>
 <p>U ovom konkretnom slučaju ćemo histogramom prikazati broj kompanija koje se zovu “CBS” po godinama. Ono što vidimo je da se “CBS” uglavnom pojavljuje jednom na Fortune500 listi svake godine, da ima desetak godina kada se pojavljuje dvaput i da ga od 2002. ili 2003. (ne vidi se najbolje na grafikonu) nema na listi.</p>
@@ -731,7 +737,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/2 Eksplorativna analiza podataka_52_0.png" src="_build/jupyter_execute/2 Eksplorativna analiza podataka_52_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_52_0.png" src="_images/2 Eksplorativna analiza podataka_52_0.png" />
 </div>
 </div>
 <p>Zaista, u godinama 1972-1981. i kasnije 1995. imamo po dva CBS-a. Očigledno to sme. Nije zabranjeno da postoje dve kompanije sa istim imenom, pogotovo ako je to skraćenica. Šteta što ne postoje metapodaci da vidimo koje su to firme i odakle su. Svejedno, zaključujemo da <strong>naziv kompanije nije jedinstven</strong>.</p>
@@ -743,7 +749,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/2 Eksplorativna analiza podataka_55_0.png" src="_build/jupyter_execute/2 Eksplorativna analiza podataka_55_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_55_0.png" src="_images/2 Eksplorativna analiza podataka_55_0.png" />
 </div>
 </div>
 <p>Ovaj histogram nije mnogo informativan. Vidimo da ima mnogo kompanija koje su u mnogim godinama imale relativno mali prihod, dok je mali broj onih koji imaju 10000 (miliona dolara). Ovo bi se mnogo bolje videlo na logaritamskoj skali prihoda. Pajton nema jednostavan način da logaritmujemo x-osu kod histograma pa ćemo napraviti nejednake intervale koji bi izgledali jednaki kad ih logaritmujemo. Zato uniformnu podelu koristimo kao eksponent broja 10. Podelićemo <em>bins</em> na intervale od 10^1 do 10^6 sa korakom 0.2 pomoću funkcije <code class="docutils literal notranslate"><span class="pre">arrange()</span></code>. Takođe ćemo objasniti Pajtonu da logaritmuje x-osu pomoću funkcije <code class="docutils literal notranslate"><span class="pre">xscale()</span></code>.</p>
@@ -756,7 +762,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/2 Eksplorativna analiza podataka_57_0.png" src="_build/jupyter_execute/2 Eksplorativna analiza podataka_57_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_57_0.png" src="_images/2 Eksplorativna analiza podataka_57_0.png" />
 </div>
 </div>
 <p>Sada se raspodela vidi mnogo bolje. Vidimo da je ima dva pika. Možda je slučajno, ali verovatno za to postoji dobar razlog.</p>
@@ -768,7 +774,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/2 Eksplorativna analiza podataka_60_0.png" src="_build/jupyter_execute/2 Eksplorativna analiza podataka_60_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_60_0.png" src="_images/2 Eksplorativna analiza podataka_60_0.png" />
 </div>
 </div>
 <p>Imamo samo jedan uzan pik i vrlo širok raspon vrednosti. Ovde logaritmovanje x-ose ne bi pomoglo jer imamo i negativne vrednosti profita. Možda će grafikon biti informativniji ako samo logaritmujemo y-osu. Tada će se umesto vetikalne linije pojaviti raspodela.</p>
@@ -779,12 +785,12 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/2 Eksplorativna analiza podataka_62_0.png" src="_build/jupyter_execute/2 Eksplorativna analiza podataka_62_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_62_0.png" src="_images/2 Eksplorativna analiza podataka_62_0.png" />
 </div>
 </div>
 <p>Očigledno, postoji mali broj slučajeva kada je profit prikazan kao veliki gubitak. Sem njih, većina kompanija ima profit oko nule s tim da je raspodela “deblja” na pozitivnom delu ose.</p>
-</div>
-<div class="section" id="bivarijatna-analiza">
+</section>
+<section id="bivarijatna-analiza">
 <h2>Bivarijatna analiza<a class="headerlink" href="#bivarijatna-analiza" title="Permalink to this headline">¶</a></h2>
 <p>Kada poredimo vrednosti dve promenljive, onda imamo bivarijatnu analizu. To najčešće znači da posmatramo kako različite vrednosti jedne (nezavisne) promenljive imaju različite vrednosti druge (zavisno) promenljive. Da li zaista postoji uzročno-posledična veza to nije mnogo bitno za eksplorativnu analizu. Važno je da vidimo da li promenljive na bilo koji način zavise jedna od druge. Numerički pokazatelji te zavisnosti (kojima se sad nećemo baviti) su uglavnom ograničeni na linearnu vezu. Zato je suštinski važno da nacrtamo tačkasti dijagram i da vidimo tu zavisnost.</p>
 <p>Grafičko predstavljanje zavisnosti dve promenljive, takođe, može da ukaže i na postojanje šuma u podacima. Ispitivanje prirode tog šuma, odnosno njegog uzroka svakako zahteva neku dodatnu analizu.</p>
@@ -796,7 +802,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/2 Eksplorativna analiza podataka_67_0.png" src="_build/jupyter_execute/2 Eksplorativna analiza podataka_67_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_67_0.png" src="_images/2 Eksplorativna analiza podataka_67_0.png" />
 </div>
 </div>
 <p>Evidentno, onaj mali broj slučajeva kada profit ima ekstremno velike negativne vrednosti kvari celu sliku i ne možemo jasno da vidimo postoji li zavisnost ove prihoda i profita. U tom cilju ćemo prikazati samo one tačke gde je profit veći od -10000. Pošto znamo kakva je rapodela prihoda, možemo odmah da logaritmujemo x-osu. Tako će uvid u podatke biti bolji.</p>
@@ -808,12 +814,12 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/2 Eksplorativna analiza podataka_69_0.png" src="_build/jupyter_execute/2 Eksplorativna analiza podataka_69_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_69_0.png" src="_images/2 Eksplorativna analiza podataka_69_0.png" />
 </div>
 </div>
 <p>Izgleda da zavisnost ove dve promenljive nije linearna. Za one kompanije sa malim prihodom (u proseku) nema profita, dok za one sa velikim eksponencijalno raste. To je <strong>trend</strong> koji uočavamo. Naravno, ova zavisnost nije glatka. Ima mnogo tačaka koje odstupaju. To je <strong>šum</strong>.</p>
-</div>
-<div class="section" id="uvid-u-deo-skupa-podataka">
+</section>
+<section id="uvid-u-deo-skupa-podataka">
 <h2>Uvid u deo skupa podataka<a class="headerlink" href="#uvid-u-deo-skupa-podataka" title="Permalink to this headline">¶</a></h2>
 <p>Do sada smo posmatrali sve podatke odjednom bez obzira što se ekomonomska situacija bitno menjala sa godinama. Za detaljniju analizu, možemo da izdvojimo podatke samo za jednu godinu. Ovde ćemo to uraditi za 2005.</p>
 <div class="cell docutils container">
@@ -869,7 +875,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/2 Eksplorativna analiza podataka_82_0.png" src="_build/jupyter_execute/2 Eksplorativna analiza podataka_82_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_82_0.png" src="_images/2 Eksplorativna analiza podataka_82_0.png" />
 </div>
 </div>
 <p>Na ovaj način ne možemo da prikažemo svih 500 kompanija, ali možemo da poredimo kompanije iz izabranog uzorka, npr. 15 sa najvećim prihodom.</p>
@@ -886,7 +892,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/2 Eksplorativna analiza podataka_86_0.png" src="_build/jupyter_execute/2 Eksplorativna analiza podataka_86_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_86_0.png" src="_images/2 Eksplorativna analiza podataka_86_0.png" />
 </div>
 </div>
 <p>Za male diskretne vrednosti, kakve su pozicije na rang-listi, možemo podatke da prikažemo i malo drugačije. U nastavku je kôd koji prikazuje kretanja na rang-listi po godinama. Izabrali smo sami prvih deset kompanija po prihodu u 1955. godini pa pratimo njihove pozicije. Istina, malo ćemo odstupiti od pravila da EDA grafici treba da budu jednostavni i da se estetici ne pridaje mnogo pažnje.</p>
@@ -930,16 +936,16 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/2 Eksplorativna analiza podataka_90_0.png" src="_build/jupyter_execute/2 Eksplorativna analiza podataka_90_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_90_0.png" src="_images/2 Eksplorativna analiza podataka_90_0.png" />
 </div>
 </div>
 <p>Ovaj grafik nam prikazuje kretanja na rang-listi za svih deset prvoplasiranih iz 1955. godine. Vidimo da nije mnogo njih opstalo u vrhu - samo tri. Neke čak nisu pale na listi. Prestale su da postoje.</p>
-</div>
-<div class="section" id="zakljucak">
+</section>
+<section id="zakljucak">
 <h2>Zaključak<a class="headerlink" href="#zakljucak" title="Permalink to this headline">¶</a></h2>
 <p>Eksplorativna analiza podataka bi trebalo samo da pruži uvid u dostupne podatke. Najbolje je kad se radi istovremeno i numerički i grafički. Ponekad to ne može bez čišćenja podataka. Bilo bi dobro da znamo kontekst i meta-podatke, ali ponekad moramo da se snađemo i bez toga.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -973,10 +979,10 @@ Name: Year, dtype: int64
             <p class="prev-next-title">Obrada tabelarnih podataka u Pajtonu</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html" title="next page">
+    <a class='right-next' id="next-link" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Priprema i deskriptivna analiza numeričkih podataka</p>
+        <p class="prev-next-title">Čišćenje podataka u Pajtonu</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Višestruka linearna regresija &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -112,6 +113,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="2%20Eksplorativna%20analiza%20podataka.html">
    Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
@@ -294,7 +300,7 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="visestruka-linearna-regresija">
+  <section class="tex2jax_ignore mathjax_ignore" id="visestruka-linearna-regresija">
 <h1>Višestruka linearna regresija<a class="headerlink" href="#visestruka-linearna-regresija" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>U ovoj svesci ispitujemo svojstva i mogućnosti modeliranja pomoću linearne regresije sa većim brojem nezavisno promenljivih veličina.</p>
@@ -590,10 +596,10 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x11b0c5f70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x1edeea16430&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/10 Višestruka linearna regresija_15_1.png" src="_build/jupyter_execute/10 Višestruka linearna regresija_15_1.png" />
+<img alt="_images/10 Višestruka linearna regresija_15_1.png" src="_images/10 Višestruka linearna regresija_15_1.png" />
 </div>
 </div>
 <p>Vidimo da, sem cene i površine, sve druge promenljive imaju mali broj diskretnih vrednosti. Takođe, vidi se da na grafikonu nema kategorijalnih promenljivih. Funkcija <code class="docutils literal notranslate"><span class="pre">pairplot()</span></code> radi samo sa numeričkim kolonama.</p>
@@ -609,7 +615,7 @@ memory usage: 55.5+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;area&#39;, ylabel=&#39;price&#39;&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/10 Višestruka linearna regresija_19_1.png" src="_build/jupyter_execute/10 Višestruka linearna regresija_19_1.png" />
+<img alt="_images/10 Višestruka linearna regresija_19_1.png" src="_images/10 Višestruka linearna regresija_19_1.png" />
 </div>
 </div>
 <p>Podaci su prilično rasejani i ova zavisnost ne omogućava preciznu procenu cene. Uz pomoć funkcije <code class="docutils literal notranslate"><span class="pre">corr()</span></code> možemo da odredimo koeficijent korelacije između ove dve promenljive. Koeficijent korelacije ćemo koristiti kao meru rastura podataka i mogućnosti za preciznu predikciju cene.</p>
@@ -658,7 +664,7 @@ memory usage: 55.5+ KB
 </div></div></div>
 </div>
 <p>Koeficijent korelacije između samo jedne nezavisno promenljive i cene je 0.536. Videćemo da li će posle uvođenja drugih promenljivih korelacija biti bolja.</p>
-<div class="section" id="priprema-kategorijalnih-podataka">
+<section id="priprema-kategorijalnih-podataka">
 <h2>Priprema kategorijalnih podataka<a class="headerlink" href="#priprema-kategorijalnih-podataka" title="Permalink to this headline">¶</a></h2>
 <p>Da bismo iskoristili kategorijalne podatke moramo nekako da ih prevedemo u numeričke. Ukoliko su to binarne vrednosti (‘da’ i ‘ne’), onda lako možemo da ih pretvorimo u 0 i 1. Promenljiva <strong>furnishingstatus</strong> nije binarna pa ćemo je za sad ostaviti po strani. Prvo ćemo ove binarne izdvojiti u listu <strong>kateg</strong>.</p>
 <div class="cell docutils container">
@@ -1537,8 +1543,8 @@ memory usage: 55.5+ KB
 </div></div></div>
 </div>
 <p>Cena kuće najviše zavisi od kvadrature (r=0.536), ali zavisi i od broj kupatila (r=0.518) i broja spratova (r=0.421) i toga da li ima klimu (r=0.453). Pošto je cena promenjliva koju hoćemo da procenimo, dobro je da imamo dobru korelaciju nezavisnih promenljivih sa njom. Ono što nam ne treba jeste da te promenljive međusobno dobro koreliraju. Vidimo, na primer, da broj parking mesta dobro korelira sa površinom kuće (r=0.353). To bi moglo da bude znak da nam jedna od njih nije potrebna.</p>
-</div>
-<div class="section" id="skaliranje">
+</section>
+<section id="skaliranje">
 <h2>Skaliranje<a class="headerlink" href="#skaliranje" title="Permalink to this headline">¶</a></h2>
 <p>Da bismo mogli da poredimo doprinose pojedinih ulaznih promenljivih proceni izlazne, poželjno je da one budu na istoj skali. Vidimo da površina kuće ide od 1650 do 16200 kvadratnih stopa, dok broj parking mesta ide od 0 do 3. Ako su obe promenljive podjednako značajne, onda će regresioni koeficijent uz površinu biti hiljadama puta manji nego onaj uz broj parking mesta. Zato je zgodno da sve promenljive skaliramo tako da minimalna vrednost bude nula, a maksimalna jedan. Onda će nam koeficijenti biti uporedivi i biće jasnije koja je promenljiva koliko važna za predikciju.</p>
 <div class="cell docutils container">
@@ -1786,8 +1792,8 @@ memory usage: 55.5+ KB
 <p>545 rows × 14 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="obucavanje-linearnog-modela">
+</section>
+<section id="obucavanje-linearnog-modela">
 <h2>Obučavanje linearnog modela<a class="headerlink" href="#obucavanje-linearnog-modela" title="Permalink to this headline">¶</a></h2>
 <p>Da bismo obučili bilo koji model mašinskog učenja, potrebno je da razdvojimo ulazne (označićemo ih sa x) i izlazne promenljive (y). U našem slučaju samo je cena kuće izlazna, sve ostale su ulazne. Mi ćemo, konkretno, podeliti tabelu <strong>housing</strong> na dva dela: <strong>x</strong> i <strong>y</strong>.</p>
 <div class="cell docutils container">
@@ -1844,10 +1850,10 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3469220.50493249  841959.82740374 3086283.61865592 1265812.37004149
-  419484.56374345  273748.92305145  378174.56589271  882685.39500834
-  841974.18141539  841691.04482293  715438.57734312  -67445.38780378
- -408613.05913356]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3343828.46997099  914449.35527064 2776150.11548413 1296709.73056302
+  397112.70237355  175029.72016401  287370.74511123 1281839.3540992
+ 1048008.09416942  818951.17766696  836683.37408658 -213667.23550447
+ -443630.73611694]
 </pre></div>
 </div>
 </div>
@@ -1860,7 +1866,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1937017.838921553
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2026867.039150888
 </pre></div>
 </div>
 </div>
@@ -1897,55 +1903,55 @@ memory usage: 55.5+ KB
   <tbody>
     <tr>
       <th>area</th>
-      <td>3.469221e+06</td>
+      <td>3.343828e+06</td>
     </tr>
     <tr>
       <th>bedrooms</th>
-      <td>8.419598e+05</td>
+      <td>9.144494e+05</td>
     </tr>
     <tr>
       <th>bathrooms</th>
-      <td>3.086284e+06</td>
+      <td>2.776150e+06</td>
     </tr>
     <tr>
       <th>stories</th>
-      <td>1.265812e+06</td>
+      <td>1.296710e+06</td>
     </tr>
     <tr>
       <th>mainroad</th>
-      <td>4.194846e+05</td>
+      <td>3.971127e+05</td>
     </tr>
     <tr>
       <th>guestroom</th>
-      <td>2.737489e+05</td>
+      <td>1.750297e+05</td>
     </tr>
     <tr>
       <th>basement</th>
-      <td>3.781746e+05</td>
+      <td>2.873707e+05</td>
     </tr>
     <tr>
       <th>hotwaterheating</th>
-      <td>8.826854e+05</td>
+      <td>1.281839e+06</td>
     </tr>
     <tr>
       <th>airconditioning</th>
-      <td>8.419742e+05</td>
+      <td>1.048008e+06</td>
     </tr>
     <tr>
       <th>parking</th>
-      <td>8.416910e+05</td>
+      <td>8.189512e+05</td>
     </tr>
     <tr>
       <th>prefarea</th>
-      <td>7.154386e+05</td>
+      <td>8.366834e+05</td>
     </tr>
     <tr>
       <th>semi-furnished</th>
-      <td>-6.744539e+04</td>
+      <td>-2.136672e+05</td>
     </tr>
     <tr>
       <th>unfurnished</th>
-      <td>-4.086131e+05</td>
+      <td>-4.436307e+05</td>
     </tr>
   </tbody>
 </table>
@@ -1969,7 +1975,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/10 Višestruka linearna regresija_66_0.png" src="_build/jupyter_execute/10 Višestruka linearna regresija_66_0.png" />
+<img alt="_images/10 Višestruka linearna regresija_66_0.png" src="_images/10 Višestruka linearna regresija_66_0.png" />
 </div>
 </div>
 <p>Ako uporedite ovaj grafik sa onim prvim u svesci gde smo koristili procenu samo na osnovu površine kuće, primetićete da je ovde slaganje nešto bolje. Verovatno će to potvrditi i koeficijent korelacije.</p>
@@ -1980,7 +1986,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8355649112177731
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7680658124205073
 </pre></div>
 </div>
 </div>
@@ -1993,7 +1999,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>929082.5348815663
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1022683.4482214296
 </pre></div>
 </div>
 </div>
@@ -2007,17 +2013,17 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/10 Višestruka linearna regresija_73_0.png" src="_build/jupyter_execute/10 Višestruka linearna regresija_73_0.png" />
+<img alt="_images/10 Višestruka linearna regresija_73_0.png" src="_images/10 Višestruka linearna regresija_73_0.png" />
 </div>
 </div>
 <p>Ako histogram reziduala prikazuje normalnu raspodelu to znači da smo izabrali adekvatan model.</p>
-</div>
-<div class="section" id="zavrsni-komentari">
+</section>
+<section id="zavrsni-komentari">
 <h2>Završni komentari<a class="headerlink" href="#zavrsni-komentari" title="Permalink to this headline">¶</a></h2>
 <p>Višestruka linearna regresija je, po svemu sudeći, bila dobar izbor modela mašinskog učenja. Bolje je kad za isti objekat imamo više karakteristika i sve njih možemo da koristimo kao prediktore.</p>
 <p>Problem je što možda koristimo previše različitih karakteristika.  Manji broj promenljivih bi smanjio količinu podataka koju obrađujemo, ubrzao procenu koeficijenata, učinio da koeficijenti budu pouzdaniji, a verovatno i da procena bude bolja. Izabrati optimalan skup promenljivih za predikciju (<em>feature selection</em>) nije jednostavan zadatak. On zahteva da znamo pouzdanost svakog procenjenog koeficijenta. To ne možemo da dobijemo iz biblioteke <strong>scikit-learn</strong>. Bolji izbor, ali nešto teži za rad, bi bio npr. <strong>statsmodels.api</strong>. On daje procene standardnih grešaka i intervale poverenja za sve koeficijente. Dalje, bilo bi dobro da utvrdimo koliko multikolinearnost promenljivih utiče na procenu. Za to postoji mnogo različitih načina. Jedan od načina je da isključujete jednu po jednu promenljivu pa da vidite kakvi su efekti. Obratite samo pažnju da uzorak za obučavanje bude isti sa i bez određene promenljive. Mi se ovde nećemo time baviti, ali možete da pokušate sami.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

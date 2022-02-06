@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Klasterska analiza &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -109,6 +110,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="2%20Eksplorativna%20analiza%20podataka.html">
    Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
@@ -332,7 +338,7 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="klasterska-analiza">
+  <section class="tex2jax_ignore mathjax_ignore" id="klasterska-analiza">
 <h1>Klasterska analiza<a class="headerlink" href="#klasterska-analiza" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>U ovoj svesci ćemo uraditi primer klasterske analize sa većim brojem indikatora. Pomoću faktorske analize ćemo proceniti koliko je faktora za ovaj skup podataka zaista važno i pokušaćemo da ih opišemo. Primer je urađen za klasifikaciju država prema stepenu ekonomskog razvoja.</p>
@@ -340,7 +346,7 @@
 <p>Pravljenje rang-lista je jednostavno kada objekte treba poređati po veličini jednog parametra. Mi, međutim, često pravimo rang-liste za vrlo složene i apstraktne konstrukte kao što su konkurentnost privrede, kvalitet života, inovativnost itd. Da bi takve liste bile nešto više od subjektivnog rangiranja potrebno je da izaberemo najvažnije karakteristike, da procenimo koliko su važne, da li su možda međusobno previše zavisne i da smislimo odgovarajuću metriku.</p>
 <p>Svetska banka klasifikuje države i ekonomije prema stepenu ekonomskog razvoja u <a class="reference external" href="https://blogs.worldbank.org/opendata/new-country-classifications-income-level-2019-2020">četiri grupe</a>: visoku, gornju-srednju, donju-srednju i nisku. Za to koristi samo jedan parametar: bruto nacionalni proizvod (BNP, eng. GNP - <em>Gross national product</em>) po glavi stanovnika. Nesumnjivo, prosečni proizvod stanovnika određene teritorije jeste važan pokazatelj njene razvijenosti. Ipak, postoje velike razlike među državama sa sličnim BNP po glavi stanovnika. Na taj način u istu grupu stavlja npr. Norvešku i Saudijsku Arabiju ili Kinu i Angolu. Jasno nam je da samo jedan parametar ne može da bude dobra osnova za dobru klasifikaciju prema ekonomskom razvoju. Takođe poređenje ekonomskog razvoja sa indikatorima iz drugih oblasti neće dati značajne rezultate jer su grupe previše grubo određene. Zamislite da poredimo postignuće na PISA testu za različite grupe zemalja gde su u istoj grupi npr. Finska i Oman. Varijansa bi bila prevelika da bi poređenje imalo smisla. Potrebno nam je još parametara.</p>
 <p>Na sajtu Svetske banke postoji <a class="reference external" href="https://data.worldbank.org/indicator">kolekcija različitih indikatora</a> o stepenu razvoja svih država i ekonomija koji se prikupljaju iz različitih izvora i po različitoj metodologiji. Sistematizacija ovih podataka nije jednostavan posao jer ne postoje svi podaci za sve zemlje i nema istraživanja za svaku godinu. Zato je potrebno napraviti odabir indikatora i kriterijum po kom ih povezujemo.</p>
-<div class="section" id="podaci">
+<section id="podaci">
 <h2>Podaci<a class="headerlink" href="#podaci" title="Permalink to this headline">¶</a></h2>
 <p>Za ovu vežbu iskoristiti fajl “countries data.csv” sa 29 indikatora koje je sakupio i priredio <a class="reference external" href="https://towardsdatascience.com/factor-analysis-cluster-analysis-on-countries-classification-1bdb3d8aa096">Zedric Cheung</a>. Ovi indikatori opisuju ne samo ekonomski već i društveni razvoj. U nedostatku podataka za aktuelnu godinu, uzeti su najnoviji dostupni podaci. Da bismo izbegli moguću pristrasnost zbog nesrazmernih vrednosti za određene indikatore, kao što su npr. BNP ili broj stanovnika, izabrani su samo relativni indikatori i indikatori rasta koji se uglavnom izražavaju u procentima.</p>
 <div class="cell docutils container">
@@ -765,15 +771,15 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="faktorska-analiza">
+</section>
+<section id="faktorska-analiza">
 <h2>Faktorska analiza<a class="headerlink" href="#faktorska-analiza" title="Permalink to this headline">¶</a></h2>
 <p>Osnovna namena faktorske analize jeste da opiše međusobne veze nekoliko promenljivih koristeći manji broj dimenzija koje ne možemo direktno da posmatramo i merimo. Ove dimenzije nazivamo faktorima.</p>
 <p>To što smo uzeli 29 indikatora ne znači da su svi nezavisni. Iza njih se verovatno krije svega nekoliko faktora koji najvećim delom objašnjavaju vrednosti indikatora. Faktorska analiza može da nam pokaže koji su to faktori najvažniji i šta ih čini.</p>
 <p>Bez namere da ovde ulazimo u detalje faktorske analize, iskoristićemo ovaj model za redukciju broja indikatora kojima opisujemo ekonomiju jedne zemlje. Ovaj postupak se zove smanjenje dimenzionalnosti (eng. <em>dimensionality reduction</em>).</p>
 <p>Faktorska analiza podrazumeva linearnu vezu promenljivih i zajedničkih faktora. Posmatrane promenljive se modeliraju kao linearne kombinacije faktora i statističkih grešaka. Ova pretpostavka se koristi za objašnjenje varijanse posmatrane promenljive i uočavanje faktora. Ukoliko postoji jaka nelinearna veza između promenljivih, onda faktorska analiza neće biti adekvatna.</p>
 <p>Faktorska analiza, takođe, pretpostavlja da promenljive mogu da budu međusobno zavisne. Na taj način promenljive mogu da se grupišu prema nekom zajedničkom svojstvu. U tom slučaju sve promenljive iz jedne grupe imaju međusobno visoke korelaciije dok su korelacije sa promenljivim iz drugih grupa niske. O svakoj grupi ovde možemo da razmišljamo kao o reprezentaciji istog osnovnog konstrukta ili faktora.</p>
-<div class="section" id="korelaciona-matrica">
+<section id="korelaciona-matrica">
 <h3>Korelaciona matrica<a class="headerlink" href="#korelaciona-matrica" title="Permalink to this headline">¶</a></h3>
 <p>Pre nego što krenemo u dublju analizu, dobro je pogledati kako indikatori međusobno koreliraju. To može da nam pokaže korelaciona matrica.</p>
 <div class="cell docutils container">
@@ -1286,8 +1292,8 @@
 </div></div></div>
 </div>
 <p>Vidimo da je izbor prvih sedam faktora objasnio 71% ukupne varijanse svih 29 indikatora.</p>
-</div>
-<div class="section" id="tumacenje-faktora">
+</section>
+<section id="tumacenje-faktora">
 <h3>Tumačenje faktora<a class="headerlink" href="#tumacenje-faktora" title="Permalink to this headline">¶</a></h3>
 <p>Iako su faktori apstraktni i ne možemo direktno da ih merimo, možemo da ih opišemo na osnovu veze sa pojedinačnim indikatorima. Npr. faktor 0 ima visoku korelaciju sa dostupnošću električne energije, interneta i pijaće vode. Možemo reći da ovaj faktor generalno opisuje dostupnost osnovnih komunalnih usluga. Slično možemo da prepoznamo i za ostale faktore.</p>
 <p>Okvirno, sedam faktora ekonomskog razvoja na osnovu izabranih indikatora grubo možemo da opišemo kao:</p>
@@ -1314,12 +1320,12 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id1">
+</section>
+</section>
+<section id="id1">
 <h2>Klasterska analiza<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Vratimo se sada na svih 29 indikatora. Njih možemo predstaviti kao 29 dimenzija nekog hiper-prostora u kom je definisano rastojanje između bilo koje dve tačke. Ako krenemo <em>bottom-up</em> i tražimo države koje su međusobno nabliže, počeće da se stvaraju klasteri država sa sličnim karakteristikama.</p>
-<div class="section" id="hijerarhijska-klasterizacija">
+<section id="hijerarhijska-klasterizacija">
 <h3>Hijerarhijska klasterizacija<a class="headerlink" href="#hijerarhijska-klasterizacija" title="Permalink to this headline">¶</a></h3>
 <p>Hijerarhijska klasterizacija je tip učenja bez nadzora koji grupiše slične tačke ili objekte u grupe koje nazivamo klasterima. Postoje dva podtipa hijerarhijske klasterizacije:</p>
 <ul class="simple">
@@ -1327,7 +1333,7 @@
 <li><p>Hijerarhijska klasterizacija razdvajanjem.</p></li>
 </ul>
 <p>Mi ćemo ovde prikazati primer korišćenja samo prvog od ova dva podtipa. Aglomerativna hijerarhijska klasterizacija ima <em>bottom-up</em> pristup gde su svi objekti na početku zasebni klasteri koji se sukcesivno sparuju čineći sve veće klastere.</p>
-<div class="section" id="standardizacija">
+<section id="standardizacija">
 <h4>Standardizacija<a class="headerlink" href="#standardizacija" title="Permalink to this headline">¶</a></h4>
 <p>Za uspešno uočavanje klastera potrebno je sve indikatore, bez obzira na raspon vrednosti i jedinice u kojima su dati, dovesti u ravnopravan položaj tako što im se vrednosti standardizuju. To činimo tako što originalne vrednosti indikatora zamenjujemo razlikom originalne i srednje vrednosti za taj indikator podeljenu standardnom devijacijom indikatora. To znači da su tipične standardizovane vrednosti uglavnom između -1 i +1.</p>
 <div class="cell docutils container">
@@ -1382,9 +1388,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="klasteri-drzava">
+</section>
+</section>
+<section id="klasteri-drzava">
 <h3>Klasteri država<a class="headerlink" href="#klasteri-drzava" title="Permalink to this headline">¶</a></h3>
 <p>Sada pošto smo državama pridružili oznake klastera kojima pripadaju bilo bi dobro da vidimo koja je država u kom klasteru. Za tu namenu napravićemo privremeno tabelu <strong>a</strong> koja sadrži samo imena država i oznake klastera i od nje napraviti tabelu <strong>grupe</strong> gde su imena država odgovarajućeg klastera navedena po kolonama.</p>
 <div class="cell docutils container">
@@ -1816,8 +1822,8 @@
 </div></div></div>
 </div>
 <p>Vidimo da su u prvom klasteru (sa oznakom 0) sve vrlo razvijene države poput Japana, Norveške, SAD itd. U drugom su mahom zemlje latinske Amerike. U drugoj uglavnom srednja i istočna Evropa, itd. Izgleda da klasterizacija ima smisla jer svaki klaster možemo da opišemo koristeći geografske i ekonomske atribute. Ovde se nećemo baviti opisom svakog pojedinačno klastera. To može da ostane za samostalni rad.</p>
-</div>
-<div class="section" id="karakteristike-klastera">
+</section>
+<section id="karakteristike-klastera">
 <h3>Karakteristike klastera<a class="headerlink" href="#karakteristike-klastera" title="Permalink to this headline">¶</a></h3>
 <p>Nakon gruposanja 159 zemalja u 12 klastera, trebalo bi relativno lako da prepoznamo karakteristike svakog klastera i utvrdimo zašto su države baš na taj način grupisane. Za potrebe prikazivanja klastera i njihovih karakteristika, grupisaćemo vrednosti indikatora po faktorima računajući njihovu srednju vrednost. To će nam pomoći da vidimo po čemu se to faktori razlikuju. Grupisane vrednosti ćemo sačuvati u tabelama <strong>df_cluster</strong> i <strong>df_cluster_std</strong>.</p>
 <div class="cell docutils container">
@@ -2211,9 +2217,9 @@
 </div></div></div>
 </div>
 <p>Odavde možete da vidite mnoštvo karakteristika klastera, npr. da zemlje četvrtog klastera imaju veoma malu dostupnost električne energije i da su im poljoprivreda i ribarstvo veoma važni za BDP. Ostavljamo vam za samostalni rad da prepoznate karakteristike pojedinačnih klastera. Još je bolje da te opise uparite sa geo-ekonomskim opisom država koje čine taj klaster.</p>
-</div>
-</div>
-<div class="section" id="smanjenje-dimenzionalnosti">
+</section>
+</section>
+<section id="smanjenje-dimenzionalnosti">
 <h2>Smanjenje dimenzionalnosti<a class="headerlink" href="#smanjenje-dimenzionalnosti" title="Permalink to this headline">¶</a></h2>
 <p>Faktorska analiza se koristi kao jedan od načina za smanjenje broja dimenzija u skupu podataka sa kojim radimo. To je dobra praksa jer se tako odstranjuju nepotrebne promenljive i izbacuju one koje nisu nezavisne pa se zbog toga dobijaju pouzdaniji rezultati mašinskog učenja. Tehnički razlozi za smanjenje broja dimenzija su takođe veoma važni. Sa manjim skupom podataka se lakše i brže radi. Osim toga, previše promenljivih može da izazove <em>over-fitting</em> efekat gde procene postaju lošije nego što bi bile da imamo manje promenljivih i jednostavniji model. Konačno, klasterska analiza u prostoru koji ima previše dimenzija može da postane neupotrebljiva zbog nedovoljno velikog uzorka za toliki broj dimenzija. Taj efekat se zove “prokletstvo multidimenzionalnosti”.</p>
 <p>Mi jesmo tražili rastojanja između tačaka u 29-odimenzionalnom prostoru za potrebe ove demonstracije, ali u opštem slučaju to nije dobra ideja. Smanjenje dimenzionalnosti (eng. <em>Dimensionality Reduction</em>) nam otvara mogućnost da radimo klasterizaciju sa manjim brojem promenljivih.</p>
@@ -2346,7 +2352,7 @@
       <th>Guatemala</th>
       <td>0.152898</td>
       <td>1.096803</td>
-      <td>0.303418</td>
+      <td>0.303419</td>
       <td>-0.366806</td>
       <td>1.132194</td>
       <td>-0.107574</td>
@@ -2356,7 +2362,7 @@
       <th>Nicaragua</th>
       <td>-0.247150</td>
       <td>0.492555</td>
-      <td>0.609116</td>
+      <td>0.609117</td>
       <td>-0.363825</td>
       <td>0.833389</td>
       <td>0.205555</td>
@@ -2406,12 +2412,12 @@
 </div>
 </div>
 <p>Sa ovog grafikona vidimo da ne postoji jasna linearna veza između bilo koja dva faktora. To znači da su faktori prilično nezavisni i da smo napravili dobar izbor.</p>
-</div>
-<div class="section" id="zakljucak">
+</section>
+<section id="zakljucak">
 <h2>Zaključak<a class="headerlink" href="#zakljucak" title="Permalink to this headline">¶</a></h2>
 <p>Hijerarhijska klasterizacija je kompleksan algoritam koji postaje previše spor za veliki broj stavki. Ipak, za male i srednje velike skupove podataka predstavlja odličan izbor modela za mašinsko učenje bez nadzora. Paterni koje pronalazimo na ovaj način mogu da se objasne i da omoguće bolji uvid u podatke i pojave koje ih uzrokuju. Dodatna vrednost ovog modela je što može dobro da se vizuelizuje pa samim tima i da se rezultati bolje komuniciraju sa ciljnom grupom.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

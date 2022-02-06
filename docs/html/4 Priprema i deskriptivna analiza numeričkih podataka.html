@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Priprema i deskriptivna analiza numeričkih podataka &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -52,7 +53,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Vizuelizacija podataka na geografskoj mapi" href="5%20Vizuelizacija%20podataka%20na%20geografskoj%20mapi.html" />
-    <link rel="prev" title="Eksplorativna analiza podataka" href="2%20Eksplorativna%20analiza%20podataka.html" />
+    <link rel="prev" title="Čišćenje podataka u Pajtonu" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,6 +111,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="2%20Eksplorativna%20analiza%20podataka.html">
    Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -289,7 +295,7 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="priprema-i-deskriptivna-analiza-numerickih-podataka">
+  <section class="tex2jax_ignore mathjax_ignore" id="priprema-i-deskriptivna-analiza-numerickih-podataka">
 <h1>Priprema i deskriptivna analiza numeričkih podataka<a class="headerlink" href="#priprema-i-deskriptivna-analiza-numerickih-podataka" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>U ovoj svesci je prikazano kako se obrađuju brojčani podaci u tabelama. Za razliku od tekstualnih podataka, sa brojevima možemo da računamo i zato je veliki broj Pajton funkcija rezervisan za numeričke podatke. Treba obratiti pažnju da nisu svi brojčani podaci istog tipa i da funkcije mogu da budu osetljive na tu razliku. To što je nama “očigledno” koji je tip podataka u pitanju, ne mora da znači da su podaci do kraja čisti i da Pajton to prepoznaje.</p>
@@ -624,7 +630,7 @@ dtype: object
 </div>
 </div>
 </div>
-<div class="section" id="jednodimenzionalni-skupovi-podataka">
+<section id="jednodimenzionalni-skupovi-podataka">
 <h2>Jednodimenzionalni skupovi podataka<a class="headerlink" href="#jednodimenzionalni-skupovi-podataka" title="Permalink to this headline">¶</a></h2>
 <p>Za jednostavne analize je dovoljno da izvučemo samo jedan indikator koji nas interesuje. Primera radi, sada ćemo izvući samo indikator vezan za površinu opštine.</p>
 <div class="cell docutils container">
@@ -1033,7 +1039,7 @@ dtype: object
 </div>
 </div>
 <p>Vidimo da srednja vrednost prosečne neto zarade po opštinama za više od dve hiljade dinara veća nego medijana.</p>
-<div class="section" id="deskriptivna-analiza">
+<section id="deskriptivna-analiza">
 <h3>Deskriptivna analiza<a class="headerlink" href="#deskriptivna-analiza" title="Permalink to this headline">¶</a></h3>
 <p>Rekli smo ranije da se u ovom kursu nećemo baviti (ozbiljnom) analizom podataka jer ona podrazumeva stručno, domensko znanje. Deskriptivna analiza je više deskripcija nego analiza. Nju računar radi po algoritmu i prikazuje nam mere centralne tendencije i mere rastura za određeni skup podataka. Taj deo posla ne zahteva bilo kakvo domensko znanje. Tumačenje mera koje nam daje deskriptivna analiza je već nešto drugo.</p>
 <p>Deskriptivna analiza daje glavne mere jednog skupa brojčanih podataka kao što su broj elemenata (<strong>count</strong>), srednja vrednost (<strong>mean</strong>), standardna devijacija (<strong>std</strong>), minimum (<strong>min</strong>) itd. Iako sve ove mere možemo da dobijemo i direktno, zgodno je da ih jednom funkcijom dobijemo sve. Funkcija <code class="docutils literal notranslate"><span class="pre">describe()</span></code> to omogućava.</p>
@@ -1071,7 +1077,7 @@ Name: vrednost, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x121e5aaf0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x1d4891328e0&gt;
 </pre></div>
 </div>
 <img alt="_images/4 Priprema i deskriptivna analiza numeričkih podataka_50_1.png" src="_images/4 Priprema i deskriptivna analiza numeričkih podataka_50_1.png" />
@@ -1087,16 +1093,16 @@ Name: vrednost, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x121da30d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x1d4899110a0&gt;
 </pre></div>
 </div>
 <img alt="_images/4 Priprema i deskriptivna analiza numeričkih podataka_52_1.png" src="_images/4 Priprema i deskriptivna analiza numeričkih podataka_52_1.png" />
 </div>
 </div>
 <p>Grafičko prikazivanje raspodele podataka je, verovatno, najbolji način da razumemo šta se u tom skupu nalazi, da li je raspodela uniformna ili ima “repove”, gde su tačke nagomilavanja, da li ima “nemogućih vrednosti” itd. Vrlo često je vizuelizacija podatka deo procesa čišćenja podataka. Mnogo je lakše uočiti nelogičnosti u velikom skupu podataka ako uspemo da ga dobro prikažemo grafički.</p>
-</div>
-</div>
-<div class="section" id="pivotiranje-tabele">
+</section>
+</section>
+<section id="pivotiranje-tabele">
 <h2>Pivotiranje tabele<a class="headerlink" href="#pivotiranje-tabele" title="Permalink to this headline">¶</a></h2>
 <p>Tabela koju smo na početku učitali ima 175 redova koji se odnose na bilo koji indikator. Ako isecamo samo one redove koje nas u tom trenutku interesuju, izgubićemo sve ostale. Možda bi bilo bolje da transformišemo tabelu <strong>opps</strong> tako da po redovima budu opštine, a po kolonama indikatori. To se zove pivotiranje tabele.</p>
 <p>Zapravo, uzećemo i matični broj i naziv opštine po redovima zbog kontrole. Nikad ne znate da li će se u listi pojaviti dve opštine sa istim imenom, npr. Palilula. Zato je dobro da uvek imamo i jedinstveni matični broj. Ta dva naziva kolona ćemo staviti u listu i pridružiti argumentu <strong>index</strong>. Argumentu <strong>columns</strong> ćemo pridružiti sve različite vrednosti koje postoje u koloni <strong>vrednost</strong>, a argumentu <strong>values</strong> ćemo pridružiti vrednosti iz kolone koja se baš tako zove, <strong>vrednost</strong>. Pivotiranje tabele sada radimo pomoću funkcije <code class="docutils literal notranslate"><span class="pre">pivot()</span></code>.</p>
@@ -1574,7 +1580,7 @@ Name: vrednost, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x121ddee20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x1d4899a4c70&gt;
 </pre></div>
 </div>
 <img alt="_images/4 Priprema i deskriptivna analiza numeričkih podataka_65_1.png" src="_images/4 Priprema i deskriptivna analiza numeričkih podataka_65_1.png" />
@@ -1622,8 +1628,8 @@ Name: vrednost, dtype: float64
 </div>
 </div>
 <p>Ovaj grafikon izgleda prilično ubedljivo. Jasno vidimo kakva je veza između zarada i broja nezaposlenih i kako ona izgleda po stepenu razvijenosti opština. Dalju analizu prepuštamo vama.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1650,11 +1656,11 @@ Name: vrednost, dtype: float64
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="2%20Eksplorativna%20analiza%20podataka.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Eksplorativna analiza podataka</p>
+            <p class="prev-next-title">Čišćenje podataka u Pajtonu</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="5%20Vizuelizacija%20podataka%20na%20geografskoj%20mapi.html" title="next page">

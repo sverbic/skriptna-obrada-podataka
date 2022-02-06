@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Obrada tabelarnih podataka u Pajtonu &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -110,6 +111,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="2%20Eksplorativna%20analiza%20podataka.html">
    Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
@@ -365,13 +371,13 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="obrada-tabelarnih-podataka-u-pajtonu">
+  <section class="tex2jax_ignore mathjax_ignore" id="obrada-tabelarnih-podataka-u-pajtonu">
 <h1>Obrada tabelarnih podataka u Pajtonu<a class="headerlink" href="#obrada-tabelarnih-podataka-u-pajtonu" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>U ovoj svesci je prikazano kako upravljamo tabelama, odnosno kako raspodeljujemo, filtriramo, sortiramo ili na neki drugi način obrađujemo podatke koji su organizovani u tabele. Uvedena je osnovna struktura za rad sa podacima u Pajtonu (<em>DataFrame</em>) i dati su primeri korišćenja najvažnijih Pajton funkcija za rad sa tabelama.</p>
 </div></blockquote>
 <p>Obrada podataka podrazumeva tehnički deo rada sa podacima: prikupljanje, organizaciju, transformisanje, filtriranje i formatiranje podataka zaključno sa čišćenjem podataka. Obrada podataka prethodi fazi analize podataka za koju je specijalističko znanje neophodno.</p>
-<div class="section" id="nizovi-i-tabele">
+<section id="nizovi-i-tabele">
 <h2>Nizovi i tabele<a class="headerlink" href="#nizovi-i-tabele" title="Permalink to this headline">¶</a></h2>
 <p>Struktura podataka sa kojom najčešće radimo je tabela. Kad otvorimo Eksel, na primer, ispred nas je tabela sa vrstama i kolonama. Kad pogledamo u neku bazu podataka, opet vidimo da su tamo podaci raspoređeni u tabele. Tako je i kod skriptne obrade podataka: najvažnija struktura je tabela.</p>
 <p>Pre nego što počnemo da radimo sa tabelama, važno je da razumemo da se dvodimenzionalne strukture (tabele) sastoje od jednodimenzionalnih struktura (nizova) koje smo ukrstili. Svako polje u tabeli pripada jednoj vrsti i jednoj koloni. Tabele se prave od nizova koje slažemo po jednoj ili drugoj dimenziji.</p>
@@ -418,8 +424,8 @@
 </div>
 </div>
 <p>Obe pomenute strukture, i liste i rečnici, koriste se za formiranje tabela u Pajtonu.</p>
-</div>
-<div class="section" id="tabela-tipa-dataframe">
+</section>
+<section id="tabela-tipa-dataframe">
 <h2>Tabela tipa <em>DataFrame</em><a class="headerlink" href="#tabela-tipa-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>Za dvodimenzionalne strukture podataka (tabele) u Pajtonu najčešće koristimo strukturu <em>DataFrame</em>. Osnovno okruženje Pajtona nema funkcije za rad sa ovom strukturom. Neophodno je da učitamo biblioteku <strong>pandas</strong> koja sadrži sve potrebne funkcije za rad sa <em>DataFrame</em> strukturom.</p>
 <div class="cell docutils container">
@@ -435,7 +441,7 @@
 <p>Strogo govoreći, Pajton razlikuje funkcije i metode. Funkcije možemo da pozivamo samo po imenu i one nisu vezane za objekat (npr. <code class="docutils literal notranslate"><span class="pre">sum()</span></code>) dok metode možemo da pozivamo samo uz ime objekta (npr. <code class="docutils literal notranslate"><span class="pre">df.info()</span></code>). Pošto ova razlika nije posebno važna za teme kojima ćemo se baviti, ubuduće ćemo, jednostavnosti radi, i funkcije i metode zvati funkcijama.</p>
 </div>
 <p>Sada ćemo jednu jednostavnu tabelu formirati na dva načina: kao niz vrsta i kao niz kolona, tačnije kao listu vrsta i rečnik kolona. Za to će nam biti potrebna i funkcija <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code>.</p>
-<div class="section" id="tabela-kao-lista-vrsta">
+<section id="tabela-kao-lista-vrsta">
 <h3>Tabela kao lista vrsta<a class="headerlink" href="#tabela-kao-lista-vrsta" title="Permalink to this headline">¶</a></h3>
 <p>Svaku vrstu tabele možemo da odredimo kao listu. Važno je samo da sve te vrste imaju isti broj elemenata i da redosled elemenata (prema kategoriji na koju se odnose) bude isti.</p>
 <div class="cell docutils container">
@@ -578,8 +584,8 @@
 </div></div></div>
 </div>
 <p>Naziv kolone u tabeli može da bude bilo koji tekst, ali to nije preporučljivo. Iz praktičnih razloga dobro je da nazivi kolona budu kratki, po mogućstvu da to bude samo jedna reč. Ima funkcija koje čak ne rade kako treba ako naziv kolone nije jedna reč. Zato je nekad dobro preimenovati kolone pre obrade podataka.</p>
-</div>
-<div class="section" id="tabela-kao-recnik-kolona">
+</section>
+<section id="tabela-kao-recnik-kolona">
 <h3>Tabela kao rečnik kolona<a class="headerlink" href="#tabela-kao-recnik-kolona" title="Permalink to this headline">¶</a></h3>
 <p>Ako tabelu formiramo kao niz kolona, onda nam je potreban rečnik gde će ključevi biti nazivi kolona, a vrednosti upravo vrednosti kolona. Prvo treba da napravimo liste u kojima će biti vrednosti po kolonama. Sada je važno da liste imaju elemente istog tipa.</p>
 <div class="cell docutils container">
@@ -660,8 +666,8 @@
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="pristupanje-elementima-tabele">
+</section>
+<section id="pristupanje-elementima-tabele">
 <h3>Pristupanje elementima tabele<a class="headerlink" href="#pristupanje-elementima-tabele" title="Permalink to this headline">¶</a></h3>
 <p>Ako hoćemo da izdvojimo jednu kolonu, dovoljno je da uz ime tabele stavimo tačku i navedemo njen naziv (pod uslovom da je naziv kolone jedna reč).</p>
 <div class="cell docutils container">
@@ -721,8 +727,8 @@ Name: Piće, dtype: object
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="pristupnici-eng-accessors">
+</section>
+<section id="pristupnici-eng-accessors">
 <h3>Pristupnici (eng. <em>accessors</em>)<a class="headerlink" href="#pristupnici-eng-accessors" title="Permalink to this headline">¶</a></h3>
 <p>Pristupnik <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> je posebna vrsta funkcije koja nam omogućava da elementima tabele pristupimo na još jedan način. Njeni argumenti su indeksi redova i kolona. Za razliku od funkcija kod kojih argumente stavljamo u obične zagrade, kod pristupnika koristimo uglaste zagrade.</p>
 <div class="cell docutils container">
@@ -751,9 +757,9 @@ Name: Piće, dtype: object
 </div>
 </div>
 <p>Pošto znamo kako se formiraju tabele i kako se pristupa njihovim elementima, možemo da pređemo na obradu veće tabele koju ćemo učitati iz fajla.</p>
-</div>
-</div>
-<div class="section" id="ucitavanje-velike-tabele-sa-podacima">
+</section>
+</section>
+<section id="ucitavanje-velike-tabele-sa-podacima">
 <h2>Učitavanje velike tabele sa podacima<a class="headerlink" href="#ucitavanje-velike-tabele-sa-podacima" title="Permalink to this headline">¶</a></h2>
 <p>Podatke najčešće čuvamo u formatima koji nisu jednostavni za učitavanje. Formati kao što su DOCX, XLSX, PDF ili HTML odgovaraju čoveku koji čita podatke, ali ne i mašini. Za skriptnu obradu podataka su mnogo pogodniji jednostavni, dobro dokumentovani i otvoreni formati za koje ne moramo da koristimo bilo kakav poseban komercijalni softver. Čak i kada se podaci učitavaju iz vrlo složenih formata oni se transformišu u tabele koje se čuvaju u svega nekoliko osnovnih formata. Najčešće se za tabelarne podatke koristi <em>Comma Separated Value</em> (CSV) format gde se vrednosti odvojene zarezom zapisane u tekstualnom formatu.</p>
 <p>Za potrebe rada u ovoj svesci koristićemo fajl sa podacima koji se odnose na sva veća postrojenja za proizvodnju električne energije u svetu. Njih možete sami da preuzmete sa interneta sa <a class="reference external" href="https://datasets.wri.org/dataset/globalpowerplantdatabase">Global Power Plant Database</a>, ali smo ih zbog jednostavnosti postavili u poddirekterijum <strong>/data</strong> našeg radnog direktorijuma. Tu se nalaze i svi ostali fajlovi sa podacima koji će nam biti potrebni u ovom kursu. Za početak, učitavamo fajl koji sadrži spisak svih velikih elektrana u svetu.</p>
@@ -764,7 +770,7 @@ Name: Piće, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py:3444: DtypeWarning: Columns (10) have mixed types.Specify dtype option on import or set low_memory=False.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\srdjan\anaconda3\lib\site-packages\IPython\core\interactiveshell.py:3444: DtypeWarning: Columns (10) have mixed types.Specify dtype option on import or set low_memory=False.
   exec(code_obj, self.user_global_ns, self.user_ns)
 </pre></div>
 </div>
@@ -1003,8 +1009,8 @@ memory usage: 9.6+ MB
 <p>5 rows × 36 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="izbor-kolona">
+</section>
+<section id="izbor-kolona">
 <h2>Izbor kolona<a class="headerlink" href="#izbor-kolona" title="Permalink to this headline">¶</a></h2>
 <p>Za rad sa tabelama nije neophodno da imamo baš sve kolone u memoriji. Ako izaberemo samo ono što nas interesuje, tabela će biti preglednija.</p>
 <p>Za potrebe ove demonstracije uzećemo samo prvih osam kolona, zaključno sa kolonom u kojoj je primarni tip goriva. Za to ćemo koristiti indekse redova i kolona pomoću <code class="docutils literal notranslate"><span class="pre">iloc[:,0:8]</span></code>. Ovo prvo <code class="docutils literal notranslate"><span class="pre">:</span></code> znači da uzimamo sve redove, a <code class="docutils literal notranslate"><span class="pre">0:8</span></code> da uzimamo 8 kolona počevši od indeksa 0 (prva kolona). Imajte u vidu da se prva kolona (za nas ljude koji gledamo ispis na ekranu) i ne računa u kolone. To su samo oznake redova. Za Pajton, prva kolona je <strong>country</strong> i ona ima indeks 0.</p>
@@ -1213,8 +1219,8 @@ memory usage: 9.6+ MB
 <p>34936 rows × 3 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="tabulacija">
+</section>
+<section id="tabulacija">
 <h2>Tabulacija<a class="headerlink" href="#tabulacija" title="Permalink to this headline">¶</a></h2>
 <p>Jedan od prvih koraka u “eksplorativnoj analizi podataka”, odnosno utvrđivanju šta sve imamo u tabeli jeste da prebrojimo koliko čega ima. Ono što se stručno zove tabulacija, kros-tabulacija ili <em>contingency table</em> je zapravo obično prebrojavanje elemenata po kategorijama. Za početak, uzećemo kolonu sa oznakama zemalja u kojima se nalaze elektrane u prebrojati ih pomoću funkcije <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>. To će nam reći koliko ima elektrana u kojoj zemlji. Pri tome će funkcija koja prebrojava elemente sortirati niz od najvećeg ka najmanjem pa će na prvom mestu biti zemlja sa najvećim brojem elektrana u ovoj tabeli.</p>
 <div class="cell docutils container">
@@ -1241,7 +1247,7 @@ Length: 167, dtype: int64
 </div>
 </div>
 </div>
-<div class="section" id="kros-tabulacija">
+<section id="kros-tabulacija">
 <h3>Kros-tabulacija<a class="headerlink" href="#kros-tabulacija" title="Permalink to this headline">¶</a></h3>
 <p>Kros-tabulacija je prebrojavanje elemenata po dve odvojene kategorije. Ovde ćemo, na primer, prebrojati koliko se puta pominje koja zemlja za svaki tip primarnih goriva. Tako ćemo videti ko ima koliko elektrana na vetar, koliko nuklearnih elektrana itd. Da bismo to uradili nije dovoljna funkcija <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> već moramo da razdvojimo kolone koje ćemo tretirati kao posebne kategorijalne promenljive. Funkcija <code class="docutils literal notranslate"><span class="pre">crosstab()</span></code> zahteva dva argumenta tog tipa. To su upravo dve kolone naše tabele.</p>
 <div class="cell docutils container">
@@ -1555,9 +1561,9 @@ Name: country, Length: 34936, dtype: object
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="sortiranje">
+</section>
+</section>
+<section id="sortiranje">
 <h2>Sortiranje<a class="headerlink" href="#sortiranje" title="Permalink to this headline">¶</a></h2>
 <p>Menjajući redosled redova i kolona u tabeli možemo da uredimo tabelu kako nama odgovara, a da pritom ništa ne izgubimo od podataka. Najčešće se redosled menja tako što sortiramo podatke po azbučnom/abecednom redu ako su tekstualni ili po veličini ako su numerički. Svako sortiranje može da se vrši i hijerarhijski. Setite se fudbalskih tabela: klubovi su sortirani po broju bodova, ali ako imaju isti broj bodova onda ih sortiramo po gol-razlici. Tu onda imamo dva kriterijuma sortiranja. Važan je i smer sortiranja. Numerički podaci, na primer, mogu da se sortiraju po rastućem ili opadajućem redosledu.</p>
 <p>Mi ćemo sada podatke o svetskim elektranama da sortiramo po snazi izraženoj u megavatima (kolona <strong>capacity_mw</strong>) počevši od elektrane koja ima najveću snagu (tj. po redu koji nije rastući – <strong>ascending=False</strong>).</p>
@@ -1951,8 +1957,8 @@ Name: country, Length: 34936, dtype: object
 </div></div></div>
 </div>
 <p>Izgleda da ga nema na listi. Barem ne pod ovim imenom. Moraćemo da pokušamo drugačije.</p>
-</div>
-<div class="section" id="filtriranje-redova-i-selekcija-kolona">
+</section>
+<section id="filtriranje-redova-i-selekcija-kolona">
 <h2>Filtriranje redova i selekcija kolona<a class="headerlink" href="#filtriranje-redova-i-selekcija-kolona" title="Permalink to this headline">¶</a></h2>
 <p>Mi možemo da filtriramo podatke i pogledamo samo ono što nas interesuje. 34936 redova je svakako previše za pregledanje red po red. Izabraćemo sada samo onaj deo tabele u kom je Srbija zemlja u kojoj se nalazi elektrana. U uglaste zagrade iza imena tabele ćemo staviti logički iskaz <code class="docutils literal notranslate"><span class="pre">elektrane['country']=='SRB'</span></code>. Onda će nam od tabele ostati samo oni redovi u kojima je taj iskaz tačan, odnosno gde je zemlja Srbija.</p>
 <div class="cell docutils container">
@@ -2141,7 +2147,7 @@ Name: country, Length: 34936, dtype: object
 </div></div></div>
 </div>
 <p>Sad je jasno zašto malopre nismo našli Đerdap. Trebalo je da ga napišemo velikim slovima. Ili, što bi bilo još bolje kažemo da <code class="docutils literal notranslate"><span class="pre">str.contains()</span></code> ne bude osetljiv na to da li su slova mala ili velika. Svejedno, sad imamo podatak da je Đerdap 1 1452. najveća elektrana na svetu. Termoelektrane u Obrenovcu su nam nešto bolje plasirane. Možda time ne bi trebalo da se hvalimo, ali možemo da konstatujemo.</p>
-<div class="section" id="slozeni-kriterijumi">
+<section id="slozeni-kriterijumi">
 <h3>Složeni kriterijumi<a class="headerlink" href="#slozeni-kriterijumi" title="Permalink to this headline">¶</a></h3>
 <p>Logički iskaz pomoću kog filtriramo podatke u tabeli može da bude složeniji. Evo primera kako koristimo dva uslova: da je elektrana u Srbiji i da je tipa “Hydro”. Da bi rezultat logičkog iskaza bio izračunat kako treba oba pojedinačna iskaza stavite u zagrade i razdvojte znakom <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>.</p>
 <div class="cell docutils container">
@@ -2233,9 +2239,9 @@ Name: country, Length: 34936, dtype: object
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="agregacija-podataka">
+</section>
+</section>
+<section id="agregacija-podataka">
 <h2>Agregacija podataka<a class="headerlink" href="#agregacija-podataka" title="Permalink to this headline">¶</a></h2>
 <p>Za neke analize je zgodno grupisati podatke. U primeru sa elektranama možemo, na primer, da uradimo pregled po zemljama – da vidimo koliko ima ukupno elektrana i koliko imaju ukupno snage. Prvi korak je da pomoću funkcije <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> grupišemo podatke u tabeli u odnosu da konkretnu kategoriju, tj. podatke u konkretnoj koloni.</p>
 <div class="cell docutils container">
@@ -2452,8 +2458,8 @@ Name: country, Length: 34936, dtype: object
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="povezivanje-tabela">
+</section>
+<section id="povezivanje-tabela">
 <h2>Povezivanje tabela<a class="headerlink" href="#povezivanje-tabela" title="Permalink to this headline">¶</a></h2>
 <p>Nemamo uvek sve potrebne podatke u jednoj tabeli. Na primer, u tabeli sa elektranama nemamo podatak o tome na kom se kontinentu nalaze elektrane, a baš nas interesuje da vidimo koliko koji kontinent proizvodi struje. Rešenje je da nađemo drugu tabelu u kojoj imamo podatke na kom je kontinentu koja zemlja pa da te dve tabele povežemo. Važno je da nađemo tabelu koja ima na isti način zapisane vrednosti po kojima hoćemo da povežemo tabele. Ako u jednoj piše “United Kingdom” a u drugoj “Great Britain” to će biti muka za povezivanje. Baš zato su međunarodne agencije standardizovale nazive i oznake za zemlje, regije, opštine itd. Da vidimo šta piše u jednoj takvoj <a class="reference external" href="https://datahub.io/JohnSnowLabs/country-and-continent-codes-list/r/country-and-continent-codes-list-csv.csv">tabeli</a>.</p>
 <div class="cell docutils container">
@@ -2826,8 +2832,8 @@ Name: country, Length: 34936, dtype: object
 </div></div></div>
 </div>
 <p>Bez mnogo analize vidimo da Evropa proizvodi sedam puta više struje nego Afrika. Mi ovde završavamo zajedničko istraživanje na temu elektrana. Sve ostalo prepuštamo vama za samostalni rad.</p>
-</div>
-<div class="section" id="snimanje-podataka">
+</section>
+<section id="snimanje-podataka">
 <h2>Snimanje podataka<a class="headerlink" href="#snimanje-podataka" title="Permalink to this headline">¶</a></h2>
 <p>Ostaje nam još samo jedna stvar koju moramo da uradimo pre nego što bude kasno – da snimimo rezultat. Pomoću fukcije <code class="docutils literal notranslate"><span class="pre">to_csv()</span></code> <em>DataFrame</em> ćemo lako snimiti kao CSV fajl.</p>
 <div class="cell docutils container">
@@ -2837,8 +2843,8 @@ Name: country, Length: 34936, dtype: object
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

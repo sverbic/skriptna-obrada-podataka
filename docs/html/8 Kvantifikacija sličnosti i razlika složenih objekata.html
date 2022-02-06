@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Kvantifikacija sličnosti i razlika složenih objekata &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -110,6 +111,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="2%20Eksplorativna%20analiza%20podataka.html">
    Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
@@ -321,7 +327,7 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="kvantifikacija-slicnosti-i-razlika-slozenih-objekata">
+  <section class="tex2jax_ignore mathjax_ignore" id="kvantifikacija-slicnosti-i-razlika-slozenih-objekata">
 <h1>Kvantifikacija sličnosti i razlika složenih objekata<a class="headerlink" href="#kvantifikacija-slicnosti-i-razlika-slozenih-objekata" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>U ovoj svesci ćemo uraditi frekvencijsku analizu slova u istom pisanom tekstu datom na trideset različitih jezika. Ovaj način parametrizacije će nam otvoriti mogućnost da definišemo metriku sličnosti jezika i da utvrdimo koji su jezici međusobno najsličniji. Na sličan način možemo da prametrizujemo i druge složene objekte.</p>
@@ -369,22 +375,12 @@
 </div>
 </div>
 </div>
-<div class="section" id="prevodenje">
+<section id="prevodenje">
 <h2>Prevođenje<a class="headerlink" href="#prevodenje" title="Permalink to this headline">¶</a></h2>
 <p>Da bismo tekst preveli na druge jezike, potrebna nam je biblioteka koja ima odgovarajuće funkcije. Ovde ćemo koristiti <strong>GoogleTranslator</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">deep_translator</span> <span class="kn">import</span> <span class="n">GoogleTranslator</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">j1</span><span class="o">/</span><span class="n">q1_l0vfs66zfhnv67vv0bp700000gq</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1013</span><span class="o">/</span><span class="mf">2398100145.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">deep_translator</span> <span class="kn">import</span> <span class="n">GoogleTranslator</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;deep_translator&#39;
 </pre></div>
 </div>
 </div>
@@ -535,7 +531,7 @@
 </div>
 </div>
 <p>Ovde možemo da prevodimo tekst <strong>kratka</strong> na sve željene jezike (što je vremenski zametno) ili da učitamo fajl u kom je tekst već preveden. Vi se odlučite za kraću ili dužu varijantu. Ako hoćete dužu, skinite <em>hash</em> sa početka narednih linija i izvršite ih. Ako hoćete kraću, idite odmah na učitavanje fajla <strong>uzorak.csv</strong>.</p>
-<div class="section" id="varijanta-sa-prevodenjem-na-sve-jezike-iz-liste">
+<section id="varijanta-sa-prevodenjem-na-sve-jezike-iz-liste">
 <h3>Varijanta sa prevođenjem na sve jezike iz liste<a class="headerlink" href="#varijanta-sa-prevodenjem-na-sve-jezike-iz-liste" title="Permalink to this headline">¶</a></h3>
 <p>Napravićemo <em>DataFrame</em> koji u prvim kolonama ima ISO kodove jezika na koje hoćemo da prevodimo. Tekst prevoda će za početak biti samo razmak <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> (osim za vrstu gde je engleski original) koji ćemo posle zameniti tekstom prevoda.</p>
 <div class="cell docutils container">
@@ -576,8 +572,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="varijanta-sa-ucitavanjem-vec-prevedenih-tekstova">
+</section>
+<section id="varijanta-sa-ucitavanjem-vec-prevedenih-tekstova">
 <h3>Varijanta sa učitavanjem već prevedenih tekstova<a class="headerlink" href="#varijanta-sa-ucitavanjem-vec-prevedenih-tekstova" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -801,9 +797,9 @@
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="transliteracija">
+</section>
+</section>
+<section id="transliteracija">
 <h2>Transliteracija<a class="headerlink" href="#transliteracija" title="Permalink to this headline">¶</a></h2>
 <p>Iako ne znamo sve jezike u listi, neke bismo lako mogli da prepoznamo. Ako počinje sa <em>Ένα καυτό βράδυ στην</em> to mora da je grčki, a ako piše <em>Однажды жарким вечером</em> sigurno je ruski. Razlog brzog prepoznavanje je karakterističan alfabet koji koriste ovi jezici. Pošto su kodovi za ova slova sasvim drugačiji od onih koji su u engleskom jeziku ili našoj latinici, frekvencijska analiza ne bi imala mnogo smisla. Preklapanja ne bi bilo uopšte. Dovoljno bi bilo da u jednom tekstu vidimo “β”, “ы” ili “ћ” pa da znamo o kom je jeziku reč. Zato ćemo zadatak da učinimo malo težim – prebacićemo sav tekst u <a class="reference external" href="https://sr.wikipedia.org/sr-el/ASCII">ASCII kodove</a> da bi bili uporedivi. Prvi korak ka tome je da uradimo transliteraciju, tj. da iz originalnih alfabeta pređemo na latinicu.</p>
 <p>Tabeli <strong>uzorak</strong> ćemo dodati kolonu pod nazivom <strong>Transliteration</strong> koja će ispočetka imati iste vrednosti kao što je u koloni <strong>Text</strong>.</p>
@@ -1079,7 +1075,7 @@
 </div></div></div>
 </div>
 <p>Na ovaj način smo ujednačili testove, ali i dalje nisu ASCII. Moraćemo da uklonimo dijakritike kako bi karakteristični znaci kao što su “ç” ili “č” postali “c”. Ne želimo da zadatak prepoznavanja bude previše lak.</p>
-<div class="section" id="ascii-dekodiranje">
+<section id="ascii-dekodiranje">
 <h3>ASCII dekodiranje<a class="headerlink" href="#ascii-dekodiranje" title="Permalink to this headline">¶</a></h3>
 <p>Uklanjanje dijakritika možemo da uradimo pomoću funkcije <code class="docutils literal notranslate"><span class="pre">unidecode()</span></code> iz istoimene biblioteke.</p>
 <div class="cell docutils container">
@@ -1105,8 +1101,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="uklanjanje-znakova-interpunkcije">
+</section>
+<section id="uklanjanje-znakova-interpunkcije">
 <h3>Uklanjanje znakova interpunkcije<a class="headerlink" href="#uklanjanje-znakova-interpunkcije" title="Permalink to this headline">¶</a></h3>
 <p>Sad kad imamo ASCII tekstove trebalo bi ukloniti znake interpunkcije. Neki jezici, kao francuski na primer, često koriste apostrof pa po tome mogu da se razlikuju od drugih jezika. Zadržaćemo samo razmake među rečima. Takođe, trebalo bi pretvoriti sva slova u mala kako se u statistici ne bi posebno pojavljivala velika i mala slova.</p>
 <p>Za uklanjanje znakova koji nisu slova ili razmak koristićemo regularne izraze, odnosno funkcije biblioteke <strong>re</strong>. Konkretno funkcija <code class="docutils literal notranslate"><span class="pre">re.sub(r'[^\w\s]','',text)</span></code> će u tekstu <strong>text</strong> sve zameniti znake koji nisu slova (\w) ili razmaci (\s) praznim stringom <code class="docutils literal notranslate"><span class="pre">''</span></code>. Kod tako očišćenog teksta ostaje da još sva velika slova pretvorimo u mala pomoću funkcije <code class="docutils literal notranslate"><span class="pre">str.lower()</span></code>.</p>
@@ -1442,9 +1438,9 @@
 </div></div></div>
 </div>
 <p>Sada u koloni <strong>Reduced</strong> imamo prilično sveden tekst napisan koristeći najmanji smileni skup znakova. U sledećoj fazi bi trebalo da napravimo frekvencijsku analizu, tj. da utvrdimo koliko se puta koje slovo pojavljuje u kom jeziku.</p>
-</div>
-</div>
-<div class="section" id="statistika-frekvencije-slova">
+</section>
+</section>
+<section id="statistika-frekvencije-slova">
 <h2>Statistika frekvencije slova<a class="headerlink" href="#statistika-frekvencije-slova" title="Permalink to this headline">¶</a></h2>
 <p>Imajući u vidu da iz teksta nismo isključili razmake (jer bi nam bez toga <em>scriptio continua</em> bila sasvim nečitljiva) u statistiku ćemo uključiti i broj pojavljivanja razmaka. String <strong>slova</strong> ćemo početi razmakom i dodati mu sva mala slova engleskog alfabeta, odnosno znake kojima odgovaraju ASCII kodovi od 97 do 123.</p>
 <div class="cell docutils container">
@@ -2396,8 +2392,8 @@ uk 	 ▇▂▃▃▃▁▁▆▅▄▃▄▃▅█▃▁▃▅▄▄▅▁▁▆
 </div>
 </div>
 <p>Ovakav prikaz nam daje mogućnost da vidimo “otisak prsta” za svaki jezik, ali je i dalje teško da vidimo da li su dva jezika slična. Za dalju analizu je potrebno da smislimo meru sličnosti među jezicima.</p>
-</div>
-<div class="section" id="mera-slicnosti">
+</section>
+<section id="mera-slicnosti">
 <h2>Mera sličnosti<a class="headerlink" href="#mera-slicnosti" title="Permalink to this headline">¶</a></h2>
 <p>Stavke sa <em>n</em> komponenti/koordinata (kao što su jezici u ovom našem primeru) možemo da predstavimo kao tačke ili vektore u <em>n</em>-dimenzionalnom prostoru parametara. Između dve stavke u tom prostoru uvek možemo da odredimo rastojanje, odnosno meru različitosti. To ne mora da da bude euklidsko rastojanje (kvadratni koren iz zbira kvadrata razlika vektora po koordinatama). Postoje i druge metrike rastojanja, npr. Manhattan ili kosinusna. Kosinusno rastojanje je zapravo skalarni proizvod normiranih koordinata dve stavke. Skalarni proizvod dve stavke sa istim normiranim koordinatama je jedan. Što se više razlikuju stavke to skalarni proizvod manji. Zapravo, ova metrika daje meru sličnosti. Što su stavke sličnije, to je kosinusno rastojanje bliže jedinici.</p>
 <p>Normiranje stavke, odnosno vektora kojim  je predstavljena, jeste deljenje svih koordinata sa normom stavke, odnosno euklidskom dužinom vektora. Ta dužina je koren iz zbira kvadrata svih koordinata.</p>
@@ -3597,7 +3593,7 @@ uk 	 ▇▂▃▃▃▁▁▆▅▄▃▄▃▅█▃▁▃▅▄▄▅▁▁▆
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/8 Kvantifikacija sličnosti i razlika složenih objekata_88_1.png" src="_build/jupyter_execute/8 Kvantifikacija sličnosti i razlika složenih objekata_88_1.png" />
+<img alt="_images/8 Kvantifikacija sličnosti i razlika složenih objekata_88_1.png" src="_images/8 Kvantifikacija sličnosti i razlika složenih objekata_88_1.png" />
 </div>
 </div>
 <p>Ovde vidimo da su jezici, naravno, najsličniji sami sebi. Zato imamo jedinice po dijagonali. Tamno crveno nam govori da su dva jezika vrlo slična, dok plavo znači da nemaju baš mnogo toga zajedničkog. Sami utvrdite koji su najsličniji.</p>
@@ -3619,18 +3615,18 @@ uk 	 ▇▂▃▃▃▁▁▆▅▄▃▄▃▅█▃▁▃▅▄▄▅▁▁▆
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x208614f9d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x1a80354b730&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/8 Kvantifikacija sličnosti i razlika složenih objekata_92_1.png" src="_build/jupyter_execute/8 Kvantifikacija sličnosti i razlika složenih objekata_92_1.png" />
+<img alt="_images/8 Kvantifikacija sličnosti i razlika složenih objekata_92_1.png" src="_images/8 Kvantifikacija sličnosti i razlika složenih objekata_92_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="zavrsni-komentar">
+</section>
+<section id="zavrsni-komentar">
 <h2>Završni komentar<a class="headerlink" href="#zavrsni-komentar" title="Permalink to this headline">¶</a></h2>
 <p>Ova analiza ne pretenduje da zameni ili banalizuje lingvistčke analize. Ideja je bila samo da pokažemo jedan od načina kako jedna kompleksna pojava poput jezika može da se parametrizuje i da na osnovu toga vidimo šta je čemu slično. Način na koji bismo mogli da predstavimo npr. države, kompanije ili programe političkih stranaka ne bi bio mnogo drugačiji. Samo bismo izabrali nešto drugo sem frekvencije slova za parametre.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

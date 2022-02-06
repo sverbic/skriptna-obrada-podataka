@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Fitovanje podataka &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -112,6 +113,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="2%20Eksplorativna%20analiza%20podataka.html">
    Eksplorativna analiza podataka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
@@ -298,14 +304,14 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="fitovanje-podataka">
+  <section class="tex2jax_ignore mathjax_ignore" id="fitovanje-podataka">
 <h1>Fitovanje podataka<a class="headerlink" href="#fitovanje-podataka" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>U ovoj svesci ćemo demostrirati fitovanje podataka, pokazati smisao srednjeg kvadratnog odstupanja kao mere kvaliteta fita i pokazati šta znači da model premalo ili previše dobro fituje (<em>under-</em> i <em>over-fitting</em>).</p>
 </div></blockquote>
 <p>Ukoliko za empirijske podatke postoji teorijski model, onda sigurno znamo i jednačinu koja povezuje zavisno i nezavisno promenljivu. To je tipičan slučaj kada u istraživanju imamo sve elemente naučnog metoda uključujući posmatranje, postavljanje hipoteze i dizajniranje eksperimenta. Međutim, nauka o podacima i mašinsko učenje su primene analize podataka na podacima za koje ne moramo da znamo teorijski okvir. Najbolji model mašinskog učenja ne pretenduje da bude naučno objašnjenje pojave već samo model koji u konkretnom slučaju daje dobru predikciju rezultata.</p>
 <p>Fitovanje podataka u slučajevima kada znamo jednačinu koja povezuje zavisno i nezavisno promeljivu je jednoznačno određeno. Bez teorijskog modela, odnosno poznavanja te veze za fitovanje podatka možemo da koristimo različite modele i vidimo koji je najverodostojniji. Svakako prvo počinjemo od najjednostavnijeg modela, linearnog.</p>
-<div class="section" id="linearni-model">
+<section id="linearni-model">
 <h2>Linearni model<a class="headerlink" href="#linearni-model" title="Permalink to this headline">¶</a></h2>
 <p>Linearni model je najčešće korišćen model predikcije, ne samo u mašinskom učenju već u nauci uopšte. Pomoću ovog modela se određuju parametri linearne funkcije koja opisuje zavisnost jedne kontinualne promenljive od druge. Ovaj model se često naziva i linearna regresija. Postoji nekoliko načina za pravljenje linearnih modela. Mi ćemo ovde pokušati da prikažemo najjednostavniji, tj. onaj koji ne učitava biblioteku za mašinsko učenje samo zato da bi uradio linearan fit. Biblioteka <strong>numpy</strong> ima funkcije koje mogu da nam pomognu.</p>
 <div class="cell docutils container">
@@ -340,8 +346,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.42842584, 0.95702671, 1.08448741, 2.48008895, 2.89843653,
-       1.21754624, 2.03463885, 0.58455736, 0.33555417, 1.80829864])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.02608646, 1.99114709, 0.39406079, 1.43328948, 0.38186527,
+       0.79148284, 0.46971752, 2.06416142, 0.53790393, 2.43941883])
 </pre></div>
 </div>
 </div>
@@ -389,7 +395,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_build/jupyter_execute/9 Fitovanje podataka_18_0.png" src="_build/jupyter_execute/9 Fitovanje podataka_18_0.png" />
+<img alt="_images/9 Fitovanje podataka_18_0.png" src="_images/9 Fitovanje podataka_18_0.png" />
 </div>
 </div>
 <p>Kvalitet fita možemo da opišemo na mnogo načina. Često se za to koristi koeficijent korelacije. Ovde nam je zgodnije da koristimo srednji kvadrat odstupanja (MSE od eng. <em>mean square error</em>) kao meru koja može lepo da se vizuelizuje. Što je vrednost MSE manja, to je fit bolji. Vidimo na grafiku kolike su vrednosti odstupanja za svaku tačku (crvene linije). Sve te vrednosti treba kvadrirati, sabrati i podeliti sa n. Konkretno za ovaj linearni fit, srednje kvadratno odstupanje je:</p>
@@ -401,12 +407,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5513848444348444
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8099499061178952
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="kvadratna-funkcija">
+<section id="kvadratna-funkcija">
 <h3>Kvadratna funkcija<a class="headerlink" href="#kvadratna-funkcija" title="Permalink to this headline">¶</a></h3>
 <p>Pošto znamo kako smo generisali podatke, znamo i da postoji boji fit od linearnog modela. Kvadratna funkcija će sigurno imati manja odstupanja stvarne i prognozirane vrednosti <strong>y</strong>. Za to ćemo koristiti istu funkciju <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> samo što će sada argument koji se odnosi na red polinoma biti 2. Na sledećem grafiku ćemo nacrtati krivu dobijenu ovakvim fitom.</p>
 <div class="cell docutils container">
@@ -425,10 +431,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x122b33ac0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x2006d822520&gt;
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/9 Fitovanje podataka_23_1.png" src="_build/jupyter_execute/9 Fitovanje podataka_23_1.png" />
+<img alt="_images/9 Fitovanje podataka_23_1.png" src="_images/9 Fitovanje podataka_23_1.png" />
 </div>
 </div>
 <p>Očekivano, ovde su rezidualni mnogo manji tako da se crvene linije jedva primećuju. Srednje kvadratno odstupanje je ovde sigurno manje:</p>
@@ -440,15 +446,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.210581107774301
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1203558182494173
 </pre></div>
 </div>
 </div>
 </div>
 <p>Lako je ovde biti pametan i zaključiti da je kvadratna funkcija odličan model za podatke koje smo prvobitno generisali koristeći kvadratnu funkciju. U realnom slučaju, to naravno nije tako. Mi ne znamo kakva je prava zavisnost i možemo samo da je pretpostavimo na osnovu fitovanja različitim modelima.</p>
-</div>
-</div>
-<div class="section" id="testiranje-modela">
+</section>
+</section>
+<section id="testiranje-modela">
 <h2>Testiranje modela<a class="headerlink" href="#testiranje-modela" title="Permalink to this headline">¶</a></h2>
 <p>U realnom slučaju fitovanje radimo na poznatom uzorku, a predikcije radimo za nepoznate tačke. To je poenta korišćenja modela. Greška koju načinimo predviđajući vrednosti zavisno promenljive u situacijama gde ne možemo da ih izmerimo ili koje se još nisu dogodile je prava mera uspešnosti modela. Ovde ćemo simulirati upravo takvu situaciju za četiri različita modela. Uporedićemo srednje kvadratne greške kako bismo utvrdili koji je model najbolji.</p>
 <p>Za početak, podelićemo ceo skup tačaka (<strong>x</strong>,<strong>y</strong>) na dva dela: na uzorak na kom fitujemo funkciju (<strong>learn</strong>) i ostatak skupa koji koristimo za testiranje modela (<strong>test</strong>). Konkretno, koristićemo funkciju <code class="docutils literal notranslate"><span class="pre">sample()</span></code> iz biblioteke <strong>random</strong> da dobijemo slučajan izorak koji čini polovina početnog skupa. Izraz <code class="docutils literal notranslate"><span class="pre">n//2</span></code> označava celobrojnu vrednost deljenja promenljive <strong>n</strong> sa 2.</p>
@@ -554,21 +560,21 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;MSE=5.21&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;MSE=4.04&#39;)
 </pre></div>
 </div>
-<img alt="_build/jupyter_execute/9 Fitovanje podataka_41_1.png" src="_build/jupyter_execute/9 Fitovanje podataka_41_1.png" />
+<img alt="_images/9 Fitovanje podataka_41_1.png" src="_images/9 Fitovanje podataka_41_1.png" />
 </div>
 </div>
 <p>Ako pažljivo pogledamo grafike, videćemo da polinom prvog reda, odnosno linearna funkcija, ima najveća odstupanja od tačaka iz skupa <strong>learn</strong>. Najbolje je slaganje za polinom najvišeg reda gde sve plave tačke leže baš na krivoj kojom smo fitovali podatke. Ovde je odstupanje tačaka iz <strong>learn</strong> uzorka od polinoma četvrtog reda jednaka nuli. Međutim, nas više interesuje koliko će tačke odstupati od funkcije za skup kojim testiramo modele. Narandžaste tačke, verovatno (ipak je ovo simulacija na skromnom uzorku) najmanje odstupaju za polinom drugog reda.</p>
 <p>Pojava da funkcija ne prati dovoljno dobro trend tačaka iz uzorka zbog čega su odstupanja za testni skup velika naziva se <em>under-fitting</em>. To svakako nije dobro, ali ni druga krajnost nije dobra. Kada funkcija previše dobro prati tačke iz uzorka, greške za testni skup opet postaju velike. Ta pojava se naziva <em>over-fitting</em>. Mi unapred, bez poznavanja vrednosti za testni skup, ne može da znamo koji je model najbolji, ali je očekivano da to najjednostavniji model koji prati trend tačaka. Treba se čuvati obe krajnosti.</p>
 <p>Složenost modela ne zavisi samo od složenosti funkcije već i od broja nezavisno promenljivih. Mi smo ovde radili samo sa jednom nezavisno promenljivom, <strong>x</strong>, ali kod mašinskog učenja taj broj može biti mnogo veći. U takvim slučajevima moramo da uradimo odabir promenljivih koje uključujemo u model (<em>feature selection</em>). Premalo nije dobro, ali nije ni previše. <em>Under-fitting</em> i <em>over-fitting</em> su standarni izazovi za mašinsko učenje. Uvek treba tražiti modele koji uključuju samo zaista važne promenljive i gde su funkcije koje ih povezuju što jednostavnije.</p>
-<div class="section" id="preporucena-literatura">
+<section id="preporucena-literatura">
 <h3>Preporučena literatura<a class="headerlink" href="#preporucena-literatura" title="Permalink to this headline">¶</a></h3>
 <p>Mirko Stojiljković, 2018, <a class="reference external" href="https://realpython.com/linear-regression-in-python/">Linear Regression in Python</a></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
