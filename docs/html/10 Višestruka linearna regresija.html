@@ -116,13 +116,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
-   Čišćenje podataka u Pajtonu
+  <a class="reference internal" href="3%20Priprema%20i%20%C4%8Di%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Priprema i čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
-   Priprema i deskriptivna analiza numeričkih podataka
+  <a class="reference internal" href="4%20Deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
+   Deskriptivna analiza numeričkih podataka
   </a>
  </li>
  <li class="toctree-l1">
@@ -161,8 +161,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="12%20Klasterska%20analiza.html">
-   Klasterska analiza
+  <a class="reference internal" href="12%20Faktorska%20i%20klasterska%20analiza.html">
+   Faktorska i klasterska analiza
   </a>
  </li>
 </ul>
@@ -303,9 +303,9 @@
   <section class="tex2jax_ignore mathjax_ignore" id="visestruka-linearna-regresija">
 <h1>Višestruka linearna regresija<a class="headerlink" href="#visestruka-linearna-regresija" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><p>U ovoj svesci ispitujemo svojstva i mogućnosti modeliranja pomoću linearne regresije sa većim brojem nezavisno promenljivih veličina.</p>
+<div><p>U ovoj svesci predstavljena je upotreba višestruke linearne regresije, odnosno linearne regresije sa većim brojem nezavisno promenljivih veličina, kao modela za predikciju. Linearni modeli mogu imati i druge namene sem predikcije, ali se njima ovde nećemo baviti.</p>
 </div></blockquote>
-<p>Linearna regresija je model koji pretpostavlja linearnu zavisnost između jedne nezavisne (<span class="math notranslate nohighlight">\(x\)</span>) i jedne zavisne promenljive (<span class="math notranslate nohighlight">\(y\)</span>). Tako, na primer, cenu stana možemo da procenimo na osnovu njegove kvadrature. Međutim, stan ne karakteriše samo površina, tu je važno i u kom je kraju grada, koliko je stara zgrada, da li ima svoj parking itd. Kada bismo imali sve ove podatke, bilo bi dobro da ih sve uključimo kao nezavisne promenljive (<span class="math notranslate nohighlight">\(x_1, x_2, x_3...\)</span>) koje u svojoj linearnoj kombinaciji daju procenu cene stana. Naravno, u pitanju je procena i neizbežno je da postoji greška (<span class="math notranslate nohighlight">\(\epsilon\)</span>) koju ne možemo da procenimo. Možemo samo da se potrudimo da bude što manja. Zadatak višestruke linearne regresije je da odredi optimalne parametre linearne funkcije (<span class="math notranslate nohighlight">\(\beta_1, \beta_2, \beta_3...\)</span>).</p>
+<p>Linearna regresija, u užem smislu ovog termina, jeste model koji pretpostavlja linearnu zavisnost jedne zavisne (<span class="math notranslate nohighlight">\(y\)</span>) od jedne nezavisne promenljive (<span class="math notranslate nohighlight">\(x\)</span>) ili određene njene transformacije (npr. <span class="math notranslate nohighlight">\(log{x}\)</span>). Ta nam zavisnost omogućava da pravimo procene zavisno promenljive ako nam je poznata vrednost nezavisne. Tako, na primer, cenu stana možemo da procenimo samo na osnovu njegove kvadrature. Međutim, stan ne karakteriše samo površina, tu je važno i u kom je kraju grada, koliko je stara zgrada, da li ima svoj parking itd. Kada bismo imali sve ove podatke, bilo bi dobro da ih sve uključimo kao nezavisne promenljive (<span class="math notranslate nohighlight">\(x_1, x_2, x_3...\)</span>), ili kao njihove transformisane vrednosti, koje u svojoj linearnoj kombinaciji daju procenu cene stana. Naravno, u pitanju je procena i neizbežno je da postoji greška (<span class="math notranslate nohighlight">\(\epsilon\)</span>) koju ne možemo da procenimo. Možemo samo da se potrudimo da bude što manja. Zadatak višestruke linearne regresije je da odredi optimalne parametre linearne funkcije (<span class="math notranslate nohighlight">\(\beta_1, \beta_2, \beta_3...\)</span>) i tako omogući što bolju predikciju.</p>
 <div class="math notranslate nohighlight">
 \[ y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon \]</div>
 <p>Svaka nova informacija bi, ako imamo dovoljno veliki skup podataka, trebalo da popravi procenu. Situacija u praksi, ipak nije tako jednostavna. Što je veći broj nezavisno promenljivih, potreban nam je veći skup podatka. Takođe, uvek ima nekih nepotrebnih i redundatnih promeljivih koje nije lako uočiti. Zato je, pre nego što uključimo u lineranu regresiju sve moguće promenjive, potrebno da obratimo pažnju na sledeće dve stvari:</p>
@@ -313,6 +313,10 @@
 <li><p>Povećanje broja promenljivih u linearnoj regresiji nije uvek korisno. Zapravo, rizikujemo da podaci za obuku previše dobro fituju (<em>over-fitting</em>), a da procene kod podataka za testiranje budu loše. Tada će formula za predikciju biti previše složena za dobijeni kvalitet procene. Bolje je da skup nezavisnih promenljivih bude manji, ali dobro odabran.</p></li>
 <li><p>Promenjive nisu potpuno nezavisne jedna od druge. Velika zavisnost između dve ili više promenljivih kvari procenu parametara linearne funkcije. Ova okolnost se naziva multikolinearnost promenljivih (<em>multicollinearity</em>). Potrebno je da je uvek imamo i vidu i da smanjimo njene efekte.</p></li>
 </ul>
+<div class="admonition-napomena admonition">
+<p class="admonition-title">Napomena</p>
+<p>Osim uslova koji se tiču broja promenljivih i multikolinearnosti, svaka višestruka linearna regresija bi trebalo da ispuni i uslove koji se tiču linearne regresije uopšte. To su, pre svega, linearna zavisnost promenljivih, kao i normalnost, nezavisnost i homoskedastičnost reziduala. Model može da bude upotrebljiv iako podaci ne ispunjavaju u potpunosti sve ove uslove, ali će greška predikcije biti sve veća što odstupanje od pomenutih uslova veće.</p>
+</div>
 <p>Linearna regresija je postojala, naravno, mnogo pre mašinskog učenja. Zbog svoje jednostavnosti, danas je to njegov osnovni i najčešće korišćeni model.</p>
 <p>Za ilustraciju višestruke linearne regresije koristićemo podatke o karakteristima i cenama kuća sa sajta <a class="reference external" href="https://www.kaggle.com/ashydv/housing-dataset">Kaggle.com</a>. Preuzeti skup podataka se se zove <strong>Housing.csv</strong> nalazi se u folderu <strong>data</strong>.</p>
 <p>Na početku ćemo učitati sve neophodne biblioteke.</p>
@@ -596,10 +600,10 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x1edeea16430&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x2477faf5220&gt;
 </pre></div>
 </div>
-<img alt="_images/10 Višestruka linearna regresija_15_1.png" src="_images/10 Višestruka linearna regresija_15_1.png" />
+<img alt="_images/10 Višestruka linearna regresija_16_1.png" src="_images/10 Višestruka linearna regresija_16_1.png" />
 </div>
 </div>
 <p>Vidimo da, sem cene i površine, sve druge promenljive imaju mali broj diskretnih vrednosti. Takođe, vidi se da na grafikonu nema kategorijalnih promenljivih. Funkcija <code class="docutils literal notranslate"><span class="pre">pairplot()</span></code> radi samo sa numeričkim kolonama.</p>
@@ -615,7 +619,7 @@ memory usage: 55.5+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;area&#39;, ylabel=&#39;price&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/10 Višestruka linearna regresija_19_1.png" src="_images/10 Višestruka linearna regresija_19_1.png" />
+<img alt="_images/10 Višestruka linearna regresija_20_1.png" src="_images/10 Višestruka linearna regresija_20_1.png" />
 </div>
 </div>
 <p>Podaci su prilično rasejani i ova zavisnost ne omogućava preciznu procenu cene. Uz pomoć funkcije <code class="docutils literal notranslate"><span class="pre">corr()</span></code> možemo da odredimo koeficijent korelacije između ove dve promenljive. Koeficijent korelacije ćemo koristiti kao meru rastura podataka i mogućnosti za preciznu predikciju cene.</p>
@@ -915,7 +919,7 @@ memory usage: 55.5+ KB
 <p>545 rows × 13 columns</p>
 </div></div></div>
 </div>
-<p>Sve su vrednosti numeričke osim za poslednju kolonu gde imamo tri moguće vrednosti: <strong>furnished</strong>, <strong>semi_furnished</strong> i <strong>unfurnished</strong>. U ovakvim slučajevima se konstruišu tri fiktivne promenljive (<em>dummy variables</em>) za svaku moguću vrednost. One su binarne i samo nam daju podatak da li je na tom mestu u tabeli prva vrednost (0/1), druga (0/1) ili treća (0/1). Pošto vrednost mora biti jedna od ove tri, onda su tri promenljive previše. Ako znamo dve, očigledno je koja je treća. Npr. ako su <strong>furnished</strong>=0 i <strong>semi_furnished</strong>=0, onda mora biti da je <strong>unfurnished</strong>=1. Vrlo je važno da eliminišemo tu jednu promenljivu viška zbog efekta kolinearnosti. U opštem slučaju, ako imamo <span class="math notranslate nohighlight">\(n\)</span> vrednosti, onda konstruišemo <span class="math notranslate nohighlight">\(n-1\)</span> fiktivnu promenljivu.</p>
+<p>Sve su vrednosti numeričke osim za poslednju kolonu gde imamo tri moguće vrednosti: <strong>furnished</strong>, <strong>semi_furnished</strong> i <strong>unfurnished</strong>. U ovakvim slučajevima se konstruišu tri fiktivne promenljive (<em>dummy variables</em>) za svaku moguću vrednost. One su binarne i samo nam daju podatak da li je na tom mestu u tabeli prva vrednost (0/1), druga (0/1) ili treća (0/1). Pošto vrednost mora biti jedna od ove tri, onda su tri promenljive previše. Ako znamo dve, očigledno je koja je treća. Npr. ako su <strong>furnished</strong>=0 i <strong>semi_furnished</strong>=0, onda mora biti da je <strong>unfurnished</strong>=1. Vrlo je važno da eliminišemo tu jednu promenljivu viška zbog efekta kolinearnosti. U opštem slučaju, ako imamo <span class="math notranslate nohighlight">\(n\)</span> vrednosti kategorijalne promenljive, onda konstruišemo <span class="math notranslate nohighlight">\(n-1\)</span> fiktivnu promenljivu.</p>
 <p>Za konstruisanje fiktivnih promenljivih koristimo funkciju <code class="docutils literal notranslate"><span class="pre">get_dummies()</span></code> biblioteke <strong>pandas</strong>. Odmah ćemo izbrisati prvu kolonu, <strong>furnished</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1542,7 +1546,7 @@ memory usage: 55.5+ KB
 </table>
 </div></div></div>
 </div>
-<p>Cena kuće najviše zavisi od kvadrature (r=0.536), ali zavisi i od broj kupatila (r=0.518) i broja spratova (r=0.421) i toga da li ima klimu (r=0.453). Pošto je cena promenjliva koju hoćemo da procenimo, dobro je da imamo dobru korelaciju nezavisnih promenljivih sa njom. Ono što nam ne treba jeste da te promenljive međusobno dobro koreliraju. Vidimo, na primer, da broj parking mesta dobro korelira sa površinom kuće (r=0.353). To bi moglo da bude znak da nam jedna od njih nije potrebna.</p>
+<p>Cena kuće najviše zavisi od kvadrature (r=0.536), ali zavisi i od broj kupatila (r=0.518) i broja spratova (r=0.421) i toga da li ima klimu (r=0.453). Pošto je cena promenjliva koju hoćemo da procenimo, dobro je da imamo dobru korelaciju nezavisnih promenljivih sa njom. Ono što nam ne treba jeste da te promenljive međusobno dobro koreliraju. Vidimo, na primer, da broj parking mesta dobro korelira sa površinom kuće (r=0.353). To bi moglo da bude znak da nam jedna od njih nije potrebna. Takođe, vidimo da fiktivne promenljive za polu-nameštenu i nenameštenu kuću imaju značajnu negativnu korelaciju (r=-0.588). To je očekivano jer su ove kategorije međusobno isključive – ako se kuća nalazi u jednoj kategoriji, ne može biti u drugoj. Ako bi trebalo zadržati samo jednu od ove dve promenljive, bolje je zadržati <strong>unfurnished</strong> jer bolje korelira sa cenom.</p>
 </section>
 <section id="skaliranje">
 <h2>Skaliranje<a class="headerlink" href="#skaliranje" title="Permalink to this headline">¶</a></h2>
@@ -1819,7 +1823,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 </div>
-<p>Sada možemo da pređemo na samu obuku modela. Konkretan model je predstavljen funkcijom <code class="docutils literal notranslate"><span class="pre">LinearRegression()</span></code> u biblioteci <strong>sklearn.linear_model</strong>. Korišćenjem ove funkcije konstruisuaćemo objekat <strong>model</strong> koji će sadržati sve podatke i funkcije za linearnu regresiju nad prethodno pripremljenim podacima.</p>
+<p>Sada možemo da pređemo na samu obuku modela. Konkretan model je predstavljen funkcijom <code class="docutils literal notranslate"><span class="pre">LinearRegression()</span></code> u biblioteci <strong>sklearn.linear_model</strong>. Korišćenjem ove funkcije konstruisaćemo objekat <strong>model</strong> koji će sadržati sve podatke i funkcije za linearnu regresiju nad prethodno pripremljenim podacima.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
@@ -1850,10 +1854,10 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3343828.46997099  914449.35527064 2776150.11548413 1296709.73056302
-  397112.70237355  175029.72016401  287370.74511123 1281839.3540992
- 1048008.09416942  818951.17766696  836683.37408658 -213667.23550447
- -443630.73611694]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3362121.69123016  597493.302742   2895321.52314868 1423703.29488228
+  474314.12146786  294912.54226032  427880.6614356  1131844.37272644
+  958021.6705782   897179.27806345  561429.26668919  -57186.83188902
+ -418480.1539941 ]
 </pre></div>
 </div>
 </div>
@@ -1866,7 +1870,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2026867.039150888
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1949929.3124154587
 </pre></div>
 </div>
 </div>
@@ -1903,61 +1907,62 @@ memory usage: 55.5+ KB
   <tbody>
     <tr>
       <th>area</th>
-      <td>3.343828e+06</td>
+      <td>3.362122e+06</td>
     </tr>
     <tr>
       <th>bedrooms</th>
-      <td>9.144494e+05</td>
+      <td>5.974933e+05</td>
     </tr>
     <tr>
       <th>bathrooms</th>
-      <td>2.776150e+06</td>
+      <td>2.895322e+06</td>
     </tr>
     <tr>
       <th>stories</th>
-      <td>1.296710e+06</td>
+      <td>1.423703e+06</td>
     </tr>
     <tr>
       <th>mainroad</th>
-      <td>3.971127e+05</td>
+      <td>4.743141e+05</td>
     </tr>
     <tr>
       <th>guestroom</th>
-      <td>1.750297e+05</td>
+      <td>2.949125e+05</td>
     </tr>
     <tr>
       <th>basement</th>
-      <td>2.873707e+05</td>
+      <td>4.278807e+05</td>
     </tr>
     <tr>
       <th>hotwaterheating</th>
-      <td>1.281839e+06</td>
+      <td>1.131844e+06</td>
     </tr>
     <tr>
       <th>airconditioning</th>
-      <td>1.048008e+06</td>
+      <td>9.580217e+05</td>
     </tr>
     <tr>
       <th>parking</th>
-      <td>8.189512e+05</td>
+      <td>8.971793e+05</td>
     </tr>
     <tr>
       <th>prefarea</th>
-      <td>8.366834e+05</td>
+      <td>5.614293e+05</td>
     </tr>
     <tr>
       <th>semi-furnished</th>
-      <td>-2.136672e+05</td>
+      <td>-5.718683e+04</td>
     </tr>
     <tr>
       <th>unfurnished</th>
-      <td>-4.436307e+05</td>
+      <td>-4.184802e+05</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
 <p>Sada po prvi put vidimo pojedinačne koeficijente pridružene nazivima promenljivih pa sada možemo da vidimo koliki je čiji doprinos konačnoj proceni. Najznačajnije promenljive su površina, broj kupatila i broj spratova, dok najmanju ulogu igra podatak koji kaže da je stan polunamenšten (<em>semi_furnished</em>).</p>
+<p>Šta konkretno znače ovi koeficijenti? Npr. koeficijent uz <strong>unfurnished</strong> znači da je nenameštena kuća u proseku jeftinija za 312.364,60 dolara od one koja to nije. Za promenljive koje su skalirane, imajte u vidu da se koeficijent ne odnosi na razliku u ceni po jedinici mere koju smo imali u tabeli <strong>housing</strong> već po celom rasponu te promenljive. Konkretno, koeficijent uz <strong>area</strong> (3.931468e+06) ne znači da je kuća 3,9 miliona dolara skuplja po svakoj kvadratnoj stopi već da je to proseku razlika cena između kuća sa maksimalnom površinom (oko 16000 kvadratnih stopa) i onih sa najmanjom (oko 1500 kvadratnih stopa). Kad to preračunamo u kvadratne metre to je oko 2800 dolara po kvadratu.</p>
 <p>Koristeći novodobijene koeficijente možemo da izračunamo procenu cene kuće za bilo koje vrednosti promenljivih. To znači da sada možemo da iskoristimo podatke za testiranje koje smo ostavili po strani (<strong>x_test</strong>) i  da vidimo šta model predviđa za izlazne vrednosti, odnosno kako procenjuje cenu kuća.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1975,7 +1980,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/10 Višestruka linearna regresija_66_0.png" src="_images/10 Višestruka linearna regresija_66_0.png" />
+<img alt="_images/10 Višestruka linearna regresija_68_0.png" src="_images/10 Višestruka linearna regresija_68_0.png" />
 </div>
 </div>
 <p>Ako uporedite ovaj grafik sa onim prvim u svesci gde smo koristili procenu samo na osnovu površine kuće, primetićete da je ovde slaganje nešto bolje. Verovatno će to potvrditi i koeficijent korelacije.</p>
@@ -1986,7 +1991,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7680658124205073
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8081281476697046
 </pre></div>
 </div>
 </div>
@@ -1999,7 +2004,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1022683.4482214296
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1049862.7109675
 </pre></div>
 </div>
 </div>
@@ -2013,10 +2018,10 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/10 Višestruka linearna regresija_73_0.png" src="_images/10 Višestruka linearna regresija_73_0.png" />
+<img alt="_images/10 Višestruka linearna regresija_75_0.png" src="_images/10 Višestruka linearna regresija_75_0.png" />
 </div>
 </div>
-<p>Ako histogram reziduala prikazuje normalnu raspodelu to znači da smo izabrali adekvatan model.</p>
+<p>Ako histogram reziduala prikazuje normalnu raspodelu to znači da smo izabrali adekvatan model. Strogo govoreći, trebalo bi proveriti i da li postoji autokorelacija reziduala, ali ćemo to ostaviti za neki napredniji kurs.</p>
 </section>
 <section id="zavrsni-komentari">
 <h2>Završni komentari<a class="headerlink" href="#zavrsni-komentari" title="Permalink to this headline">¶</a></h2>

@@ -54,7 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Klasterska analiza" href="12%20Klasterska%20analiza.html" />
+    <link rel="next" title="Faktorska i klasterska analiza" href="12%20Faktorska%20i%20klasterska%20analiza.html" />
     <link rel="prev" title="Višestruka linearna regresija" href="10%20Vi%C5%A1estruka%20linearna%20regresija.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -116,13 +116,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
-   Čišćenje podataka u Pajtonu
+  <a class="reference internal" href="3%20Priprema%20i%20%C4%8Di%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Priprema i čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
-   Priprema i deskriptivna analiza numeričkih podataka
+  <a class="reference internal" href="4%20Deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
+   Deskriptivna analiza numeričkih podataka
   </a>
  </li>
  <li class="toctree-l1">
@@ -161,8 +161,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="12%20Klasterska%20analiza.html">
-   Klasterska analiza
+  <a class="reference internal" href="12%20Faktorska%20i%20klasterska%20analiza.html">
+   Faktorska i klasterska analiza
   </a>
  </li>
 </ul>
@@ -306,7 +306,7 @@
 <div><p>U ovoj svesci je prikazan primer korišćenja stabla odlučivanja, modela mašinskog učenja pod nadzorom koji se obučava sa cijem da verodostojno proceni binarni ishod procesa na osnovu niza kategorijalnih parametara.</p>
 </div></blockquote>
 <p>Kod mašinskog učenja sa višedimenzionalnim podacima gde je bitno na procenimo “koliko” će nečega biti na izlazu, najčešće primenjujemo linearnu regresiju. Sa druge strane, kod mašinskog učenja sa istim takvim podacima gde je bitno da procenimo “da li” će nečega biti ili neće, često se koristi stablo odlučivanja. Postoje različite varijante i nadogradnje stabla odlučivanja (npr. <em>random forest</em>), ali se sve svode na jednostavnu ideju – da postavljamo prava da/ne pitanja i da svakim pitanjem podelimo posmatranu grupu na dve homogenije grupe, približno iste veličine koje imaje različite vrednosti na izlazu.</p>
-<p>U ovoj svesci ćemo analizirati skup podataka koji se često koristi kao primer za stablo odlučivanja – “titanik”. U tom skupu podataka se nalaze osnovne karakteristike putnika, npr. pol, godine, mesto gde su se ukracali itd., dok je binarni podatak koji pokušavamo da procenimo da li su preživeli brodolom ili ne. Ono što znamo o brodolomu Titanika bez gledanja u tabelu jeste da se približno 60% od oko 1300 putnika utopilo. Koje biste vi pitanje postavili o karakteristikama putnika pa da bitno poboljšate procenu da li su preživeli ili ne? Ispostavlja se da je najbolji prediktor pol putnika. Ako je muškog pola verovatno nije preživeo (19%), ako je ženskog pola verovatno jeste (73%). Sada ćemo da analiziramo skup podataka i utvrdimo koja su to prava pitanja.</p>
+<p>U ovoj svesci ćemo analizirati skup podataka “Titanik” koji se često koristi kao primer za stablo odlučivanja. U tom skupu podataka se nalaze osnovne karakteristike putnika, npr. pol, godine, mesto gde su se ukracali itd., dok je binarni podatak koji pokušavamo da procenimo da li su preživeli brodolom ili ne. Ono što znamo o brodolomu Titanika bez gledanja u tabelu jeste da se približno 60% od oko 1300 putnika utopilo. Koje biste vi pitanje postavili o karakteristikama putnika pa da bitno poboljšate procenu da li su preživeli ili ne? Ispostavlja se da je najbolji prediktor pol putnika. Ako je muškog pola verovatno nije preživeo (19%), ako je ženskog pola verovatno jeste (73%). Sada ćemo da analiziramo skup podataka i utvrdimo koja su to prava pitanja.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1287,7 +1287,7 @@
 </table>
 </div></div></div>
 </div>
-<p>Koeficijent korelacije između pojedinih promenljivih govori o tome koliko su dobri prediktori za preživljavanje, ali i tome u kakvoj su međusobnoj vezi. Npr. postoji primetna veza između promeljivih <strong>child</strong> i <strong>alone</strong> i onda ima negativnu korelaciju. Zvuči logično. Deca ne bi trebalo da su na brodu sama bez ikog svog. Za naš model predikcije to govori nešto drugo, odnosno da prejaka veza između dve promenljive kvari model i da bi možda jednu od njih trebalo isključiti.</p>
+<p>Koeficijent korelacije između pojedinih promenljivih govori o tome koliko su dobri prediktori za preživljavanje, ali i tome u kakvoj su međusobnoj vezi. Npr. postoji primetna veza između promeljivih <strong>child</strong> i <strong>alone</strong> i ona ima negativnu korelaciju. Zvuči logično. Deca ne bi trebalo da su na brodu sama bez ikog svog. Za naš model predikcije to govori nešto drugo, odnosno da prejaka veza između dve promenljive kvari model i da bi možda jednu od njih trebalo isključiti.</p>
 <p>Konačno, možemo da izaberemo karakteristike koje hoćemo kao nezavisno promenljive u modelu. <strong>X</strong> će biti tabela samo sa tim kolonama, a <strong>y</strong> kolona u kojoj su podaci o tome da li su preživeli.</p>
 </section>
 <section id="obucavanje-modela">
@@ -1338,7 +1338,7 @@
 <li><p>da putnik nije preživeo i da je predikcija bila da je preživeo (<em>false positive</em>, FP).</p></li>
 </ol>
 <p>Samo jedan od ovih brojeva može da nas dovede u zabludu. Npr. model koji kaže da su svi preživeli bi imao 100% uspešnost u proceni kod onih koji su preživeli, ali 0% kod onih koji nisu. To ne bi bio posebno dobar model.</p>
-<p>Umesto jednog broja za opisivanje uspešnosti predikcije, obično se koristi koristi matrica konfuzije (<em>confusion matrix</em>). U matrici su frekvencije sve četiri gore pomenute kombinacije.</p>
+<p>Umesto jednog broja za opisivanje uspešnosti predikcije, obično se koristi matrica konfuzije (<em>confusion matrix</em>). U matrici su frekvencije sve četiri gore pomenute kombinacije ishoda.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -1367,8 +1367,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[176,  20],
-       [ 49,  83]], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[194,  14],
+       [ 57,  63]], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -1406,13 +1406,13 @@
   <tbody>
     <tr>
       <th>nije preživeo</th>
-      <td>176</td>
-      <td>20</td>
+      <td>194</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>preživeo</th>
-      <td>49</td>
-      <td>83</td>
+      <td>57</td>
+      <td>63</td>
     </tr>
   </tbody>
 </table>
@@ -1428,7 +1428,7 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost: 0.790
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost: 0.784
 </pre></div>
 </div>
 </div>
@@ -1443,7 +1443,7 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost (bez kriterijuma): 0.500
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost (bez kriterijuma): 0.506
 </pre></div>
 </div>
 </div>
@@ -1473,9 +1473,9 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 |   |   |   |--- class: 0.0
 |--- feature_1 &gt;  0.50
 |   |--- feature_0 &lt;= 2.50
-|   |   |--- feature_3 &lt;= 0.50
+|   |   |--- feature_0 &lt;= 1.50
 |   |   |   |--- class: 1.0
-|   |   |--- feature_3 &gt;  0.50
+|   |   |--- feature_0 &gt;  1.50
 |   |   |   |--- class: 1.0
 |   |--- feature_0 &gt;  2.50
 |   |   |--- feature_3 &lt;= 0.50
@@ -1515,7 +1515,7 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.23410673, 0.68863264, 0.066111  , 0.01114963])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.21714434, 0.73089301, 0.03960307, 0.01235958])
 </pre></div>
 </div>
 </div>
@@ -1570,10 +1570,10 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
             <p class="prev-next-title">Višestruka linearna regresija</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="12%20Klasterska%20analiza.html" title="next page">
+    <a class='right-next' id="next-link" href="12%20Faktorska%20i%20klasterska%20analiza.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Klasterska analiza</p>
+        <p class="prev-next-title">Faktorska i klasterska analiza</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

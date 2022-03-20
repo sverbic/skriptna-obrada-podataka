@@ -43,6 +43,8 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -309,13 +311,13 @@
 <div><p>U ovoj svesci ćemo prikazati kako radimo preliminarnu, eksplorativnu analizu podataka sa kojima se prvi put srećemo. Teško je postaviti granice dokle se analiza smatra eksplorativnom, a kad postaje neka druga. Sigurno je da bez nje ne možemo mnogo da uradimo kasnije. EDA je korak koji ne može da se preskoči.</p>
 </div></blockquote>
 <p>Eksplorativna analiza podataka (EDA od eng. <em>Exploratory Data Analysis</em>) je preliminarna faza analize podataka. Ona je veoma važna za podatke sa kojima se prvi put susrećemo. Tokom ove faze ispitujemo opšte karakteristike skupa podataka: koji su to podaci, koliko ih ima, kog su tipa, kakva im je struktura itd. EDA daje uvid u podatke numerički i grafički. Idealno, ova dva načina se kombinuju po potrebi.</p>
-<p>Ekplorativna analiza zahteva dosta vremena. Iako bi trebalo da prethodni fazi čišćenja podataka, često ih nije moguće razdvojiti pa se rade istovremeno. EDA može da sadrži različite tipove kratkih analize, ali se oni svode na svega nekoliko glavnih zadataka. Od EDA se očekuje da:</p>
+<p>Eksplorativna analiza zahteva dosta vremena. Iako bi trebalo da prethodni fazi čišćenja podataka, često ih nije moguće razdvojiti pa se rade istovremeno. EDA može da sadrži različite tipove kratkih analize, ali se oni svode na svega nekoliko glavnih zadataka. Od EDA se očekuje da:</p>
 <ul class="simple">
-<li><p>istraži strukturu podataka (koliko ima podataka, kog, tipa, šta su atributi),</p></li>
+<li><p>istraži strukturu podataka (koliko ima podataka, kog su tipa, kako se nazivaju kolone),</p></li>
+<li><p>prikaže raspodelu podataka i proceni njene glavne parametre,</p></li>
 <li><p>uoči nedostajuće podatke i očigledne greške,</p></li>
-<li><p>uoči raspodele podataka i proceni njene parametre,</p></li>
-<li><p>omogući skiciranje modela odnosa među varijablama i da</p></li>
-<li><p>omogući identifikovanje ključnih varijabli.</p></li>
+<li><p>omogući skiciranje modela odnosa među promenljivim i da</p></li>
+<li><p>omogući identifikovanje ključnih promenljivih.</p></li>
 </ul>
 <p>Za veće i heterogene skupove podataka nije dovoljno dati sumarni prikaz sveden na nekoliko brojeva. Često je neophodno da “vidimo” podatke, njihove raspodele i neočekivana odstupanja. Grafici u EDA su obično histogrami, kutijasti dijagrami (<em>boxplots</em>) i tačkasti dijagrami (<em>scetter plots</em>). Svrha ovih dijagrama nije komunikacija rezultata već pre svega vizuelno ispitivanje skupa podataka.</p>
 <p>Ovde ćemo prikazati kako bi eksplorativna analiza mogla da izgleda za istorijske podatke o rang-listama Fortune 500. Fajl sa ovim podacima je dostupan na <a class="reference external" href="https://s3.amazonaws.com/dq-blog-files/fortune500.csv">https://s3.amazonaws.com/dq-blog-files/fortune500.csv</a>. Nemamo meta-podatke o podacima u ovom fajlu tako da ćemo morati sami da otkrijemo šta je unutra.</p>
@@ -328,7 +330,7 @@
 </div>
 </div>
 </div>
-<p>Prvo, da učitamo <strong>fortune500.csv</strong> fajl direktno sa veba. Sadržaj fajla smeštamo u <em>data frame</em> koji ćemo kreativno nazvati <strong>df</strong>.</p>
+<p>Prvo, da učitamo <strong>fortune500.csv</strong> fajl direktno sa veba. Sadržaj fajla smeštamo u <em>data frame</em> koji ćemo “kreativno” nazvati <strong>df</strong>.</p>
 <p>(Ako se ispostavi da link više ne radi, koristite istoimeni fajl iz foldera <strong>/data</strong>.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -512,7 +514,7 @@ Name: Profit, Length: 6977, dtype: int64
 </div>
 </div>
 </div>
-<p>Izgleda da sem brojeva u koloni <strong>Profit</strong> imamo i tekst “N.A.” 369 puta. To je string u kom se nalazi teks “N.A.” i to nije isto što i Pajtonova oznaka za NA. Zato je funkcija <code class="docutils literal notranslate"><span class="pre">is.na()</span></code> nije prepoznala. Pokušaćemo da ove vrednosti pretvorimo u numeričke pomoću funkcije <code class="docutils literal notranslate"><span class="pre">to_numeric()</span></code> iz biblioteke <strong>pandas</strong> tako što će sve što nisu brojevi postati <strong>NaN</strong> (Pajtonova oznaka za <em>not-a-number</em>).</p>
+<p>Izgleda da sem brojeva u koloni <strong>Profit</strong> imamo i tekst “N.A.” 369 puta. To je string u kom se nalazi tekst “N.A.” i to nije isto što i Pajtonova oznaka za NA. Zato je funkcija <code class="docutils literal notranslate"><span class="pre">is.na()</span></code> nije prepoznala. Pokušaćemo da ove vrednosti pretvorimo u numeričke pomoću funkcije <code class="docutils literal notranslate"><span class="pre">to_numeric()</span></code> iz biblioteke <strong>pandas</strong> tako što će sve što nisu brojevi postati <strong>NaN</strong> (Pajtonova oznaka za <em>not-a-number</em>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Profit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Profit</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
@@ -574,7 +576,7 @@ Name: Profit, Length: 6977, dtype: int64
 </div>
 </div>
 </div>
-<p>Pošto su nam sad sve kolone sem naziva kompanije numeričke možemo da pogledamo koje vrednosti imaju.</p>
+<p>Pošto su nam sad sve kolone, sem naziva kompanije, numeričke možemo da pogledamo koje vrednosti imaju.</p>
 <p>Podaci su dati po godinama. Koje godine imamo u ovoj tabeli?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -592,7 +594,7 @@ Name: Profit, Length: 6977, dtype: int64
 </div>
 </div>
 </div>
-<p>Imamo, dakle, 51 godinu. Koliko je to vrsta podataka po godini?</p>
+<p>Imamo, dakle, 51 različitu vrednost za godinu. Koliko je to podataka po godini?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Year</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -723,12 +725,12 @@ Name: Year, dtype: int64
 </div>
 </div>
 </div>
-<p>Na sličan način možemo da proverimo koje se vrednosti načaze u ostalim kolonama. Možda je bolje da podatke prikažemo grafički. Tako će biti preglednije.</p>
-<p>Eksplorativna analiza podrazumeva vizuelizaciju podataka. Vizuelizacija je pomoć u analizi. Često je lakše razumeti podatke ako ih vidimo nego ako gledamo samo statistike. Te vizuelizacije ne moraju da budu posebno lepe je nisu namenjene nikome drugom do vama koji radite analizu. Zbog toga nećemo trošiti previše vremena na estetiku grafikona.</p>
+<p>Na sličan način možemo da proverimo koje se vrednosti nalaze u ostalim kolonama. Možda je bolje da podatke prikažemo grafički. Tako će biti preglednije.</p>
+<p>Eksplorativna analiza podrazumeva vizuelizaciju podataka. Vizuelizacija je pomoć u analizi. Često je lakše razumeti podatke ako ih vidimo nego ako gledamo samo statistike. Te vizuelizacije ne moraju da budu posebno atraktivne jer nisu namenjene nikome drugom do vama koji radite analizu. Zbog toga nećemo trošiti previše vremena na estetiku grafikona.</p>
 </section>
 <section id="univarijatna-analiza">
 <h2>Univarijatna analiza<a class="headerlink" href="#univarijatna-analiza" title="Permalink to this headline">¶</a></h2>
-<p>Ako radimo analizu samo jedne promenljive, onda je ta analiza univarijatna. Nema mnogo toga što možemo da uradimo sa jednom promenljivom, odnosno nizom njenih vrednosti. Možemo da nađemo mere centralne tendencije (srednja vrednost, medijana i slični), da nađemo meru rastura (varijansa, standardna devijacija ili slično) ili da nacrtamo raspodelu ovih vrednosti (npr. pomoću histograma ili kutijastih dijagrama).</p>
+<p>Ako radimo analizu samo jedne promenljive, onda je ta analiza univarijatna. Nema mnogo toga što možemo da uradimo sa jednom promenljivom, odnosno nizom njenih vrednosti. Ako su podaci numerički, onda možemo da nađemo mere centralne tendencije (srednja vrednost, medijana i slični), da nađemo meru rastura (varijansa, standardna devijacija ili slično) ili da nacrtamo raspodelu ovih vrednosti (npr. pomoću histograma ili kutijastih dijagrama).</p>
 <p>U ovom konkretnom slučaju ćemo histogramom prikazati broj kompanija koje se zovu “CBS” po godinama. Ono što vidimo je da se “CBS” uglavnom pojavljuje jednom na Fortune500 listi svake godine, da ima desetak godina kada se pojavljuje dvaput i da ga od 2002. ili 2003. (ne vidi se najbolje na grafikonu) nema na listi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -765,7 +767,11 @@ Name: Year, dtype: int64
 <img alt="_images/2 Eksplorativna analiza podataka_57_0.png" src="_images/2 Eksplorativna analiza podataka_57_0.png" />
 </div>
 </div>
-<p>Sada se raspodela vidi mnogo bolje. Vidimo da je ima dva pika. Možda je slučajno, ali verovatno za to postoji dobar razlog.</p>
+<p>Sada se raspodela vidi mnogo bolje. Vidimo da ima dva pika. Možda je slučajno, ali verovatno za to postoji dobar razlog.</p>
+<div class="tip admonition">
+<p class="admonition-title">Alternativno rešenje</p>
+<p>Crtanje histograma na logaritamskoj skali zavisi od toga da li softver predviđa takvu mogućnost. Očigledno, Pajton prihvata dekadni logaritam. Kada bismo hteli da prikažemo drugačije transformisane podatke na x-osi (npr. kao <span class="math notranslate nohighlight">\(1/x\)</span> ili <span class="math notranslate nohighlight">\(log_2(x)\)</span>) to ne bi radilo jer funkcija <code class="docutils literal notranslate"><span class="pre">xscale()</span></code> to ne predviđa. U takvim slučajevima je najjednostavnije rešenje da uvedemo još jednu promenljivu: npr. <strong>log-Revenue</strong>. U tu novu kolonu stavimo transformisane vrednosti, a onda ih nacrtamo kao “običan” histogram.</p>
+</div>
 <p>Da vidimo kako izgleda raspodela profita.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -774,7 +780,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2 Eksplorativna analiza podataka_60_0.png" src="_images/2 Eksplorativna analiza podataka_60_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_61_0.png" src="_images/2 Eksplorativna analiza podataka_61_0.png" />
 </div>
 </div>
 <p>Imamo samo jedan uzan pik i vrlo širok raspon vrednosti. Ovde logaritmovanje x-ose ne bi pomoglo jer imamo i negativne vrednosti profita. Možda će grafikon biti informativniji ako samo logaritmujemo y-osu. Tada će se umesto vetikalne linije pojaviti raspodela.</p>
@@ -785,7 +791,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2 Eksplorativna analiza podataka_62_0.png" src="_images/2 Eksplorativna analiza podataka_62_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_63_0.png" src="_images/2 Eksplorativna analiza podataka_63_0.png" />
 </div>
 </div>
 <p>Očigledno, postoji mali broj slučajeva kada je profit prikazan kao veliki gubitak. Sem njih, većina kompanija ima profit oko nule s tim da je raspodela “deblja” na pozitivnom delu ose.</p>
@@ -802,7 +808,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2 Eksplorativna analiza podataka_67_0.png" src="_images/2 Eksplorativna analiza podataka_67_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_68_0.png" src="_images/2 Eksplorativna analiza podataka_68_0.png" />
 </div>
 </div>
 <p>Evidentno, onaj mali broj slučajeva kada profit ima ekstremno velike negativne vrednosti kvari celu sliku i ne možemo jasno da vidimo postoji li zavisnost ove prihoda i profita. U tom cilju ćemo prikazati samo one tačke gde je profit veći od -10000. Pošto znamo kakva je rapodela prihoda, možemo odmah da logaritmujemo x-osu. Tako će uvid u podatke biti bolji.</p>
@@ -814,7 +820,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2 Eksplorativna analiza podataka_69_0.png" src="_images/2 Eksplorativna analiza podataka_69_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_70_0.png" src="_images/2 Eksplorativna analiza podataka_70_0.png" />
 </div>
 </div>
 <p>Izgleda da zavisnost ove dve promenljive nije linearna. Za one kompanije sa malim prihodom (u proseku) nema profita, dok za one sa velikim eksponencijalno raste. To je <strong>trend</strong> koji uočavamo. Naravno, ova zavisnost nije glatka. Ima mnogo tačaka koje odstupaju. To je <strong>šum</strong>.</p>
@@ -875,7 +881,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2 Eksplorativna analiza podataka_82_0.png" src="_images/2 Eksplorativna analiza podataka_82_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_83_0.png" src="_images/2 Eksplorativna analiza podataka_83_0.png" />
 </div>
 </div>
 <p>Na ovaj način ne možemo da prikažemo svih 500 kompanija, ali možemo da poredimo kompanije iz izabranog uzorka, npr. 15 sa najvećim prihodom.</p>
@@ -892,7 +898,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2 Eksplorativna analiza podataka_86_0.png" src="_images/2 Eksplorativna analiza podataka_86_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_87_0.png" src="_images/2 Eksplorativna analiza podataka_87_0.png" />
 </div>
 </div>
 <p>Za male diskretne vrednosti, kakve su pozicije na rang-listi, možemo podatke da prikažemo i malo drugačije. U nastavku je kôd koji prikazuje kretanja na rang-listi po godinama. Izabrali smo sami prvih deset kompanija po prihodu u 1955. godini pa pratimo njihove pozicije. Istina, malo ćemo odstupiti od pravila da EDA grafici treba da budu jednostavni i da se estetici ne pridaje mnogo pažnje.</p>
@@ -936,7 +942,7 @@ Name: Year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2 Eksplorativna analiza podataka_90_0.png" src="_images/2 Eksplorativna analiza podataka_90_0.png" />
+<img alt="_images/2 Eksplorativna analiza podataka_91_0.png" src="_images/2 Eksplorativna analiza podataka_91_0.png" />
 </div>
 </div>
 <p>Ovaj grafik nam prikazuje kretanja na rang-listi za svih deset prvoplasiranih iz 1955. godine. Vidimo da nije mnogo njih opstalo u vrhu - samo tri. Neke čak nisu pale na listi. Prestale su da postoje.</p>

@@ -114,13 +114,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
-   Čišćenje podataka u Pajtonu
+  <a class="reference internal" href="3%20Priprema%20i%20%C4%8Di%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Priprema i čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
-   Priprema i deskriptivna analiza numeričkih podataka
+  <a class="reference internal" href="4%20Deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
+   Deskriptivna analiza numeričkih podataka
   </a>
  </li>
  <li class="toctree-l1">
@@ -159,8 +159,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="12%20Klasterska%20analiza.html">
-   Klasterska analiza
+  <a class="reference internal" href="12%20Faktorska%20i%20klasterska%20analiza.html">
+   Faktorska i klasterska analiza
   </a>
  </li>
 </ul>
@@ -475,7 +475,7 @@
 <p>Ako isečemo string <strong>imeiprezime</strong> tamo gde su razmaci i uzmemo prvi deo tog isečenog stringa, dobićemo samo ime. Funkcija <code class="docutils literal notranslate"><span class="pre">split()</span></code> seče string na delove. Ako ne navedemo ni jedan argument, separator će biti razmak. “Sečenje” stringa na upotrebljive delove se, inače, stručno zove <strong>parsiranje</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># пошто Пајтон низове индексира почевши од нуле, индекс 0 се односи на први елемент</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pošto Pajton nizove indeksira počevši od nule, indeks 0 se odnosi na prvi element</span>
 <span class="n">imeiprezime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -486,7 +486,7 @@
 </div>
 </div>
 </div>
-<p>ada ćemo sva imena staviti u novu listu koju ćemo nazvati <strong>imena_lista</strong>. U njoj će biti samo imena bez prezimena. Obratite pažnju da ima opština za koje nije navedeno kako se zove predsednik opštine pa tu stoji razmak ” “. Ovakva imena treba preskočiti. Napisaćemo program koji prolazi kroz sva imena u listi, proverava da li su različita od ” ” i pravi novu listu bez nedostajućih imena. Petlja u programu za svaki element <strong>iip</strong> koji se nalazi u listi <strong>imeiprezime</strong> proverava da li je jednak ” “. Ako nije, string delimo na manje stringove odvojene razmakom <code class="docutils literal notranslate"><span class="pre">iip.split()</span></code>, uzimamo samo prvi deo u kom se nalazi ime i tim elementom dopunjujemo novu listu <strong>imena_lista</strong> pomoću funkcije <code class="docutils literal notranslate"><span class="pre">append()</span></code>. Uslov <code class="docutils literal notranslate"><span class="pre">iip!=&quot;</span> <span class="pre">&quot;</span></code> znači da element <strong>iip</strong> nije jednak ” “. (Zapamtite da kod logičkih iskaza znak <code class="docutils literal notranslate"><span class="pre">!=</span></code> znači nije jednako, dok je <code class="docutils literal notranslate"><span class="pre">==</span></code> jednako.)</p>
+<p>Sada ćemo sva imena staviti u novu listu koju ćemo nazvati <strong>imena_lista</strong>. U njoj će biti samo imena bez prezimena. Obratite pažnju da ima opština za koje nije navedeno kako se zove predsednik opštine pa tu stoji razmak ” “. Ovakva imena treba preskočiti. Napisaćemo program koji prolazi kroz sva imena u listi, proverava da li su različita od ” ” i pravi novu listu bez nedostajućih imena. Petlja u programu za svaki element <strong>iip</strong> koji se nalazi u listi <strong>imeiprezime</strong> proverava da li je jednak ” “. Ako nije, string delimo na manje stringove odvojene razmakom <code class="docutils literal notranslate"><span class="pre">iip.split()</span></code>, uzimamo samo prvi deo u kom se nalazi ime i tim elementom dopunjujemo novu listu <strong>imena_lista</strong> pomoću funkcije <code class="docutils literal notranslate"><span class="pre">append()</span></code>. Uslov <code class="docutils literal notranslate"><span class="pre">iip!=&quot;</span> <span class="pre">&quot;</span></code> znači da element <strong>iip</strong> nije jednak ” “. (Zapamtite da kod logičkih iskaza znak <code class="docutils literal notranslate"><span class="pre">!=</span></code> znači nije jednako, dok je <code class="docutils literal notranslate"><span class="pre">==</span></code> jednako.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imena_lista</span><span class="o">=</span><span class="p">[]</span>
@@ -682,7 +682,7 @@
 </div>
 </div>
 </div>
-<p>Biblioteka <strong>pandas</strong> ima promenljivu tipa serija koja je složenija varijanta liste. Za taj tip promenljive su napisane brojne funkcije koje ne postoje za liste. Zato je zgodno da <strong>imena_lista</strong> umesto liste postane serija. U tom slučaju će nam odmah biti dostupne razne statističke funkcije. Listu ćemo u seriju pretvoriti pomoću funkcije <code class="docutils literal notranslate"><span class="pre">Series()</span></code> i odmah prebrojati koliko ima kojih imena.</p>
+<p>Biblioteka <strong>pandas</strong> ima promenljivu tipa serija koja je složenija varijanta liste. Za taj tip promenljive su napisane brojne funkcije koje ne postoje za liste. Zato je zgodno da promenljiva <strong>imena_lista</strong> umesto liste postane serija. U tom slučaju će nam odmah biti dostupne razne statističke funkcije. Listu ćemo u seriju pretvoriti pomoću funkcije <code class="docutils literal notranslate"><span class="pre">Series()</span></code> i odmah prebrojati koliko ima kojih imena.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># od liste pravimo seriju kako bismo lakše mogli da prebrojimo imena</span>
@@ -708,7 +708,7 @@ Length: 95, dtype: int64
 </div>
 </div>
 </div>
-<p>Izgleda da je sa serijom sve u redu. Vidimo da ima 95 različitih imena. Sada ćemo grafički da prikažemo koja se imena koliko puta pominju u seriji. Zbog preglednosti prikazujemo samo prvih 16 najčešćih, ali to lako možete da promenite. Sa serijama se lako radi crtanje grafika. U ovom slučaju u seriju <strong>y</strong> stavljamo imena sortirana po broju pojavljivanja. Dovoljno je da napišemo <code class="docutils literal notranslate"><span class="pre">y.plot()</span></code> i grafik će se prikazati. Doduše, izbor tipa grafika neće biti baš najbolji. Zbog toga treba specifikovati da hoćemo horizontalni stubični dijagram, tj. <em>horizontal bar chart</em> - <code class="docutils literal notranslate"><span class="pre">kind='barh'</span></code>. Da bismo promenili redosled najčešćih imena tako da ide odozgo na dole, invertovaćemo u-osu pomoću <code class="docutils literal notranslate"><span class="pre">gca().invert_yaxis()</span></code>.</p>
+<p>Izgleda da je sa serijom sve u redu. Vidimo da ima 95 različitih imena. Sada ćemo grafički da prikažemo koja se imena koliko puta pominju u seriji. Zbog preglednosti prikazujemo samo prvih 16 najčešćih, ali to lako možete da promenite. Sa serijama se lako radi crtanje grafika. U ovom slučaju u seriju <strong>y</strong> stavljamo imena sortirana po broju pojavljivanja. Dovoljno je da napišemo <code class="docutils literal notranslate"><span class="pre">y.plot()</span></code> i grafik će se prikazati. Doduše, izbor tipa grafika neće biti baš najbolji. Zbog toga treba specifikovati da hoćemo horizontalni stubični dijagram, tj. <em>horizontal bar chart</em> - <code class="docutils literal notranslate"><span class="pre">kind='barh'</span></code>. Da bismo promenili redosled najčešćih imena tako da ide odozgo na dole, invertovaćemo y-osu pomoću <code class="docutils literal notranslate"><span class="pre">gca().invert_yaxis()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="n">imena_serija</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[:</span><span class="mi">16</span><span class="p">]</span>
@@ -722,12 +722,12 @@ Length: 95, dtype: int64
 <img alt="_images/6 Mašinska obrada tekstualnih podataka_24_0.png" src="_images/6 Mašinska obrada tekstualnih podataka_24_0.png" />
 </div>
 </div>
-<p>Ovo je jednostavan i pregledan način da uporedimo rezultate. Odmah vidimo da je najčešće neki Dragan predsednik opštine, pa Vladimir, pa Milan itd. . Primećujete li nešto neobično kod ovih imena? Sva su muška. Ima li uopšte predsednica opština u Srbiji. Koliko?</p>
+<p>Ovo je jednostavan i pregledan način da uporedimo rezultate. Odmah vidimo da je najčešće neki Dragan predsednik opštine, pa Vladimir, pa Milan itd. Primećujete li nešto neobično kod ovih imena? Sva su muška. Ima li uopšte predsednica opština u Srbiji. Koliko?</p>
 <p>Pošto u seriji nemamo podatak o polu predsednika opština već samo ime, trebalo bi da na osnovu imena procenimo kog su pola. Računar ne zna koje je ime muško, a koje žensko. Napravićemo procenu na osnovu <strong>heuristike</strong> (jednostavnog pravila koje uglavnom daje tačnu procenu). Jedna takva heuristika može da bude da se ženska imena skoro uvek završavaju na A.</p>
 <p>Kod svake reči ćemo uzeti poslednje slovo i proveriti da li je A. Pojedinačne karaktere iz teksta u Pajtonu možemo da izdvajamo uz pomoć indeksa u uglastoj zagradi. Tako će nam <strong>ime[0]</strong> dati prvo slovo, dok će nam <strong>ime[-1]</strong> dati poslednje. U niz <strong>pol</strong> ćemo staviti 0 za imena koja se ne završavaju na A i 1 za ona koja se završavaju tim slovom.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Važna napomena! Kada proveravate koje je koje slovo obavezno obratite pažnju na pismo. “A” i “A” nisu isti karakter ako je jednom slovo pisano latinicom, a drugi put ćirilicom.</p>
+<div class="admonition-vazna-napomena admonition">
+<p class="admonition-title">Važna napomena!</p>
+<p>Kada proveravate koje je koje slovo obavezno obratite pažnju na pismo. “A” i “A” nisu isti karakter ako je jednom slovo pisano latinicom, a drugi put ćirilicom.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -756,7 +756,7 @@ Length: 95, dtype: int64
 </div>
 </div>
 <p>Čini se da imamo 25% predsednika opština čija se imena završavaju na A. Da li su svi žene? Verovatno ne. Hajde da prvo napravimo <em>DataFrame</em> sa dve kolone: jedan sa imenom, druga sa kôdom koji odgovara procenjenom polu.</p>
-<p>Ovde ćemo <em>DataFrame</em> napravimo pomoću strukture rečnik (eng. <em>dictionary</em>). Nećemo se na tome mnogo zadržavati. Probajte da varirate sadržaj u sledećoj ćeliji da vidite kako to funkcioniše. U svakom slučaju, ovde smo određenim oznakama (<strong>Ime</strong> i <strong>Pol</strong>), pridružili nizove <strong>imena_lista</strong> i <strong>pol</strong>. Pomoću funkcije <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code> Pajton će sadržaj rečnika data spakovati u <em>DataFrame</em> gde su oznake nazivi kolona, a nizovi sadržaj tih kolona.</p>
+<p>Ovde ćemo <em>DataFrame</em> napravimo pomoću strukture rečnik (eng. <em>dictionary</em>). Nećemo se na tome mnogo zadržavati. Probajte da varirate sadržaj u sledećoj ćeliji da vidite kako to funkcioniše. U svakom slučaju, ovde smo određenim oznakama (<strong>Ime</strong> i <strong>Pol</strong>), pridružili nizove <strong>imena_lista</strong> i <strong>pol</strong>. Pomoću funkcije <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code> Pajton će sadržaj rečnika <strong>data</strong> spakovati u <em>DataFrame</em> gde su oznake nazivi kolona, a nizovi sadržaj tih kolona.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Ime&#39;</span><span class="p">:</span><span class="n">imena_lista</span><span class="p">,</span><span class="s1">&#39;Pol&#39;</span><span class="p">:</span><span class="n">pol</span><span class="p">}</span>
@@ -909,7 +909,7 @@ Length: 95, dtype: int64
 <img alt="_images/6 Mašinska obrada tekstualnih podataka_42_1.png" src="_images/6 Mašinska obrada tekstualnih podataka_42_1.png" />
 </div>
 </div>
-<p>Čuvena “pitica” se crta uz pomoć funkcije <code class="docutils literal notranslate"><span class="pre">pie()</span></code>. Evo šta smo učinili sa se ona pojavi. Prvo smo pomoću funkcije <code class="docutils literal notranslate"><span class="pre">figure()</span></code> zadali dimenzije grafikona od 5 puta 5 inča: <code class="docutils literal notranslate"><span class="pre">figsize=(5,5)</span></code>. U sledećem koraku smo prebrojali koliko ima kojih vrednosti u <code class="docutils literal notranslate"><span class="pre">ime_df['Pol']</span></code> pomoću funkcije <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>. Pošto imamo samo dve različite vrednosti (0 i 1, odnosno muško i žensko), pridružili smo im oznake <strong>M</strong> i <strong>Ž</strong> i boje plavo i crveno. Sa tim argumentima smo pokrenuli funkciju za crtanje pitica. Konačno, u poslednjem redu stoji naredba <code class="docutils literal notranslate"><span class="pre">show()</span></code> da se grafikon prikaže na ekranu.</p>
+<p>Ovde smo prebrojali koliko ima kojih vrednosti u <code class="docutils literal notranslate"><span class="pre">ime_df['Pol']</span></code> pomoću funkcije <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>. Pošto imamo samo dve različite vrednosti (0 i 1, odnosno muško i žensko), pridružili smo im oznake <strong>muškarci</strong> i <strong>žene</strong> i boje plavo i crveno. Sa tim argumentima smo pokrenuli funkciju za crtanje stubičnih dijagrama (eng. <em>bar charts</em>).</p>
 </section>
 <section id="pretraga-teksta">
 <h2>Pretraga teksta<a class="headerlink" href="#pretraga-teksta" title="Permalink to this headline">¶</a></h2>
@@ -1080,7 +1080,7 @@ dtype: int64
 </div>
 </div>
 </div>
-<p>Najčešće se pojavljuje ” ” (77 puta), pa “a” (50), pa “o” (43) itd. Ako prođete kroz celu listu videćete da se posebno pojavljuju velika i mala slova, kao i da tu ima i znakova interpunkcije. Za frekvencijsku analizu slova nije mnogo važno koliko se puta pojavljuju zagrade i da li je slovo na početku rečenice. Pojednostavljenu analizu možemo da uradimo tako što ćemo napisati našu funkciju <code class="docutils literal notranslate"><span class="pre">ciscenje()</span></code> koja prvo sva slova pretvori u mala uz pomoć funkcije <code class="docutils literal notranslate"><span class="pre">lower()</span></code>, zameni sve znake interpunkcije “,.,()_” razmacima pomoću funkcije <code class="docutils literal notranslate"><span class="pre">replace()</span></code> i konačno izbriše višak razmaka tamo gde ih ima pomoću funkcije <code class="docutils literal notranslate"><span class="pre">strip()</span></code>.</p>
+<p>Najčešće se pojavljuje ” ” (77 puta), pa “a” (50), pa “o” (43) itd. Ako prođete kroz celu listu videćete da se posebno pojavljuju velika i mala slova, kao i da tu ima i znakova interpunkcije. Za frekvencijsku analizu slova nije mnogo važno koliko se puta pojavljuju zagrade i da li je slovo na početku rečenice. Pojednostavljenu analizu možemo da uradimo tako što ćemo napisati našu funkciju <code class="docutils literal notranslate"><span class="pre">ciscenje()</span></code> koja prvo sva slova pretvori u mala uz pomoć funkcije <code class="docutils literal notranslate"><span class="pre">lower()</span></code>, zameni sve znake interpunkcije “,.()_” razmacima pomoću funkcije <code class="docutils literal notranslate"><span class="pre">replace()</span></code> i konačno izbriše višak razmaka tamo gde ih ima pomoću funkcije <code class="docutils literal notranslate"><span class="pre">strip()</span></code>.</p>
 <p>Uklanjanje znakova koji nisu slova može efikasnije da se uradi pomoću regularnih izraza (eng. <em>regular expressions</em>), ali ćemo to ostaviti za napredni kurs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1159,7 +1159,7 @@ dtype: int64
 <p>Čemu bi sad ovo moglo da posluži? Na primer za prepoznavanje jezika na kom je pisan tekst. Frekvencija slova se značajno razlikuje među jezicima pa čak i među dijalektima. Nesumnjivo je da će frekvencija slova j biti veća u jekavici nego u ekavici. Čak i kratke sekvence slova mogu da ukažu na jezik kojim je tekst pisan i za to ne moramo da znamo jezik. Mašinama je dovoljno da nizove frekvenci u nekoj rečenici uporede sa tipičnim frekvencama u određenim jezicima i tako odrede koji je jezik u pitanju. U engleskom je, na primer, najfrekventnije slovo e, dok je u srpskom a. Jasno, ukoliko postoje specifična slova kao što su ć, я ili Ψ identifikacija će biti trivijalna. Mašine su nam potrebne za ono što nije očigledno.</p>
 <section id="n-gram">
 <h3><em>n</em>-gram<a class="headerlink" href="#n-gram" title="Permalink to this headline">¶</a></h3>
-<p>Jasno, frekvencije slova ne mogu mnogo da nam kažu o sadržaju teksta. Bolje je da probamo sa statistikom reči. Osnovni koncept u rudarenju teksta je <em>n</em>-gram, tj. sekvenca od n tokena (najčešće znakova ili reči) u nekom većem tekstu. Ako za token uzmemo reč, 1-grami su u ovom tekstu “Osnovni”, “koncept”, “u” itd., dok su 2-grami “Osnovni koncept”, “koncept u” itd.</p>
+<p>Jasno, frekvencije slova ne mogu mnogo da nam kažu o sadržaju teksta. Bolje je da probamo sa statistikom reči. Osnovni koncept u rudarenju teksta je <em>n</em>-gram, tj. sekvenca od <em>n</em> tokena (najčešće znakova ili reči) u nekom većem tekstu. Ako za token uzmemo reč, 1-grami su u ovom tekstu “Osnovni”, “koncept”, “u” itd., dok su 2-grami “Osnovni koncept”, “koncept u” itd.</p>
 <p>Da bismo videli moć statističke analize tokena, uzećemo jedan (vama) nepoznati tekst i analizirati ga. Taj tekst je malo veći i nalazi se u fajlu <strong>“CELEX 32016R0679 EN TXT.txt”</strong>. Nećemo ga učitavati u DataFrame kao što smo to radili sa tabelama. Dovoljno je da ga učitamo u promenljivu tipa string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1193,7 +1193,7 @@ dtype: int64
 </div>
 </div>
 </div>
-<p>Izgleda, da ovde imamo raznih kontrolnih kodova i tagova koje treba ukloniti. Na osnovu ove kratke sekvence čini se da su tagovi odvojeni od reči u tekstu. To bi moglo da nam pomogne u čišćenju. Da vidimo kako bi sada izgledalo prvi nekoliko tokena.</p>
+<p>Izgleda, da ovde imamo raznih kontrolnih kodova i tagova koje treba ukloniti. Na osnovu ove kratke sekvence čini se da su tagovi odvojeni od reči u tekstu. To bi moglo da nam pomogne u čišćenju. Da vidimo kako bi sada izgledalo prvih nekoliko tokena.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()[:</span><span class="mi">15</span><span class="p">]</span>
@@ -1382,7 +1382,7 @@ Length: 2456, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;wordcloud.wordcloud.WordCloud at 0x23274b1af70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;wordcloud.wordcloud.WordCloud at 0x25a27d2eaf0&gt;
 </pre></div>
 </div>
 </div>

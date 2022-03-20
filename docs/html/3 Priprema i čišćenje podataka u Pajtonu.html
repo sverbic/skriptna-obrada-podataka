@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Čišćenje podataka u Pajtonu &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Priprema i čišćenje podataka u Pajtonu &#8212; Skriptna obrada i analiza podataka u Pajtonu</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,6 +52,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Deskriptivna analiza numeričkih podataka" href="4%20Deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html" />
+    <link rel="prev" title="Eksplorativna analiza podataka" href="2%20Eksplorativna%20analiza%20podataka.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -94,7 +97,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="0%20Uvod.html">
    Uvod
@@ -110,9 +113,14 @@
    Eksplorativna analiza podataka
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Priprema i čišćenje podataka u Pajtonu
+  </a>
+ </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
-   Priprema i deskriptivna analiza numeričkih podataka
+  <a class="reference internal" href="4%20Deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
+   Deskriptivna analiza numeričkih podataka
   </a>
  </li>
  <li class="toctree-l1">
@@ -151,8 +159,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="12%20Klasterska%20analiza.html">
-   Klasterska analiza
+  <a class="reference internal" href="12%20Faktorska%20i%20klasterska%20analiza.html">
+   Faktorska i klasterska analiza
   </a>
  </li>
 </ul>
@@ -196,7 +204,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/3 Čisćenje podataka u Pajtonu.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/3 Priprema i čišćenje podataka u Pajtonu.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -216,7 +224,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F3 Čisćenje podataka u Pajtonu.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F3 Priprema i čišćenje podataka u Pajtonu.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -237,7 +245,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/3 Čisćenje podataka u Pajtonu.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/3 Priprema i čišćenje podataka u Pajtonu.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -324,13 +332,13 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="ciscenje-podataka-u-pajtonu">
-<h1>Čišćenje podataka u Pajtonu<a class="headerlink" href="#ciscenje-podataka-u-pajtonu" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="priprema-i-ciscenje-podataka-u-pajtonu">
+<h1>Priprema i čišćenje podataka u Pajtonu<a class="headerlink" href="#priprema-i-ciscenje-podataka-u-pajtonu" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>Ova sveska je posvećena algoritamskom čišćenju podataka gde pokušavamo da prepoznamo obrazac greške kako bismo sve takve greške ispravili u što manje koraka. Sadržaj je napredniji i teži za razumevanje nego u ostalim sveskama. Svejedno, važno je da vidimo kako čišćenje podataka funkcioniše i zašto je neophodno za kvalitetnu analizu podataka.</p>
 </div></blockquote>
 <p>Velike količine podataka koje prikupljaju i unose različiti ljudi uvek nose rizik od nedoslednosti u pogledu formata unosa. Sa mašinama je lako, ali ljudi u skladu sa svojom kulturom, navikama ili potrebom da budu kreativni često unose ono što nam ne treba. Za mašinski čitljive podatke je najvažnije da imaju poznatu strukturu i da budu formatirani na isti način. Ovo možda zvuči kao nepotrebno cepidlačenje, ali nije. Ljudi koji se bave obradom i analizom podataka najveći deo svog vremena troše na čišćenje podataka (eng. <em>data cleaning</em>).</p>
-<p>Uvek treba imati na umu da je čišćenje podataka, u krajnjoj liniji, proizvoljno menjanje podataka o kojima znamo manje od onoga ko je podatke unosio. Normalno je da oni koji unose podatke naprave previd ili podatak unesu na pogrešan način. Isto tako je normalno da mi to primetimo i napravimo korekciju. Za neke druge podatke, opet, ne znamo šta da mislimo; možda je greška, možda nije. Granica je svakako subjektivna. Onaj ko čisti podatke mora da ima znanje iz oblasti na koju se podaci odnose, da zna šta je moguće a šta nije, šta može da bude verodostojno, a šta je sigurno greška. Baš zbog toga što je kriterijum za korekciju podataka subjektivan ne možemo potpuno da ga automatizujemo. To moraju da rade ljudi koji znaju kontekst podataka. Mašina može da pomogne da to uradimo brže.</p>
+<p>Uvek treba imati na umu da je čišćenje podataka, u krajnjoj liniji, proizvoljno menjanje podataka o kojima znamo manje od onoga ko je podatke unosio. Normalno je da oni koji unose podatke ponekad naprave previd ili podatak unesu na pogrešan način. Isto tako je očekivano da mi to primetimo i napravimo korekciju. Za neke druge podatke, opet, ne znamo šta da mislimo; možda je greška, možda nije. Granica je svakako subjektivna. Onaj ko čisti podatke mora da ima znanje iz oblasti na koju se podaci odnose, da zna šta je moguće a šta nije, šta može da bude verodostojno, a šta je sigurno greška. Baš zbog toga što je kriterijum za korekciju podataka subjektivan ne možemo potpuno da ga automatizujemo. To moraju da rade ljudi koji znaju kontekst podataka. Mašina može da pomogne da to uradimo brže.</p>
 <p>Nas u ovom kursu interesuju pre svega podaci spakovani u tabele, odnosno jednu konkretnu tabelarnu strukturu <em>DataFrame</em>. Ova struktura, kao i funkcije za rad sa njom, sastavni su deo biblioteke <strong>pandas</strong> pa je uputno na početku rada sa podacima u Pajtonu uvek prvo učitati ovu biblioteku.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -935,10 +943,10 @@
 </div></div></div>
 </div>
 <p>Čak i površan uvid u podatke otkriva da ima mnogo polja u kojima piše NaN što znači da tog podatka nema, a da je neki softver prazno polje zamenio ovom oznakom. Nadajmo se da se nijedan izdavač ili knjiga ne zovu baš “NaN”. Takođe, vidimo da neki podaci nisu konzistentno unošeni. Za godinu izdanja (<em>Date of Publication</em>) uglavnom stoji broj, ali ima i onih sa uglastim zagradama. Imena autora izgledaju kao haos posebne vrste.</p>
-<div class="section" id="indeksna-kolona">
+<section id="indeksna-kolona">
 <h2>Indeksna kolona<a class="headerlink" href="#indeksna-kolona" title="Permalink to this headline">¶</a></h2>
 <p>Vrlo važna karakteristika funkcionalne tabele sa podacima jeste da ima kolonu u kojoj se vrednosti ne ponavljaju. Takvih kolona može biti više, ali jednu od njih treba izabrati za “glavnu” i proglasiti je indeksnom kolonom. Takva kolona nam omogućava jednoznačno označavanje redova u tabeli. Svaki element te kolone odgovara tačno jednom redu u tabeli.</p>
-<p>Da bismo se na sličan način pozivali na kolone u tabeli, potreban nam je “indeksni red”. On već postoji. To je zapravo zaglavlje tabele, odnosno red u kom su nazivi kolona. Nazivi kolona ne mogu da se ponavljaju pa je su vrednosti u tom redu jedinstvene.</p>
+<p>Da bismo se na sličan način pozivali na kolone u tabeli, potreban nam je “indeksni red”. On već postoji. To je zapravo zaglavlje tabele, odnosno red u kom su nazivi kolona. U Pajtonu nazivi kolona ne mogu da se ponavljaju pa su vrednosti u tom redu jedinstvene.</p>
 <p>Svaki <em>DataFrame</em> automatski dobija svoju indeksnu kolonu. Ako mi ne kažemo mašini koja je to kolona, Pajton će sam dodeliti kolonu sa indeksom 0, 1, 2, 3… Najvažnije svojstvo indeksne kolone je da sadrži jedinstvene podatke. Ako se podaci u koloni ponavljaju onda ona ne može da bude indeksna.</p>
 <p>U tabeli <strong>bibreg</strong> postoji kolona <strong>Identifier</strong> koja bi mogla da bude taj jedinstveni identifikator koji su uneli bibliotekari mnogo pre nego što se neko setio da pravi tabele u Pajtonu. Da li su sve vrednosti u koloni jedinstvene možemo da proverimo funkcijom <code class="docutils literal notranslate"><span class="pre">is.unique()</span></code>.</p>
 <div class="cell docutils container">
@@ -956,7 +964,7 @@
 <p>Jeste jedinstvena. To znači da možemo nju da koristimo umesto automatski dodeljenog niza nenegativnih celih brojeva. To ćemo učiniti pomoću funkcije <code class="docutils literal notranslate"><span class="pre">set_index()</span></code>. Glavni argument ove funkcije je naziv kolone koju ćemo proglasiti za indeksnu, ali argumenata može da bude više. Ovde ćemo iskoristiti argument <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code> koji Pajtonu saopštava da hoćemo da promeni i zapamti sadržaj tabele. Bez toga bismo samo dobili ispis u kom je postavljena indeksna kolona dok bi u memoriji ostao isti onaj stari DataFrame. Naravno, isti rezultat bismo mogli da dobijemo i ako novoj tabeli pridružimo izmenjenu tabelu: <code class="docutils literal notranslate"><span class="pre">bibreg=bibreg.set_index('Identifier')</span></code>. To su dva načina da dobijemo isti rezultat. Birajte šta vam se više sviđa.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibreg</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Identifier&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibreg</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Identifier&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">bibreg</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1103,8 +1111,8 @@
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="pristupanje-podacima-pomocu-pristupnika-loc-i-iloc">
+</section>
+<section id="pristupanje-podacima-pomocu-pristupnika-loc-i-iloc">
 <h2>Pristupanje podacima pomoću “pristupnika” loc[] i iloc[]<a class="headerlink" href="#pristupanje-podacima-pomocu-pristupnika-loc-i-iloc" title="Permalink to this headline">¶</a></h2>
 <p>Sad kad imamo indeksnu kolonu, podacima u tabeli možemo da pristupamo na različite načine. <code class="docutils literal notranslate"><span class="pre">loc[]</span></code> i <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> su posebni načini pristupa podacima preko oznaka i indeksa. U prvom slučaju koristimo oznake, tj. podatke iz indeksne kolone i nazive kolona, a u drugom redne brojeve redova i kolona koji počinju nulom. Evo primera kako možemo da ih upotrebimo. Primetite kako se indeksna kolona ne broji kao ni red u kom su nazivi kolona.</p>
 <div class="cell docutils container">
@@ -1182,8 +1190,8 @@ Name: Place of Publication, Length: 8287, dtype: object
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="izbor-kolona">
+</section>
+<section id="izbor-kolona">
 <h2>Izbor kolona<a class="headerlink" href="#izbor-kolona" title="Permalink to this headline">¶</a></h2>
 <p>Tabele sa podacima znaju da budu prevelike. Ne zbog memorije računara, nego zato što ne možemo lako da vidimo podatke na ekranu. Zato je uvek dobro osloboditi se balasta na početku. Ako nam za konkretan zadatak neke kolone (ili redovi) nisu potrebne, onda ih treba odmah izbrisati i raditi sam manjom tabelom.</p>
 <p>Ako nam je potrebno svega nekoliko kolona, najbolje je da njihove nazive stavimo u listu i svedemo <em>DataFrame</em> tako da sadrži samo njih. U suprotnom, ako hoćemo samo neke da isključimo, stavimo ih u listu i pozovemo funkciju <code class="docutils literal notranslate"><span class="pre">drop()</span></code> iz <strong>pandas</strong> biblioteke. Na primer, možemo da stavimo kao argument funkcije <code class="docutils literal notranslate"><span class="pre">drop()</span></code> listu za_brisanje koju smo prethodno definisali kao <code class="docutils literal notranslate"><span class="pre">za_brisanje=['Edition</span> <span class="pre">Statement','Corporate</span> <span class="pre">Author','Corporate</span> <span class="pre">Contributors','Former</span> <span class="pre">owner','Engraver','Contributors','Issuance</span> <span class="pre">type','Shelfmarks']</span></code>. Priznaćete, malo je zametno navoditi sve nazive kolona koje hoćemo da obrišemo. Alternativa je da istu listu definišemo preko rednih brojeva kolona: <code class="docutils literal notranslate"><span class="pre">za_brisanje=bibreg.columns[[0,6,7,8,9,10,11,13]]</span></code>.</p>
@@ -1196,12 +1204,12 @@ Name: Place of Publication, Length: 8287, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibreg</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">za_brisanje</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibreg</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">za_brisanje</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Argument <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> kaže funkciji da treba obrisati kolone. Da je ta vrednost 0, funkcija bi obrisala redove.</p>
+<p>Argument <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> kaže funkciji da treba obrisati kolone. Da je ta vrednost 0, funkcija bi obrisala redove. Drugi argument, <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code> znači da se brisanje kolona dešava u samoj tabeli <strong>bibreg</strong>, a ne u njenoj kopiji, što znači da će originalna tabela nakon ovoga biti promenjena.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibreg</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1294,7 +1302,7 @@ Name: Place of Publication, Length: 8287, dtype: object
 </table>
 </div></div></div>
 </div>
-<div class="section" id="priprema-numerickih-podataka">
+<section id="priprema-numerickih-podataka">
 <h3>Priprema numeričkih podataka<a class="headerlink" href="#priprema-numerickih-podataka" title="Permalink to this headline">¶</a></h3>
 <p>Sada imamo tabelu sa manje kolona gde je prilično jasno šta je sadržaj. Ono što je sporno je forma sadržaja. U drugoj koloni bi trebalo da budu brojevi koji označavaju godine. Međutim, mašina tu ne vidi brojeve već tekst. CSV fajlovi ne čuvaju podatke o tipu promenljive. Za Pajton je odmah po učitavanju sve između zareza string. Za bilo kakvu numeričku analizu, npr. traženje minimuma, zbira ili srednje vrednosti potrebno je podacima promenimo tip promenljive. Dok god postoje u koloni elementi sa znacima koji nisu cifre, minus i decimalna tačka to neće biti moguće.</p>
 <p>Probajte da nađete najstariju knjigu u registru. To bi trebalo da bude najmanji broj u koloni pomoću funkcije <code class="docutils literal notranslate"><span class="pre">min()</span></code>.</p>
@@ -1408,11 +1416,11 @@ Name: Date of Publication, dtype: object
 <p>Automatsko čišćenje podataka u ovoj koloni nije jednostavno. Prvo, zato što nismo sigurni šta treba da prepoznamo kao broj. Drugo, zato što ne postoji jednostavan način za to.</p>
 <p>Da se dogovorimo prvo šta treba da prepoznamo kao broj. Jedno rešenje (koje ne mora da bude najbolje) je da tražimo samo one elemente u koloni koji počinju sa četiri cifre, da te četiri cifre pretvorimo u broj, a da sve ostalo zanemarimo. To znači da bi prvi element bio 1879, drugi 1868 itd.</p>
 <p>Način na koji ćemo to uraditi je da prepoznamo deo teksta koristeći regularne izraze. Ovo je dosta komplikovana tema koju ovde ne možemo da obradimo. Možda je najbolje da nam verujete da to tako zaista radi.</p>
-</div>
-<div class="section" id="regularni-izrazi">
+</section>
+<section id="regularni-izrazi">
 <h3>Regularni izrazi<a class="headerlink" href="#regularni-izrazi" title="Permalink to this headline">¶</a></h3>
 <p>Regularni izrazi (eng. <em>regular expressions</em>) su kodirani opisi sadržaja u nekom tekstu. Pajton može da pretraži niz tekstualnih podataka u potrazi za sadržajem koji odgovaraju tom opisu. Način na koji se kodiraju regularni izrazi nisu baš intuitivni. Drugim rečima, ako su vam načini na koji se zapisuju i rade regularni izrazi zbunjujući i nerazumljivi, to je sasvim normalno.</p>
-<p>Mi ćemo pomoću regularnih izraza da potražimo grupe od četiri cifre na početku tekstualne promenljive. <a class="reference external" href="https://regex101.com/r/3AJ1Pv/1">Regularni izraz</a> koji to opisuje je <code class="docutils literal notranslate"><span class="pre">^(\d{4})</span></code>. Kod <code class="docutils literal notranslate"><span class="pre">\d</span></code> označava <em>digit</em>, odnosno bilo koju cifru, <code class="docutils literal notranslate"><span class="pre">{4}</span></code> znači da se cifre ponavljaju tačno 4 puta, zagrade označavaju grupu koju treba obeležiti, a kod <code class="docutils literal notranslate"><span class="pre">^</span></code> da se tim tekstom počinje red. Za razliku od običnog teksta koji stavljamo pod navodnike kad ga pridružujemo promenljivoj, ovde ispred navodnika stoji slovo <code class="docutils literal notranslate"><span class="pre">r</span></code> koje označava da to nije običan tekst već kodirani opis teksta.</p>
+<p>Mi ćemo pomoću regularnih izraza da potražimo grupe od četiri cifre na početku tekstualne promenljive. <a class="reference external" href="https://regex101.com/r/3AJ1Pv/1">Regularni izraz</a> koji to opisuje je <code class="docutils literal notranslate"><span class="pre">^(\d{4})</span></code>. Kôd <code class="docutils literal notranslate"><span class="pre">\d</span></code> označava <em>digit</em>, odnosno bilo koju cifru, <code class="docutils literal notranslate"><span class="pre">{4}</span></code> znači da se cifre ponavljaju tačno 4 puta, zagrade označavaju grupu koju treba obeležiti, a kôd <code class="docutils literal notranslate"><span class="pre">^</span></code> da se tim tekstom počinje red. Za razliku od običnog teksta koji stavljamo pod navodnike kad ga pridružujemo promenljivoj, ovde ispred navodnika stoji slovo <code class="docutils literal notranslate"><span class="pre">r</span></code> koje označava da to nije običan tekst već kodirani opis teksta.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">maska</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^(\d</span><span class="si">{4}</span><span class="s1">)&#39;</span>
@@ -1730,8 +1738,8 @@ Name: Date of Publication, Length: 8287, dtype: object
 <p>8287 rows × 7 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="ciscenje-tekstualnih-podataka">
+</section>
+<section id="ciscenje-tekstualnih-podataka">
 <h3>Čišćenje tekstualnih podataka<a class="headerlink" href="#ciscenje-tekstualnih-podataka" title="Permalink to this headline">¶</a></h3>
 <p>Za razliku od numeričkih podataka, tekstualne možemo da analiziramo i pre čišćenja. Za tekst imamo drugu vrste analize (koliko ima kojih elemenata, kog ima najviše itd.). Rezultati možda neće biti najpouzdaniji, ali ćemo dobiti nešto informativno. Da vidimo, na primer, statistiku mesta izdavanja knjiga iz registra <strong>bibreg</strong>.</p>
 <div class="cell docutils container">
@@ -2014,7 +2022,7 @@ Name: 0, dtype: int64
 </div>
 </div>
 </div>
-<p>Ovo je izgleda pomoglo više. Sada imamo 49 oblika zapisa manje. Broj zapisa gde je London mesto izdavanja se povećao sa 3868 na 3923. To znači da smo za kratko vreme napravili pomak. Da smo ručno čistili podatke, mnogo više vremena bi nam trebalo. Na sličan način bismo mogli da čistimo i uglaste zagrade, da brišemo nazive država iz zapisa (npr. U.S.A.), ali bi korišćenje regularnih izraza bilo vrlo poželjno. Probajte sami šta možete da očistite na ovaj način.</p>
+<p>Ovo je izgleda pomoglo više. Sada imamo 49 oblika zapisa manje. Broj zapisa gde je London mesto izdavanja se povećao sa 3868 na 3923. To znači da smo za kratko vreme napravili pomak. Da smo ručno čistili podatke, više vremena bi nam trebalo. Na sličan način bismo mogli da čistimo i uglaste zagrade, da brišemo nazive država iz zapisa (npr. U.S.A.), ali bi korišćenje regularnih izraza bilo vrlo poželjno. Probajte sami šta možete da očistite na ovaj način.</p>
 <p>Sada da zamenimo konkretne zapise koje smo pominjali ranije.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2325,8 +2333,8 @@ Name: Author, dtype: int64
 </div>
 </div>
 <p>Ovde, ipak, sve izgleda čisto. Zato nećemo trošiti više vremena na obradu ove kolone.</p>
-</div>
-<div class="section" id="datum-i-vreme">
+</section>
+<section id="datum-i-vreme">
 <h3>Datum i vreme<a class="headerlink" href="#datum-i-vreme" title="Permalink to this headline">¶</a></h3>
 <p>Slično kao što Pajton ne prepoznaje brojeve u “prljavoj” koloni, ne prepoznaje ni datume i vreme. Da bismo mogli da analiziramo vremenske podatke, neophodno je da ih zabeležimo u istom formatu i da ih konvertujemo u odgovarajući, <em>DateTime</em> format pomoću funkcije <code class="docutils literal notranslate"><span class="pre">to_datetime()</span></code>. U primeru sa bibliotečkim registrom, doduše, to nema mnogo smisla jer su date samo godine bez datuma pa je i samo jedan broj dovoljan da prikaže godinu izdanja.</p>
 <p>String koji sadrži datum, prema ISO standardu, treba da ima format <strong>‘YYYY-MM-DD’</strong> ili <strong>‘YYYY-MM-DD HH:MM:SS’</strong> ako sadrži i vreme. Ukoliko Pajton pročita ovakav string, umeće lako da ga pretvori u promenljivu tipa datum odakle možemo da pročitamo godinu, dan, mesec itd. Ako je datum zapisan string u ovom formatu, onda nema potrebe da naglašavamo koji je format. Međutim, ako umesto 2021-07-13 stoji 12. 7. 2021. ili July 13, 2021 onda moramo Pajtonu tačno da kažemo kako da pričita taj podatak.</p>
@@ -2365,12 +2373,12 @@ Name: Author, dtype: int64
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="bonus-problemi">
+</section>
+</section>
+<section id="bonus-problemi">
 <h2>Bonus problemi<a class="headerlink" href="#bonus-problemi" title="Permalink to this headline">¶</a></h2>
 <p>Čišćenje podataka u Srbiji je malo izazovnije nego u većini drugih (evropskih) zemalja. Prvi razlog za to je što koristimo dva pisma pa se često suočavamo sa nekonzistentno unetim podacima. Drugi razlog je nedosledna upotreba decimalnog zareza. Na računaru i kalkulatoru obično koristimo tačku, a zvanični dokumenti traže zarez. Još gore, separator za hiljade je u srpskom jeziku tačka, a u engleskom zarez. Konačno, treći razlog za izazovnije čišćenje podataka je nedosledno zapisivanje datuma.</p>
-<div class="section" id="cirilica-i-latinica">
+<section id="cirilica-i-latinica">
 <h3>Ćirilica i latinica<a class="headerlink" href="#cirilica-i-latinica" title="Permalink to this headline">¶</a></h3>
 <p>U sledećoj ćeliji izgleda kao da smo isti kôd napisali dva puta. Logično, očekujemo da će izlaz u oba slučaja biti isti. Međutim, slovo A je jednom ukucano korišćenjem latinične, a drugi put korišćenjem ćirilične tastature. Pajton je primetio tu razliku i zapamtio dve različite vrednosti ASCII kôdova. To što A i A izgledaju isto, ne znači da ih računar isto registruje.</p>
 <div class="cell docutils container">
@@ -2418,22 +2426,14 @@ ASCII vrednost znaka &#39;А&#39; je 1040
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">j1</span><span class="o">/</span><span class="n">q1_l0vfs66zfhnv67vv0bp700000gq</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_978</span><span class="o">/</span><span class="mf">2286632340.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">cyrtranslit</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># iz latinice u ćirilicu</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">cyrtranslit</span><span class="o">.</span><span class="n">to_cyrillic</span><span class="p">(</span><span class="s2">&quot;daždevnjak&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;cyrtranslit&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>даждевњак
+mravinjak
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="decimalni-zarez-i-decimalna-tacka">
+</section>
+<section id="decimalni-zarez-i-decimalna-tacka">
 <h3>Decimalni zarez i decimalna tačka<a class="headerlink" href="#decimalni-zarez-i-decimalna-tacka" title="Permalink to this headline">¶</a></h3>
 <p>Kada učitavate ili snimate fajl sa podacima koji su decimalni brojevi, vodite računa da li se koristi decimalna tačka ili zarez. Zvanični podaci u Srbiji bi trebalo da uvek imaju decimalni zarez. Ako koristimo CSV format, to će sigurno biti problem. Ne može isti znak da odvaja celobrojni i decimаlni deo broja, kao i da odvaja pojedinačne podatke u fajlu. Rešenje za ovaj problem je da separator umesto zareza bude tačka-zarez što dobijamo postavljanjem parametra <code class="docutils literal notranslate"><span class="pre">sep=&quot;;&quot;</span></code> u funkciji <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>. Ovakav format se ponekad naziva CSV2.</p>
 <p>Ovde samo navodimo primer kako se učitava tabela iz CSV fajla gde separator nije zarez. Ovaj fajl ćemo više koristiti u narednim sveskama.</p>
@@ -2445,7 +2445,7 @@ ASCII vrednost znaka &#39;А&#39; je 1040
 </div>
 </div>
 <p>Alternativno rešenje je da se ipak koristi zarez kao separator, ali da se sve vrednosti stave pod znake navoda postavljajući parametar <code class="docutils literal notranslate"><span class="pre">quotechar='&quot;'</span></code>. Tada je potrebno da se tabele i snimaju i da se učitavaju sa podacima stavljenim pod navodnike.</p>
-<p>Kako bi se izbegli problemi sa formatima teksualnog zapisa, često se koristi robusniji format podataka koji nije osetljiv na pismo koje koristimo ili izbor separatora. JSON (<em>JavaScript Object Notation</em>) format služi za prenošenje složenijih struktura podatka između različitih platformi. Taj format za prenos podataka, isti za volju, nije baš pregledan ali je razumljiv i ljudima i mašinama. Otvoreni podaci su najčešće dostupni upravo u ova dva formata: CSV i JSON.</p>
+<p>Kako bi se izbegli problemi sa formatima teksualnog zapisa, često se koristi robusniji format podataka koji nije osetljiv na pismo koje koristimo ili izbor separatora. JSON (<em>JavaScript Object Notation</em>) format služi za prenošenje složenijih struktura podatka između različitih platformi. Taj format za prenos podataka, istini za volju, nije baš pregledan ali je razumljiv i ljudima i mašinama. Otvoreni podaci su najčešće dostupni upravo u ova dva formata: CSV i JSON.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pokazatelji</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;data/03IND01.json&quot;</span><span class="p">)</span>
@@ -2467,9 +2467,9 @@ ASCII vrednost znaka &#39;А&#39; je 1040
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2495,7 +2495,21 @@ ASCII vrednost znaka &#39;А&#39; je 1040
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="2%20Eksplorativna%20analiza%20podataka.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Eksplorativna analiza podataka</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="4%20Deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Deskriptivna analiza numeričkih podataka</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>

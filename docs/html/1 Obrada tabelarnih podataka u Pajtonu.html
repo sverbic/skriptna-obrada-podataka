@@ -307,8 +307,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ucitavanje-velike-tabele-sa-podacima">
-   Učitavanje velike tabele sa podacima
+  <a class="reference internal nav-link" href="#ucitavanje-tabele-sa-podacima">
+   Učitavanje tabele sa podacima
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -339,8 +339,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slozeni-kriterijumi">
-     Složeni kriterijumi
+    <a class="reference internal nav-link" href="#slozeni-kriterijumi-za-filtriranje">
+     Složeni kriterijumi za filtriranje
     </a>
    </li>
   </ul>
@@ -353,11 +353,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#povezivanje-tabela">
    Povezivanje tabela
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#snimanje-podataka">
-   Snimanje podataka
   </a>
  </li>
 </ul>
@@ -759,8 +754,8 @@ Name: Piće, dtype: object
 <p>Pošto znamo kako se formiraju tabele i kako se pristupa njihovim elementima, možemo da pređemo na obradu veće tabele koju ćemo učitati iz fajla.</p>
 </section>
 </section>
-<section id="ucitavanje-velike-tabele-sa-podacima">
-<h2>Učitavanje velike tabele sa podacima<a class="headerlink" href="#ucitavanje-velike-tabele-sa-podacima" title="Permalink to this headline">¶</a></h2>
+<section id="ucitavanje-tabele-sa-podacima">
+<h2>Učitavanje tabele sa podacima<a class="headerlink" href="#ucitavanje-tabele-sa-podacima" title="Permalink to this headline">¶</a></h2>
 <p>Podatke najčešće čuvamo u formatima koji nisu jednostavni za učitavanje. Formati kao što su DOCX, XLSX, PDF ili HTML odgovaraju čoveku koji čita podatke, ali ne i mašini. Za skriptnu obradu podataka su mnogo pogodniji jednostavni, dobro dokumentovani i otvoreni formati za koje ne moramo da koristimo bilo kakav poseban komercijalni softver. Čak i kada se podaci učitavaju iz vrlo složenih formata oni se transformišu u tabele koje se čuvaju u svega nekoliko osnovnih formata. Najčešće se za tabelarne podatke koristi <em>Comma Separated Value</em> (CSV) format gde se vrednosti odvojene zarezom zapisane u tekstualnom formatu.</p>
 <p>Za potrebe rada u ovoj svesci koristićemo fajl sa podacima koji se odnose na sva veća postrojenja za proizvodnju električne energije u svetu. Njih možete sami da preuzmete sa interneta sa <a class="reference external" href="https://datasets.wri.org/dataset/globalpowerplantdatabase">Global Power Plant Database</a>, ali smo ih zbog jednostavnosti postavili u poddirekterijum <strong>/data</strong> našeg radnog direktorijuma. Tu se nalaze i svi ostali fajlovi sa podacima koji će nam biti potrebni u ovom kursu. Za početak, učitavamo fajl koji sadrži spisak svih velikih elektrana u svetu.</p>
 <div class="cell docutils container">
@@ -1222,7 +1217,7 @@ memory usage: 9.6+ MB
 </section>
 <section id="tabulacija">
 <h2>Tabulacija<a class="headerlink" href="#tabulacija" title="Permalink to this headline">¶</a></h2>
-<p>Jedan od prvih koraka u “eksplorativnoj analizi podataka”, odnosno utvrđivanju šta sve imamo u tabeli jeste da prebrojimo koliko čega ima. Ono što se stručno zove tabulacija, kros-tabulacija ili <em>contingency table</em> je zapravo obično prebrojavanje elemenata po kategorijama. Za početak, uzećemo kolonu sa oznakama zemalja u kojima se nalaze elektrane u prebrojati ih pomoću funkcije <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>. To će nam reći koliko ima elektrana u kojoj zemlji. Pri tome će funkcija koja prebrojava elemente sortirati niz od najvećeg ka najmanjem pa će na prvom mestu biti zemlja sa najvećim brojem elektrana u ovoj tabeli.</p>
+<p>Jedan od prvih koraka u eksplorativnoj analizi podataka, odnosno utvrđivanju šta sve imamo u tabeli jeste da prebrojimo koliko čega ima. Ono što se stručno zove tabulacija, kros-tabulacija ili <em>contingency table</em> je zapravo obično prebrojavanje elemenata po grupama ili kategorijama. Za početak, uzećemo kolonu sa oznakama zemalja u kojima se nalaze elektrane u prebrojati ih pomoću funkcije <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>. To će nam reći koliko ima elektrana u kojoj zemlji. Pri tome će funkcija koja prebrojava elemente sortirati niz od najvećeg ka najmanjem pa će na prvom mestu biti zemlja sa najvećim brojem elektrana u ovoj tabeli.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elektrane</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
@@ -1249,7 +1244,11 @@ Length: 167, dtype: int64
 </div>
 <section id="kros-tabulacija">
 <h3>Kros-tabulacija<a class="headerlink" href="#kros-tabulacija" title="Permalink to this headline">¶</a></h3>
-<p>Kros-tabulacija je prebrojavanje elemenata po dve odvojene kategorije. Ovde ćemo, na primer, prebrojati koliko se puta pominje koja zemlja za svaki tip primarnih goriva. Tako ćemo videti ko ima koliko elektrana na vetar, koliko nuklearnih elektrana itd. Da bismo to uradili nije dovoljna funkcija <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> već moramo da razdvojimo kolone koje ćemo tretirati kao posebne kategorijalne promenljive. Funkcija <code class="docutils literal notranslate"><span class="pre">crosstab()</span></code> zahteva dva argumenta tog tipa. To su upravo dve kolone naše tabele.</p>
+<p>Kros-tabulacija je prebrojavanje elemenata u tabeli po svim vrednostima u dve različite kategorije. Ovde ćemo, na primer, u tabeli <strong>elektrane</strong> prebrojati koliko se puta koja zemlja pominje za svaki tip primarnih goriva. Tako ćemo videti ko ima koliko elektrana na vetar, koliko nuklearnih elektrana itd. Da bismo to uradili nije dovoljna funkcija <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> već moramo da razdvojimo kolone koje ćemo tretirati kao posebne promenljive. Funkcija <code class="docutils literal notranslate"><span class="pre">crosstab()</span></code> zahteva dva argumenta. To su upravo dve kolone naše tabele.</p>
+<div class="admonition-napomena admonition">
+<p class="admonition-title">Napomena</p>
+<p>Ponekad nizovi imaju previše različitih vrednosti pa tabulacija po svim tim vrednostima ne bi imala svrhu. Tabela kontingencije sa stotinama kolona ili redova koju dobijamo kros-tabulacijom ne bi bila pregledna. Ako je promenljiva kontunualna možda bi trebalo grupisati vrednosti po intervalima baš kao što to radimo kod histograma pa tek onda prebrojavati elemente. Tako ćemo dobiti manju i preglednu tabelu. Slično možemo da grupišemo i tekstualne vrednosti. Poenta kros-tabulacije je da dobijemo jasan i koristan pregled zastupljenosti elemenata po grupama.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zemljа</span><span class="o">=</span><span class="n">elektrane</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span>
@@ -1729,7 +1728,7 @@ Name: country, Length: 34936, dtype: object
 <p>34936 rows × 8 columns</p>
 </div></div></div>
 </div>
-<p>Tabela nam pokazuje da hidroelektrana “Tri klisure” u Kini ima najveći kapacitet: 22,5 gigavata. Neki od nas su u školi učili da Huverova elektrana na reci Kolorado proizvodi najviše struje. Davno je to bilo. Izgleda da se nešto promenilo. Da bismo utvrdili koja je po redu Huverova elektrana danas potrebno je da elektranama pridružimo poziciju na rang-listi. Najbolje je da celoj tabeli dodamo kolonu u kojoj će biti rang elektrane od najveće do najmanje. Tu kolonu ćemo nazvati <strong>rank</strong>. (I ostali nazivi kolona su nam na engleskom, zar ne?)</p>
+<p>Tabela nam pokazuje da hidroelektrana “Tri klisure” u Kini ima najveći kapacitet: 22,5 gigavata. Gde li se ovde nalaze elektrane koje su sredinom prošlog veka važile za arhitektonska i inženjerska čuda kao što npr. Huverova elektrana na reci Kolorado ili Asuanska na Nilu? Da bismo utvrdili koja je po redu Huverova elektrana danas potrebno je da elektranama pridružimo poziciju na rang-listi. Najbolje je da celoj tabeli dodamo kolonu u kojoj će biti rang elektrane od najveće do najmanje. Tu kolonu ćemo nazvati <strong>rank</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elektrane</span><span class="p">[</span><span class="s1">&#39;rank&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">elektrane</span><span class="p">[</span><span class="s1">&#39;capacity_mw&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -2146,9 +2145,9 @@ Name: country, Length: 34936, dtype: object
 </table>
 </div></div></div>
 </div>
-<p>Sad je jasno zašto malopre nismo našli Đerdap. Trebalo je da ga napišemo velikim slovima. Ili, što bi bilo još bolje kažemo da <code class="docutils literal notranslate"><span class="pre">str.contains()</span></code> ne bude osetljiv na to da li su slova mala ili velika. Svejedno, sad imamo podatak da je Đerdap 1 1452. najveća elektrana na svetu. Termoelektrane u Obrenovcu su nam nešto bolje plasirane. Možda time ne bi trebalo da se hvalimo, ali možemo da konstatujemo.</p>
-<section id="slozeni-kriterijumi">
-<h3>Složeni kriterijumi<a class="headerlink" href="#slozeni-kriterijumi" title="Permalink to this headline">¶</a></h3>
+<p>Sad je jasno zašto malopre nismo našli Đerdap. Trebalo je da ga napišemo velikim slovima. Ili, što bi bilo još bolje kažemo da <code class="docutils literal notranslate"><span class="pre">str.contains()</span></code> ne bude osetljiv na to da li su slova mala ili velika. Svejedno, sad imamo podatak da je Đerdap I 1452. najveća elektrana na svetu. Termoelektrane u Obrenovcu su nam nešto bolje plasirane. Možda time ne bi trebalo da se hvalimo, ali možemo da konstatujemo.</p>
+<section id="slozeni-kriterijumi-za-filtriranje">
+<h3>Složeni kriterijumi za filtriranje<a class="headerlink" href="#slozeni-kriterijumi-za-filtriranje" title="Permalink to this headline">¶</a></h3>
 <p>Logički iskaz pomoću kog filtriramo podatke u tabeli može da bude složeniji. Evo primera kako koristimo dva uslova: da je elektrana u Srbiji i da je tipa “Hydro”. Da bi rezultat logičkog iskaza bio izračunat kako treba oba pojedinačna iskaza stavite u zagrade i razdvojte znakom <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2580,10 +2579,10 @@ Name: country, Length: 34936, dtype: object
 </div></div></div>
 </div>
 <p>Dovoljno je baciti pogled na tabelu pa da vidimo da je u jednoj tabeli “Afghanistan”, a u drugoj “Afghanistan, Islamic Republic of”. Srećom, kolone <strong>country</strong> u prvoj i <strong>Three_Letter_Country_Code</strong> imaju iste troslovne oznake: “AFG” je na oba mesta. Nadamo se da se podaci podudaraju i za druge zemlje.</p>
-<p>Pomoću funkcije <code class="docutils literal notranslate"><span class="pre">merge()</span></code> iz <strong>pandas</strong> biblioteke možemo da spojimo dve tabele. To možemo da uradimo tako što od dve tabele pravimo treću ili tako što jednu dopunjujemo podacima iz druge. Svejedno, argumenti funkcije treba da budu nazivi tabela i kolona po kojima ih povezujemo. Lakše je ako se te kolone zovu isto u obe tabele. Onda je dovoljan jedan argument, npr. <code class="docutils literal notranslate"><span class="pre">on=&quot;country&quot;</span></code>, ali to kod nas nije slučaj pa smo naveli oba: <code class="docutils literal notranslate"><span class="pre">left_on</span></code> i <code class="docutils literal notranslate"><span class="pre">right_on</span></code>. Imajte u vidu da se liste po kojima povezujemo tabele možda ne poklapaju savršeno. Podrazumevani argument je <code class="docutils literal notranslate"><span class="pre">how=&quot;inner&quot;</span></code> što znači da će nova tabela imati samo one redove koje se nalaze i u prvoj i u drugoj. To možemo da menjamo, ali se nećemo sad u to upuštati.</p>
+<p>Pomoću funkcije <code class="docutils literal notranslate"><span class="pre">merge()</span></code> iz <strong>pandas</strong> biblioteke možemo da spojimo dve tabele. To možemo da uradimo tako što od dve tabele pravimo treću ili tako što jednu dopunjujemo podacima iz druge. Svejedno, argumenti funkcije treba da budu nazivi tabela i kolona po kojima ih povezujemo. Lakše je ako se te kolone zovu isto u obe tabele. Onda je dovoljan jedan argument, npr. <code class="docutils literal notranslate"><span class="pre">on=&quot;country&quot;</span></code>, ali to kod nas nije slučaj pa smo naveli oba: <code class="docutils literal notranslate"><span class="pre">left_on</span></code> i <code class="docutils literal notranslate"><span class="pre">right_on</span></code>. Imajte u vidu da se liste po kojima povezujemo tabele možda ne poklapaju savršeno. Parametar <code class="docutils literal notranslate"><span class="pre">how=&quot;left&quot;</span></code> označava da će nova tabela imati sve redove koje se nalaze u prvoj tabeli bez obzira da li se nalaze i u drugoj.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">=</span><span class="n">gdf</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">zemlje</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Three_Letter_Country_Code&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">=</span><span class="n">gdf</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">zemlje</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Three_Letter_Country_Code&quot;</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2691,7 +2690,7 @@ Name: country, Length: 34936, dtype: object
       <td>...</td>
     </tr>
     <tr>
-      <th>168</th>
+      <th>169</th>
       <td>41350.490</td>
       <td>236</td>
       <td>Asia</td>
@@ -2702,7 +2701,7 @@ Name: country, Length: 34936, dtype: object
       <td>704.0</td>
     </tr>
     <tr>
-      <th>169</th>
+      <th>170</th>
       <td>1045.000</td>
       <td>7</td>
       <td>Asia</td>
@@ -2713,7 +2712,7 @@ Name: country, Length: 34936, dtype: object
       <td>887.0</td>
     </tr>
     <tr>
-      <th>170</th>
+      <th>171</th>
       <td>50422.700</td>
       <td>104</td>
       <td>Africa</td>
@@ -2724,7 +2723,7 @@ Name: country, Length: 34936, dtype: object
       <td>710.0</td>
     </tr>
     <tr>
-      <th>171</th>
+      <th>172</th>
       <td>2689.337</td>
       <td>15</td>
       <td>Africa</td>
@@ -2735,7 +2734,7 @@ Name: country, Length: 34936, dtype: object
       <td>894.0</td>
     </tr>
     <tr>
-      <th>172</th>
+      <th>173</th>
       <td>1670.000</td>
       <td>2</td>
       <td>Africa</td>
@@ -2747,10 +2746,402 @@ Name: country, Length: 34936, dtype: object
     </tr>
   </tbody>
 </table>
-<p>173 rows × 8 columns</p>
+<p>174 rows × 8 columns</p>
 </div></div></div>
 </div>
-<p>Kako bismo sad od ovoga napravili tabelu sa brojem elektrana i ukupnom snagom po kontinentima? Opet ćemo grupisati podatke.</p>
+<p>Neočekivano, ova tabela ima 174 reda, a imamo samo 167 država u fajlu elektrane. Da vidimo kako je do toga došlo? Imamo li duplikate iz nekog razloga?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">duple</span><span class="o">=</span><span class="n">gdf</span><span class="o">.</span><span class="n">Country_Name</span><span class="p">[</span><span class="n">gdf</span><span class="o">.</span><span class="n">Country_Name</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">duple</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6         Armenia, Republic of
+11     Azerbaijan, Republic of
+40         Cyprus, Republic of
+60                     Georgia
+85     Kazakhstan, Republic of
+138         Russian Federation
+160        Turkey, Republic of
+Name: Country_Name, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Iz nekog razloga ovih sedam država se pojavljuju dva puta. Da vidimo gde se u tabeli <strong>gdf</strong> nalaze ove države.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="p">[</span><span class="n">gdf</span><span class="o">.</span><span class="n">Country_Name</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">duple</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>capacity_mw</th>
+      <th>count</th>
+      <th>Continent_Name</th>
+      <th>Continent_Code</th>
+      <th>Country_Name</th>
+      <th>Two_Letter_Country_Code</th>
+      <th>Three_Letter_Country_Code</th>
+      <th>Country_Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>3271.00</td>
+      <td>8</td>
+      <td>Europe</td>
+      <td>EU</td>
+      <td>Armenia, Republic of</td>
+      <td>AM</td>
+      <td>ARM</td>
+      <td>51.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>3271.00</td>
+      <td>8</td>
+      <td>Asia</td>
+      <td>AS</td>
+      <td>Armenia, Republic of</td>
+      <td>AM</td>
+      <td>ARM</td>
+      <td>51.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>5764.00</td>
+      <td>14</td>
+      <td>Europe</td>
+      <td>EU</td>
+      <td>Azerbaijan, Republic of</td>
+      <td>AZ</td>
+      <td>AZE</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>5764.00</td>
+      <td>14</td>
+      <td>Asia</td>
+      <td>AS</td>
+      <td>Azerbaijan, Republic of</td>
+      <td>AZ</td>
+      <td>AZE</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>1468.00</td>
+      <td>3</td>
+      <td>Europe</td>
+      <td>EU</td>
+      <td>Cyprus, Republic of</td>
+      <td>CY</td>
+      <td>CYP</td>
+      <td>196.0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>1468.00</td>
+      <td>3</td>
+      <td>Asia</td>
+      <td>AS</td>
+      <td>Cyprus, Republic of</td>
+      <td>CY</td>
+      <td>CYP</td>
+      <td>196.0</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>3831.40</td>
+      <td>19</td>
+      <td>Europe</td>
+      <td>EU</td>
+      <td>Georgia</td>
+      <td>GE</td>
+      <td>GEO</td>
+      <td>268.0</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>3831.40</td>
+      <td>19</td>
+      <td>Asia</td>
+      <td>AS</td>
+      <td>Georgia</td>
+      <td>GE</td>
+      <td>GEO</td>
+      <td>268.0</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>18628.00</td>
+      <td>33</td>
+      <td>Europe</td>
+      <td>EU</td>
+      <td>Kazakhstan, Republic of</td>
+      <td>KZ</td>
+      <td>KAZ</td>
+      <td>398.0</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>18628.00</td>
+      <td>33</td>
+      <td>Asia</td>
+      <td>AS</td>
+      <td>Kazakhstan, Republic of</td>
+      <td>KZ</td>
+      <td>KAZ</td>
+      <td>398.0</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>228220.05</td>
+      <td>545</td>
+      <td>Europe</td>
+      <td>EU</td>
+      <td>Russian Federation</td>
+      <td>RU</td>
+      <td>RUS</td>
+      <td>643.0</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>228220.05</td>
+      <td>545</td>
+      <td>Asia</td>
+      <td>AS</td>
+      <td>Russian Federation</td>
+      <td>RU</td>
+      <td>RUS</td>
+      <td>643.0</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>51444.70</td>
+      <td>163</td>
+      <td>Europe</td>
+      <td>EU</td>
+      <td>Turkey, Republic of</td>
+      <td>TR</td>
+      <td>TUR</td>
+      <td>792.0</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <td>51444.70</td>
+      <td>163</td>
+      <td>Asia</td>
+      <td>AS</td>
+      <td>Turkey, Republic of</td>
+      <td>TR</td>
+      <td>TUR</td>
+      <td>792.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Očigledno ja da su ove države pridružene i Evropi i Aziji. To komplikuje grupisanje. Ono što možemo sad da uradimo je ili da isključimo ove države iz statistike ili da ih pridružimo samo jednom kontinentu. Ovo drugo ima više opravdanja. Verovatno je najbolje da Rusiju (gde većina populacije živi u Evropi) i Kipar pridružimo Evropi, a da sve ostale zemlje pridružimo Aziji. To ćemo uraditi tako što ćemo nepoželjne redove isključiti iz <strong>gdf</strong> tabele: 5, 10, 40, 59, 84, 137 i 158.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">=</span><span class="n">gdf</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">137</span><span class="p">,</span> <span class="mi">158</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>capacity_mw</th>
+      <th>count</th>
+      <th>Continent_Name</th>
+      <th>Continent_Code</th>
+      <th>Country_Name</th>
+      <th>Two_Letter_Country_Code</th>
+      <th>Three_Letter_Country_Code</th>
+      <th>Country_Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>300.550</td>
+      <td>9</td>
+      <td>Asia</td>
+      <td>AS</td>
+      <td>Afghanistan, Islamic Republic of</td>
+      <td>AF</td>
+      <td>AFG</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1071.180</td>
+      <td>14</td>
+      <td>Africa</td>
+      <td>AF</td>
+      <td>Angola, Republic of</td>
+      <td>AO</td>
+      <td>AGO</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1529.000</td>
+      <td>8</td>
+      <td>Europe</td>
+      <td>EU</td>
+      <td>Albania, Republic of</td>
+      <td>AL</td>
+      <td>ALB</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>30327.000</td>
+      <td>30</td>
+      <td>Asia</td>
+      <td>AS</td>
+      <td>United Arab Emirates</td>
+      <td>AE</td>
+      <td>ARE</td>
+      <td>784.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>32913.079</td>
+      <td>236</td>
+      <td>South America</td>
+      <td>SA</td>
+      <td>Argentina, Argentine Republic</td>
+      <td>AR</td>
+      <td>ARG</td>
+      <td>32.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>41350.490</td>
+      <td>236</td>
+      <td>Asia</td>
+      <td>AS</td>
+      <td>Vietnam, Socialist Republic of</td>
+      <td>VN</td>
+      <td>VNM</td>
+      <td>704.0</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>1045.000</td>
+      <td>7</td>
+      <td>Asia</td>
+      <td>AS</td>
+      <td>Yemen</td>
+      <td>YE</td>
+      <td>YEM</td>
+      <td>887.0</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>50422.700</td>
+      <td>104</td>
+      <td>Africa</td>
+      <td>AF</td>
+      <td>South Africa, Republic of</td>
+      <td>ZA</td>
+      <td>ZAF</td>
+      <td>710.0</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>2689.337</td>
+      <td>15</td>
+      <td>Africa</td>
+      <td>AF</td>
+      <td>Zambia, Republic of</td>
+      <td>ZM</td>
+      <td>ZMB</td>
+      <td>894.0</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>1670.000</td>
+      <td>2</td>
+      <td>Africa</td>
+      <td>AF</td>
+      <td>Zimbabwe, Republic of</td>
+      <td>ZW</td>
+      <td>ZWE</td>
+      <td>716.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>167 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>Izgleda da su sad sve države pridružene odgovarajućim kontinentima. Kako bismo sad od ovoga napravili tabelu sa brojem elektrana i ukupnom snagom po kontinentima? Jednostavno, opet ćemo grupisati podatke.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">po_kontinentima</span><span class="o">=</span><span class="n">gdf</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Continent_Name&#39;</span><span class="p">)</span>
@@ -2758,7 +3149,6 @@ Name: country, Length: 34936, dtype: object
 </div>
 </div>
 </div>
-<p>Istini za volju, ovo grupisanje nije savršeno. Ima zemalja koje su na dva kontinenta (npr. Rusija i Turska) pa se njihove elektrane broje dvaput. To bi moglo da se reši tako što njihove pojedinačne elektrane pridružujemo kontinentima, ali bi to sad bilo previše zametno. Za potrebe ove vežbe ćemo zanemariti grešku koju unosi tih nekoliko zemalja.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf2</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">po_kontinentima</span><span class="p">[</span><span class="s1">&#39;capacity_mw&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
@@ -2801,7 +3191,7 @@ Name: country, Length: 34936, dtype: object
   <tbody>
     <tr>
       <th>Africa</th>
-      <td>1.605328e+05</td>
+      <td>1.554806e+05</td>
     </tr>
     <tr>
       <th>Antarctica</th>
@@ -2809,11 +3199,11 @@ Name: country, Length: 34936, dtype: object
     </tr>
     <tr>
       <th>Asia</th>
-      <td>2.940987e+06</td>
+      <td>2.939519e+06</td>
     </tr>
     <tr>
       <th>Europe</th>
-      <td>1.140829e+06</td>
+      <td>8.811148e+05</td>
     </tr>
     <tr>
       <th>North America</th>
@@ -2831,10 +3221,8 @@ Name: country, Length: 34936, dtype: object
 </table>
 </div></div></div>
 </div>
-<p>Bez mnogo analize vidimo da Evropa proizvodi sedam puta više struje nego Afrika. Mi ovde završavamo zajedničko istraživanje na temu elektrana. Sve ostalo prepuštamo vama za samostalni rad.</p>
-</section>
-<section id="snimanje-podataka">
-<h2>Snimanje podataka<a class="headerlink" href="#snimanje-podataka" title="Permalink to this headline">¶</a></h2>
+<p>Mi ovde završavamo zajedničko istraživanje na temu elektrana. Sve ostalo prepuštamo vama za samostalni rad.</p>
+<p><strong>Snimanje podataka</strong></p>
 <p>Ostaje nam još samo jedna stvar koju moramo da uradimo pre nego što bude kasno – da snimimo rezultat. Pomoću fukcije <code class="docutils literal notranslate"><span class="pre">to_csv()</span></code> <em>DataFrame</em> ćemo lako snimiti kao CSV fajl.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -114,13 +114,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="3%20%C4%8Ci%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
-   Čišćenje podataka u Pajtonu
+  <a class="reference internal" href="3%20Priprema%20i%20%C4%8Di%C5%A1%C4%87enje%20podataka%20u%20Pajtonu.html">
+   Priprema i čišćenje podataka u Pajtonu
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="4%20Priprema%20i%20deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
-   Priprema i deskriptivna analiza numeričkih podataka
+  <a class="reference internal" href="4%20Deskriptivna%20analiza%20numeri%C4%8Dkih%20podataka.html">
+   Deskriptivna analiza numeričkih podataka
   </a>
  </li>
  <li class="toctree-l1">
@@ -159,8 +159,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="12%20Klasterska%20analiza.html">
-   Klasterska analiza
+  <a class="reference internal" href="12%20Faktorska%20i%20klasterska%20analiza.html">
+   Faktorska i klasterska analiza
   </a>
  </li>
 </ul>
@@ -1271,7 +1271,7 @@
 <p>31 rows × 25 columns</p>
 </div></div></div>
 </div>
-<p>Ono što takođe vidimo je da imamo nepotrebni red u u kom su prosečni podaci za sve timove. Taj podatak nam ne treba pa ćemo taj red obrisati pomoću funkcije <code class="docutils literal notranslate"><span class="pre">drop()</span></code>. To je u obe tabele 31. red ima u Pajtonu indeks 0.</p>
+<p>Ono što takođe vidimo je da imamo nepotrebni red u u kom su prosečni podaci za sve timove. Taj podatak nam ne treba pa ćemo taj red obrisati pomoću funkcije <code class="docutils literal notranslate"><span class="pre">drop()</span></code>. To je u obe tabele 31. red koji u Pajtonu ima indeks 30.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timovi</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2100,7 +2100,7 @@
 </div>
 </div>
 </div>
-<p>Sada možemo da povežemo statistike sa brojem pobeda. To praktično znači da ćemo tabeli dodati kolonu u kojoj piše kolikom je kojin tim ostvario pobeda.</p>
+<p>Sada možemo da povežemo statistike sa brojem pobeda. To praktično znači da ćemo tabeli dodati kolonu u kojoj piše koliko je koji tim ostvario pobeda.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabela</span><span class="o">=</span><span class="n">tabela</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">pobede</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;Team&#39;</span><span class="p">)</span>
@@ -3683,7 +3683,7 @@
 <p>30 rows × 46 columns</p>
 </div></div></div>
 </div>
-<p>Ni sada nije mnogo bolje, ali su barem sve vrednosti numeričke pa ćemo moći da izračunamo koreficijent korelacije. Usvari, biće sve numeričke kada naziv tima izmestima iz tabele i pretvorimo ga u indeksnu kolonu.</p>
+<p>Ni sada nije mnogo bolje, ali su barem sve vrednosti numeričke pa ćemo moći da izračunamo koreficijent korelacije. Usvari, biće sve numeričke kada naziv tima izmestimo iz tabele i pretvorimo ga u indeksnu kolonu.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tabela</span><span class="o">.</span><span class="n">index</span><span class="o">=</span><span class="n">tabela</span><span class="p">[</span><span class="s1">&#39;Team&#39;</span><span class="p">]</span>
@@ -4696,7 +4696,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1c1d1b692b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2a64b3ef160&gt;
 </pre></div>
 </div>
 <img alt="_images/7 Koeficijent korelacije_37_1.png" src="_images/7 Koeficijent korelacije_37_1.png" />
@@ -4714,7 +4714,7 @@
 </div>
 </div>
 </div>
-<p>Očekivano, postoji značajna korelacija između broja koševa postignutih iz igre i broja pobeda. Ko više koševa daje, češće pobeđuje. Ipak, ta veza nije sasvim pouzdana. Ne možemo reći da je većiu broj koševa garancija pobede. Vidimo da ima timova koji imau 3100 pogodaka i svega 30-35 pobeda, dok neki drugi sa 3000 pogodaka ostvaruju 50 pobeda.</p>
+<p>Očekivano, postoji značajna korelacija između broja koševa postignutih iz igre i broja pobeda. Ko više koševa daje, češće pobeđuje. Ipak, ta veza nije sasvim pouzdana. Ne možemo reći da je veći broj koševa garancija pobede. Vidimo da ima timova koji imaju 3100 pogodaka i svega 30-35 pobeda, dok neki drugi sa 3000 pogodaka ostvaruju 50 pobeda.</p>
 <p>Na sličan način kao za broj koševa, možemo da izračunamo koeeficijent korelacije sa brojem pobeda i za sve ostale promenljive. Te rezultate ćemo staviti u niz <strong>kk</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5251,13 +5251,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1c1d28c7dc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2a64c146dc0&gt;
 </pre></div>
 </div>
 <img alt="_images/7 Koeficijent korelacije_52_1.png" src="_images/7 Koeficijent korelacije_52_1.png" />
 </div>
 </div>
-<p>Kada bismo na osnovu svih dostupnih statistika pravili predikciju uspešnosti tima, broj promenljivih bi sa 45 trebalo smanjiti na nekoliko najznačajnijih koje su međusobno nezavisne. Korelacija svake promenljive sa brojem pobeda nam daje koliko su određene promenljive značajne, ali za meru nezavisnosti moramo da odredimo korelaciju svake promenljive sa svakom drugom. Pomoću funkcije <code class="docutils literal notranslate"><span class="pre">corr()</span></code> dobijamo tabelu korelacija (tkor) između podataka datih u kolonama originalne tabele (tabela).</p>
+<p>Kada bismo na osnovu svih dostupnih statistika koristeći linearni model pravili predikciju uspešnosti tima, broj promenljivih bi sa 45 trebalo smanjiti na nekoliko najznačajnijih koje su međusobno nezavisne. Korelacija svake promenljive sa brojem pobeda nam daje koliko su određene promenljive značajne, ali za meru nezavisnosti moramo da odredimo korelaciju svake promenljive sa svakom drugom. Pomoću funkcije <code class="docutils literal notranslate"><span class="pre">corr()</span></code> dobijamo tabelu korelacija (tkor) između podataka datih u kolonama originalne tabele (tabela).</p>
 <p><em>Naravno, pravljenje modela za predikciju ne treba raditi na osnovu agregiranih podataka (srednje vrednosti za celu sezonu) nego na osnovu podataka za svaku pojedinačnu utakmicu. Tek tada bi se videlo koja je statistika koliko važna.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
