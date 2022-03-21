@@ -305,7 +305,7 @@
 <blockquote>
 <div><p>U ovoj svesci predstavljena je upotreba višestruke linearne regresije, odnosno linearne regresije sa većim brojem nezavisno promenljivih veličina, kao modela za predikciju. Linearni modeli mogu imati i druge namene sem predikcije, ali se njima ovde nećemo baviti.</p>
 </div></blockquote>
-<p>Linearna regresija, u užem smislu ovog termina, jeste model koji pretpostavlja linearnu zavisnost jedne zavisne (<span class="math notranslate nohighlight">\(y\)</span>) od jedne nezavisne promenljive (<span class="math notranslate nohighlight">\(x\)</span>) ili određene njene transformacije (npr. <span class="math notranslate nohighlight">\(log{x}\)</span>). Ta nam zavisnost omogućava da pravimo procene zavisno promenljive ako nam je poznata vrednost nezavisne. Tako, na primer, cenu stana možemo da procenimo samo na osnovu njegove kvadrature. Međutim, stan ne karakteriše samo površina, tu je važno i u kom je kraju grada, koliko je stara zgrada, da li ima svoj parking itd. Kada bismo imali sve ove podatke, bilo bi dobro da ih sve uključimo kao nezavisne promenljive (<span class="math notranslate nohighlight">\(x_1, x_2, x_3...\)</span>), ili kao njihove transformisane vrednosti, koje u svojoj linearnoj kombinaciji daju procenu cene stana. Naravno, u pitanju je procena i neizbežno je da postoji greška (<span class="math notranslate nohighlight">\(\epsilon\)</span>) koju ne možemo da procenimo. Možemo samo da se potrudimo da bude što manja. Zadatak višestruke linearne regresije je da odredi optimalne parametre linearne funkcije (<span class="math notranslate nohighlight">\(\beta_1, \beta_2, \beta_3...\)</span>) i tako omogući što bolju predikciju.</p>
+<p>Linearna regresija, u užem smislu ovog termina, jeste model koji pretpostavlja linearnu zavisnost jedne zavisne (<span class="math notranslate nohighlight">\(y\)</span>) od jedne nezavisne promenljive (<span class="math notranslate nohighlight">\(x\)</span>) ili određene njene transformacije (npr. <span class="math notranslate nohighlight">\(\log{x}\)</span>). Ta nam zavisnost omogućava da pravimo procene zavisno promenljive ako nam je poznata vrednost nezavisne. Tako, na primer, cenu stana možemo da procenimo samo na osnovu njegove kvadrature. Međutim, stan ne karakteriše samo površina, tu je važno i u kom je kraju grada, koliko je stara zgrada, da li ima svoj parking itd. Kada bismo imali sve ove podatke, bilo bi dobro da ih sve uključimo kao nezavisne promenljive (<span class="math notranslate nohighlight">\(x_1, x_2, x_3...\)</span>), ili kao njihove transformisane vrednosti, koje u svojoj linearnoj kombinaciji daju procenu cene stana. Naravno, u pitanju je procena i neizbežno je da postoji greška (<span class="math notranslate nohighlight">\(\epsilon\)</span>) koju ne možemo da procenimo. Možemo samo da se potrudimo da bude što manja. Zadatak višestruke linearne regresije je da odredi optimalne parametre linearne funkcije (<span class="math notranslate nohighlight">\(\beta_1, \beta_2, \beta_3...\)</span>) i tako omogući što bolju predikciju.</p>
 <div class="math notranslate nohighlight">
 \[ y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon \]</div>
 <p>Svaka nova informacija bi, ako imamo dovoljno veliki skup podataka, trebalo da popravi procenu. Situacija u praksi, ipak nije tako jednostavna. Što je veći broj nezavisno promenljivih, potreban nam je veći skup podatka. Takođe, uvek ima nekih nepotrebnih i redundatnih promeljivih koje nije lako uočiti. Zato je, pre nego što uključimo u lineranu regresiju sve moguće promenjive, potrebno da obratimo pažnju na sledeće dve stvari:</p>
@@ -600,7 +600,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x15c91426a90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x2118cf85bb0&gt;
 </pre></div>
 </div>
 <img alt="_images/10 Višestruka linearna regresija_16_1.png" src="_images/10 Višestruka linearna regresija_16_1.png" />
@@ -1854,10 +1854,10 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4132346.63218778  582274.40995686 2924888.39203559 1260375.45001049
-  413703.87598282  253217.50249879  326469.29186486  535787.36399649
-  877585.00522708  538486.89902739  498508.03948311  126321.97761641
- -367661.4583751 ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3064020.91344103  826424.21554996 3348327.93262805 1290502.15797252
+  445480.71287783  193769.39808715  506471.05268687 1047792.44240613
+ 1097180.66460934  880724.88501932  652426.760801    -20391.87363829
+ -397368.09878471]
 </pre></div>
 </div>
 </div>
@@ -1870,7 +1870,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1919450.498788828
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1890191.716640953
 </pre></div>
 </div>
 </div>
@@ -1907,55 +1907,55 @@ memory usage: 55.5+ KB
   <tbody>
     <tr>
       <th>area</th>
-      <td>4.132347e+06</td>
+      <td>3.064021e+06</td>
     </tr>
     <tr>
       <th>bedrooms</th>
-      <td>5.822744e+05</td>
+      <td>8.264242e+05</td>
     </tr>
     <tr>
       <th>bathrooms</th>
-      <td>2.924888e+06</td>
+      <td>3.348328e+06</td>
     </tr>
     <tr>
       <th>stories</th>
-      <td>1.260375e+06</td>
+      <td>1.290502e+06</td>
     </tr>
     <tr>
       <th>mainroad</th>
-      <td>4.137039e+05</td>
+      <td>4.454807e+05</td>
     </tr>
     <tr>
       <th>guestroom</th>
-      <td>2.532175e+05</td>
+      <td>1.937694e+05</td>
     </tr>
     <tr>
       <th>basement</th>
-      <td>3.264693e+05</td>
+      <td>5.064711e+05</td>
     </tr>
     <tr>
       <th>hotwaterheating</th>
-      <td>5.357874e+05</td>
+      <td>1.047792e+06</td>
     </tr>
     <tr>
       <th>airconditioning</th>
-      <td>8.775850e+05</td>
+      <td>1.097181e+06</td>
     </tr>
     <tr>
       <th>parking</th>
-      <td>5.384869e+05</td>
+      <td>8.807249e+05</td>
     </tr>
     <tr>
       <th>prefarea</th>
-      <td>4.985080e+05</td>
+      <td>6.524268e+05</td>
     </tr>
     <tr>
       <th>semi-furnished</th>
-      <td>1.263220e+05</td>
+      <td>-2.039187e+04</td>
     </tr>
     <tr>
       <th>unfurnished</th>
-      <td>-3.676615e+05</td>
+      <td>-3.973681e+05</td>
     </tr>
   </tbody>
 </table>
@@ -1991,7 +1991,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.819633705829064
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8155103459754045
 </pre></div>
 </div>
 </div>
@@ -2004,7 +2004,7 @@ memory usage: 55.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1091538.4268696534
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>957406.0900779318
 </pre></div>
 </div>
 </div>
