@@ -1367,8 +1367,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[183,  21],
-       [ 43,  81]], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[177,  15],
+       [ 62,  74]], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -1406,13 +1406,13 @@
   <tbody>
     <tr>
       <th>nije preživeo</th>
-      <td>183</td>
-      <td>21</td>
+      <td>177</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>preživeo</th>
-      <td>43</td>
-      <td>81</td>
+      <td>62</td>
+      <td>74</td>
     </tr>
   </tbody>
 </table>
@@ -1428,7 +1428,7 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost: 0.805
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost: 0.765
 </pre></div>
 </div>
 </div>
@@ -1443,7 +1443,7 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost (bez kriterijuma): 0.552
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost (bez kriterijuma): 0.488
 </pre></div>
 </div>
 </div>
@@ -1461,13 +1461,16 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 0.50
-|   |--- feature_2 &lt;= 0.50
-|   |   |--- feature_0 &lt;= 1.50
+|   |--- feature_0 &lt;= 1.50
+|   |   |--- feature_2 &lt;= 0.50
 |   |   |   |--- class: 0.0
-|   |   |--- feature_0 &gt;  1.50
+|   |   |--- feature_2 &gt;  0.50
+|   |   |   |--- class: 1.0
+|   |--- feature_0 &gt;  1.50
+|   |   |--- feature_2 &lt;= 0.50
 |   |   |   |--- class: 0.0
-|   |--- feature_2 &gt;  0.50
-|   |   |--- class: 1.0
+|   |   |--- feature_2 &gt;  0.50
+|   |   |   |--- class: 0.0
 |--- feature_1 &gt;  0.50
 |   |--- feature_0 &lt;= 2.50
 |   |   |--- feature_0 &lt;= 1.50
@@ -1512,7 +1515,7 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.24681782, 0.69536518, 0.05373519, 0.00408181])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.25241341, 0.67836889, 0.05297809, 0.01623962])
 </pre></div>
 </div>
 </div>
