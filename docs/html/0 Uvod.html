@@ -286,13 +286,6 @@
   <a class="reference internal nav-link" href="#kako-da-pokrenete-interaktivnu-verziju-dzupiter-sveski">
    Kako da pokrenete interaktivnu verziju Džupiter sveski
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#preporucena-literatura">
-     Preporučena literatura
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -324,6 +317,7 @@
 <h2>O Džupiter sveskama<a class="headerlink" href="#o-dzupiter-sveskama" title="Permalink to this headline">¶</a></h2>
 <p>Džupiter sveske (<em>Jupyter Notebook</em>) su <em>open-source</em> aplikacija koja omogućava da pravimo i delimo dokumente koji sadrže programski kôd sa pratećim tekstom, jednačinama i vizuelizacijama. Ova aplikacija radi u Džupiter okruženju, odnosno na Džupiter serveru koji može biti podignut lokalno na vašem računaru ili dostupan kao onlajn servis. Iako je Džupiter zamišljen kao platforma za tri jezika (<strong>Ju</strong>lia, <strong>Pyt</strong>hon i <strong>R</strong>), najveći broj svezaka je urađen u Pajtonu. Za Džupiter sveske ne postoji poseban editor, one se edituju i pokreću iz veb-brauzera.</p>
 <p>Ovde se nećemo upuštati u detalje rada sa Džupiter sveskama. Ako samo čitate sadržaj, nikakvo uputstvo vam nije potrebno. Kada radite interaktivno, najvažnije je da primetite da se sveska sastoji iz “In” (<em>input</em>) i “Out” (<em>output</em>) polja. U <em>input</em> polja mi unosimo instrukcije ili prateći tekst. U <em>output</em> poljima je izlaz koji generiše mašina. Kada unesmo kôd u <em>input</em> polje, izvršavamo ga tako što istovremeno pritiskamo <em>Ctrl</em> i <em>Enter</em> na tastaturi. Tada se u polju ispod pojavljuje rezultat. Kada izvršimo instrukcije date u nekom “In” polju, broj u uglastim zagradama pored oba polja se povećava za jedan. Pošto instrukcije ne moraju da se izvršavaju redom kojim su ispisane na ekranu, numeracija nam govori kojim su redom izvršavane.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/in&amp;out.png"><img alt="in&amp;out" class="bg-primary mb-1 align-center" src="_images/in&amp;out.png" style="width: 320px;" /></a>
 </section>
 <section id="o-pajtonu">
 <h2>O Pajtonu<a class="headerlink" href="#o-pajtonu" title="Permalink to this headline">¶</a></h2>
@@ -337,16 +331,17 @@
 <p>Najjednostavniji način da otvorite .ipynb fajlove jeste da ih postavite u neki onlajn Git repozitorijum (npr. GitHub) i da onda link na sveske, odnosno te fajlove unesete u odgovarajuće polje portala <a class="reference external" href="https://mybinder.org/">Binder</a> i kliknete na “launch”. Ovaj servis će otvoriti interaktivnu verziju na kojoj ćete moći da radite dok ste onlajn. Binder vam neće trajno sačuvati ono što radite, ali možete uvek ponovo na mu pristupite.</p>
 <p>Drugi način da pokrenete .ipynb fajlove je da koristite neki od od servisa na kojima je potrebno da otvorite nalog (a možda i da platite korišćenje) poput <a class="reference external" href="https://colab.research.google.com/">Google Colab</a> ili <a class="reference external" href="https://cocalc.com/">CoCalc</a>. Ovo je rešenje, pre svega, za profesionalce koji ne žele samo onlajn servis već i platformu za saradnju sa drugim programerima.</p>
 <p>Treći način je da podignete server za Džupiter sveske na svom računaru. Srećom, to nije tako komplikovano kao što zvuči. Potrebno je da preuzmete sa interneta instalaciju programskog okruženja <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> i da je instalirate. Izaberite verziju za Pajton 3.8 i vaš operativni sistem. Imajte u vidu da je ova instalacija velika i zahtevna u pogledu memorije. Kad pokrenete okruženje Anaconda dobićete mogućnost da izaberete neku od ponuđenih aplikacija. Izaberite Jupyter Notebook. Tada će vaš brauzer otvoriti Pajtonov radni direktorijum. Postarajte se da u taj direktorijum unesete potrebne Džupiter sveske, odnosno .ipynb fajlove. Biće dovoljno da kliknete na ime fajla i on će se u novom tabu brauzera otvoriti kao interaktivna sveska.</p>
-<p><img alt="alt text" src="_images/jupyter_notebook2.png" /></p>
+<img alt="in&amp;out" class="bg-primary mb-1 align-center" src="_images/jupyter_notebook2.png" />
 <p>Kada završimo sa tehničkim podešavanjima, bićemo spremni da se pozabavimo suštinom, tj. obradom i analizom podataka u Pajtonu.</p>
-<section id="preporucena-literatura">
-<h3>Preporučena literatura<a class="headerlink" href="#preporucena-literatura" title="Permalink to this headline">¶</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">Preporučena literatura</p>
+<p>Sadržaj ovog praktikuma nema klasične reference. Tamo gde se sveske oslanjaju na poznate skupove podataka ili kôd koji je javno dostupan u tekstu postoje hiperlinkovi na originalni materijal. Umesto referenci ovde dajemo listu preporučene literature.</p>
 <ul class="simple">
-<li><p>Машуловић Драган. 2019. <a class="reference external" href="https://petlja.org/biblioteka/r/kursevi/jupyter-prirucnik">Анализа и презентација података у Џупајтеру</a></p></li>
+<li><p>Машуловић Драган. 2019. Фондација Петља. <a class="reference external" href="https://petlja.org/biblioteka/r/kursevi/jupyter-prirucnik">Анализа и презентација података у Џупајтеру</a> Ovaj priručnik je uvod u analizu podataka prilagođenu učenicima osnovne škole. Kako je Pajton nova tema i za osnovce i za starije, ovakav priručnik svakome od nas može da bude kosristan.</p></li>
 <li><p>VanderPlas Jake. 2016. <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook">Python Data Science Handbook: Essential Tools for Working with Data</a></p></li>
 <li><p>Stojiljković Mirko. 2018. <a class="reference external" href="https://realpython.com/linear-regression-in-python/">Linear Regression in Python</a></p></li>
 </ul>
-</section>
+</div>
 </section>
 </section>
 
