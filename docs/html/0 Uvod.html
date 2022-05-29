@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -301,7 +302,8 @@
   <section class="tex2jax_ignore mathjax_ignore" id="uvod">
 <h1>Uvod<a class="headerlink" href="#uvod" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><p>Za skiptnu obradu i analizu podataka u Pajtonu nam je potrebno nešto matematičkog predznanja i tehničkih preduslova. Ništa od toga nije previše zahtevno. U ovoj svesci je dato uputstvo kako da prevaziđemo te početne teškoće.</p>
+<div><p>Pred vama je praktikum za predmet <strong>Primenjena nauka o podacima</strong> na fakultetu <a class="reference external" href="https://www.fefa.edu.rs/">FEFA</a> u Beogradu. Ukoliko se ne prepoznajete u studentima koji pohađaju ovaj predmet, zaboravite na ovu formalnu napomenu i čitajte materijal onako kako vama najviše odgovara. <em>Jupyter</em> sveske u ovom praktikumu sadrže uputstvo za pisanje programa za obradu i analizu podataka u Pajtonu sa nizom, nadam se, zanimljivih i inspirativnih primera. Prvo izdanje ove publikacije je dostupno na web prezentaciji fakulteta, ali bi materijal trebalo i dalje da se razvija. Ažurna verzija ovog praktikuma sa novim temama i primerima trebalo bi da uvek bude dostupna na lokaciji <a class="reference external" href="https://sverbic.github.io/skriptna-obrada-podataka/">https://sverbic.github.io/skriptna-obrada-podataka/</a>. Ukoliko imate sugestije za poboljšanje teksta ili kôda, “forkujte” materijal koji se nalazi na <a class="reference external" href="https://github.com/sverbic/skriptna-obrada-podataka">GitHub-u</a> i predložite izmene. Bilo bi sjajno da novi ljudi i nove ideje ovaj materijal učine boljim i savremenijim.</p>
+<p>Za skriptnu obradu i analizu podataka u Pajtonu vam nije potrebno posebno predznanje. Dovoljno je da vladate osnovnoškolskom matematikom i elementarnom statistikom, kao i da ispunite tehničke preduslove za pokretanje Jupyter sveski. Čak iako se nikada ranije niste sreli sa Pajtonom, ovi programi ne bi trebalo da predstavljaju posebnu teškoću. Potrebno je samo da posvetite neko vreme da razumete i primenite ono što je u sveskama opisano. Ništa od toga nije previše zahtevno. U ovoj “nultoj” svesci dato je uputstvo kako da prevaziđemo početne tehničke izazove.</p>
 </div></blockquote>
 <section id="skriptna-obrada-podataka">
 <h2>Skriptna obrada podataka<a class="headerlink" href="#skriptna-obrada-podataka" title="Permalink to this headline">¶</a></h2>
@@ -323,7 +325,7 @@
 <h2>O Pajtonu<a class="headerlink" href="#o-pajtonu" title="Permalink to this headline">¶</a></h2>
 <p>U ovom praktikumu nećemo davati uputstvo za rad u Pajtonu. Čitajući ove Džupiter sveske videćete da mnogo toga u Pajtonu može da se uradi sa svega par linija koda. Zato verujemo da je primena Pajtona za obradu i analizu podataka moguća i bez posebnog znanja programiranja. Pajton je programski jezik opšte namene koji ima mnoštvo svojih specifičnosti. Mi, međutim, ne planiramo da pišemo softver od hiljadu linija kôda niti da pravimo nove biblioteke. Ideja je da koristimo prednosti interpretera koji dozvoljava da podatke obrađujemo korak po korak kao iz komandne linije. Sintaksa Pajtona je, srećom kao i kod većine jezika interpretera, jednostavna.</p>
 <p>Sam Pajton, u svojoj osnovnoj verziji, nema dovoljno funkcija za rad sa podacima. Zato je potrebno da koristimo specifične biblioteke koje imaju za to namenjene funkcije. To je takođe jednostavno i vrlo brzo ćete videti da skoro uvek koristimo iste 2-3 biblioteke. Zaista mislimo da niko ne treba da uzima kurs programiranja u Pajtonu kako bi mogao da ga koristi za (ne previše složenu) obradu i analizu podataka.</p>
-<p>Ukoliko procenite da vam je potreban postupniji i lakši pristup Pajtonu, možete da pogledate onlajn kurs Fondacije Petlja na ovu temu [1].</p>
+<p>Ukoliko procenite da vam je potreban postupniji i lakši pristup Pajtonu, možete da pogledate onlajn kurs Fondacije Petlja na ovu temu. Pogledajte preporuke na kraju ove sveske.</p>
 </section>
 <section id="kako-da-pokrenete-interaktivnu-verziju-dzupiter-sveski">
 <h2>Kako da pokrenete interaktivnu verziju Džupiter sveski<a class="headerlink" href="#kako-da-pokrenete-interaktivnu-verziju-dzupiter-sveski" title="Permalink to this headline">¶</a></h2>
@@ -335,11 +337,12 @@
 <p>Kada završimo sa tehničkim podešavanjima, bićemo spremni da se pozabavimo suštinom, tj. obradom i analizom podataka u Pajtonu.</p>
 <div class="tip admonition">
 <p class="admonition-title">Preporučena literatura</p>
-<p>Sadržaj ovog praktikuma nema klasične reference. Tamo gde se sveske oslanjaju na poznate skupove podataka ili kôd koji je javno dostupan u tekstu postoje hiperlinkovi na originalni materijal. Umesto referenci ovde dajemo listu preporučene literature.</p>
+<p>Ovaj praktikum nema klasične reference jer ne bi imale mnogo smisla. Tamo gde se sveske oslanjaju na poznate skupove podataka ili kôd koji je javno dostupan, u tekstu postoje hiperlinkovi na originalni materijal. U svakom slučaju, postoje onlajn knjige i priručnici koje biste mogli da pogledate jer na sličan način obrađuju slične teme. Bez obzira što vam je tema poznata, pristup može da bude nov i inspirativan. Evo nekih preporuka:</p>
 <ul class="simple">
-<li><p>Машуловић Драган. 2019. Фондација Петља. <a class="reference external" href="https://petlja.org/biblioteka/r/kursevi/jupyter-prirucnik">Анализа и презентација података у Џупајтеру</a> Ovaj priručnik je uvod u analizu podataka prilagođenu učenicima osnovne škole. Kako je Pajton nova tema i za osnovce i za starije, ovakav priručnik svakome od nas može da bude kosristan.</p></li>
-<li><p>VanderPlas Jake. 2016. <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook">Python Data Science Handbook: Essential Tools for Working with Data</a></p></li>
-<li><p>Stojiljković Mirko. 2018. <a class="reference external" href="https://realpython.com/linear-regression-in-python/">Linear Regression in Python</a></p></li>
+<li><p><a class="reference external" href="https://petlja.org/biblioteka/r/kursevi/jupyter-prirucnik">Анализа и презентација података у Џупајтеру</a> Dragan Mašulović. 2019. Fondacija Petlja. <em>Ovaj priručnik je uvod u analizu podataka prilagođenu učenicima osnovne škole. Kako je Pajton nova tema i za osnovce i za starije, ovakav priručnik svakome od nas može da bude koristan. Sintaksa je ista za sve.</em></p></li>
+<li><p><a class="reference external" href="https://petlja.org/biblioteka/r/kursevi/jupyterRadneSveske_srb">Анализа (отворених) података</a> Aleksandra Alorić. 2020. Fondacija Petlja. <em>Ovaj kurs je namenjen nešto starijoj publici. Naglasak nije na Pajtonu - jer se pretpostavlja da osnove Pajtona već znate - nego na korišćenju otvorenih podataka iz različitih izvora.</em></p></li>
+<li><p><a class="reference external" href="https://inferentialthinking.com/chapters/intro.html">Computational and Inferential Thinking: The Foundations of Data Science</a>  Ani Adhikari, John DeNero, David Wagner. 2021. <em>Ova knjiga obiluje primerima tumačenja podataka i izvođenja zaključaka na osnovu njih. Autori su se potrudili da izbegnu statističke testove i da Pajton iskoriste za simuliranje mogućih podataka i njihovih rapodela. Ovaj način analize podataka je svakako intuitivniji i manje formalan.</em></p></li>
+<li><p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook">Python Data Science Handbook: Essential Tools for Working with Data</a> VanderPlas Jake. 2016. O’Reilly Media. <em>Ovaj knjga nudi sistematičan i detaljan pregled svih važnih tema vezanih za obradu podataka u Pajtonu. Posebno je interesantan i inspirativan deo sa naprednom vizuelizacijom podataka.</em></p></li>
 </ul>
 </div>
 </section>

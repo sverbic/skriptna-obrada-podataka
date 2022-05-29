@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -43,8 +44,8 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -1367,8 +1368,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[177,  15],
-       [ 62,  74]], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[174,  27],
+       [ 47,  80]], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -1406,13 +1407,13 @@
   <tbody>
     <tr>
       <th>nije preživeo</th>
-      <td>177</td>
-      <td>15</td>
+      <td>174</td>
+      <td>27</td>
     </tr>
     <tr>
       <th>preživeo</th>
-      <td>62</td>
-      <td>74</td>
+      <td>47</td>
+      <td>80</td>
     </tr>
   </tbody>
 </table>
@@ -1428,7 +1429,7 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost: 0.765
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost: 0.774
 </pre></div>
 </div>
 </div>
@@ -1443,7 +1444,7 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost (bez kriterijuma): 0.488
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost (bez kriterijuma): 0.549
 </pre></div>
 </div>
 </div>
@@ -1461,16 +1462,13 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- feature_1 &lt;= 0.50
-|   |--- feature_0 &lt;= 1.50
-|   |   |--- feature_2 &lt;= 0.50
+|   |--- feature_2 &lt;= 0.50
+|   |   |--- feature_0 &lt;= 1.50
 |   |   |   |--- class: 0.0
-|   |   |--- feature_2 &gt;  0.50
-|   |   |   |--- class: 1.0
-|   |--- feature_0 &gt;  1.50
-|   |   |--- feature_2 &lt;= 0.50
+|   |   |--- feature_0 &gt;  1.50
 |   |   |   |--- class: 0.0
-|   |   |--- feature_2 &gt;  0.50
-|   |   |   |--- class: 0.0
+|   |--- feature_2 &gt;  0.50
+|   |   |--- class: 1.0
 |--- feature_1 &gt;  0.50
 |   |--- feature_0 &lt;= 2.50
 |   |   |--- feature_0 &lt;= 1.50
@@ -1515,7 +1513,7 @@ Tačnost (<em>accuracy</em>) se definiše kao zbir vrednosti po glavnoj dijagona
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.25241341, 0.67836889, 0.05297809, 0.01623962])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.21332567, 0.7191064 , 0.0630466 , 0.00452134])
 </pre></div>
 </div>
 </div>

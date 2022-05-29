@@ -10,7 +10,7 @@
 ```{admonition} Impresum
 **Skriptna obrada i analiza podataka u Pajtonu**
 
-I izdanje, april 2022.
+I izdanje, maj 2022.
 
 Autor: dr Srđan Verbić, docent, Univerzitet Metropolitan – FEFA 
 

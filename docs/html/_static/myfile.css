@@ -1,0 +1,14 @@
+h2 {page-break-before: always;}
+@page {
+padding-top:0.2em;
+padding-bottom:0.2em;
+/* A4 */
+size: A4;
+margin: 0.8in;
+}
+.dataframe th {
+    font-size: 12px;
+}
+.dataframe td {
+    font-size: 10px;
+}
